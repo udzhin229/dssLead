@@ -1,0 +1,16 @@
+///// - COLOR - ///////
+$bg-color: #000000;
+$main-color: #ffffff;
+$blur-bg: #ffffff1a;
+$second-text-color: #191919;
+
+// SHADOW
+$text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+
+// Border
+$main-border: 0.5px solid $main-color;
+$main-border-radius: 16px;

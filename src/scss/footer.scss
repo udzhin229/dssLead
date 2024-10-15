@@ -1,0 +1,133 @@
+//====================================================================================================
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: linear-gradient(90deg, #880101 0%, #4d0606 53%, #260b0b 100%);
+}
+@media (min-width: 1200px) {
+  .footer {
+    padding-top: 75px;
+    padding-bottom: 53px;
+  }
+}
+
+.footer__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.footer__top-content {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  .footer__top-content {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__title-box {
+}
+.title-box {
+}
+.footer__title.title {
+  font-size: 18px;
+}
+@media (min-width: 1200px) {
+  .footer__title.title {
+    font-size: 24px;
+  }
+}
+
+.footer-socials__list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (min-width: 1200px) {
+  .footer-socials__list {
+    gap: 30px;
+  }
+}
+
+.footer-socials__element {
+}
+.footer-socials__element-icon {
+  width: 30px;
+  height: 30px;
+}
+.footer-mail-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-mail-icon-box {
+}
+.footer-mail-icon {
+  width: 24px;
+  height: 24px;
+}
+.footer-mail-text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 130%;
+}
+@media (min-width: 1200px) {
+  .footer-mail-text {
+    font-size: 18px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+    .footer-logo-box {
+        margin-right: 376px;
+    }
+  }
+
+.footer-logo-box__icon {
+  width: 60px;
+  height: 45px;
+}
+@media (min-width: 1200px) {
+  .footer-logo-box__icon {
+    width: 143px;
+    height: 107px;
+  }
+}
+
+.footer__bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+@media (min-width: 1200px) {
+    .footer__bottom-content {
+        margin-right: 205px;
+    }
+  }
+
+.footer__bottom-content-text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 130%;
+  text-decoration: underline;
+}
+@media (min-width: 1200px) {
+  .footer__bottom-content-text {
+    font-size: 18px;
+  }
+}
+//====================================================================================================
