@@ -12,7 +12,7 @@
 */
 
 // Увімкнути/вимкнути FLS (Full Logging System) (в роботі)
-window['FLS'] = true;
+window["FLS"] = true;
 
 // Підключення основного файлу стилів
 import "../scss/style.scss";
@@ -126,7 +126,7 @@ flsForms.formFieldsInit({
 // flsForms.formRating();
 
 /* Модуль роботи з select. */
-import './libs/select.js'
+import "./libs/select.js";
 
 /* Модуль роботи з календарем */
 // import './files/forms/datepicker.js'
@@ -252,19 +252,28 @@ import "./libs/dynamic_adapt.js";
 /* Підключаємо файли зі своїм кодом */
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
-document.addEventListener("DOMContentLoaded", function() {
-	const cards = document.querySelectorAll('.advantages__card');
-  
-	const observer = new IntersectionObserver((entries) => {
-	  entries.forEach(entry => {
-		if (entry.isIntersecting) {
-		  entry.target.classList.add('flipped'); // Додаємо клас, щоб картка переверталась
-		}
-	  });
-	});
-  
-	cards.forEach(card => {
-	  observer.observe(card);
-	});
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".advantages__card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("flipped");
+      }
+    });
   });
-  
+
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
+});
+
+const cards = document.querySelectorAll(".card");
+
+if (cards) {
+	cards.forEach((card) => {
+		card.addEventListener("mouseover", () => {
+		  card.classList.add("flipped");
+		});
+	  });
+}

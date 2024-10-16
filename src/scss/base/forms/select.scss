@@ -176,3 +176,128 @@
 ._select-tag {
   cursor: pointer;
 }
+
+.select.select_pre-footer{
+  display: block;
+  width: 290px;
+  background-color: #2C2C2C;
+  padding: 13px 20px;
+  border-radius: 8px;
+  border: 1px solid #9C9C9C;
+
+  & .select__body{
+    width: 100%;
+  }
+
+  & .select__title{
+    width: 100%;
+    padding-left: 40px;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  & .select__options{
+    position: static;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  & .select__content{
+    font-size: 12px;
+    line-height: 130%;
+  }
+
+  & .select__content::before{
+    content: url(../../../img/telegram.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    
+  }
+
+  & .select__option{
+    position: relative;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 12px;
+    line-height: 130%;
+  }
+
+  & .select__option:nth-child(1)::before{
+    content: url(../../../img/telegram.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    
+  }
+
+  & .select__option:nth-child(2)::before{
+    content: url(../../../img/whatsapp.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    
+  }
+
+  & .select__option:nth-child(3)::before{
+    content: url(../../../img/viber.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    
+  }
+}
+@media (min-width: 1200px) {
+  .select.select_pre-footer{
+    width: 515px;
+    padding: 15px 20px;
+  }
+
+  .select.select_pre-footer{
+    & .select__content{
+      font-size: 16px;
+    }
+
+    & .select__option{
+      font-size: 16px;
+    }
+
+    & .select__option:nth-child(1)::before{
+      content: url(../../../img/telegram.png);
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      
+    }
+  
+    & .select__option:nth-child(2)::before{
+      content: url(../../../img/whatsapp.png);
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      
+    }
+  
+    & .select__option:nth-child(3)::before{
+      content: url(../../../img/viber.png);
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      
+    }
+  }
+}

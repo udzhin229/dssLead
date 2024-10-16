@@ -304,6 +304,74 @@ body {
 ._select-tag {
   cursor: pointer
 }
+.select.select_pre-footer {
+  display: block;
+  width: 290px;
+  background-color: #2c2c2c;
+  padding: 13px 20px;
+  border-radius: 8px;
+  border: 1px solid #9c9c9c
+}
+.select.select_pre-footer .select__body {
+  width: 100%
+}
+.select.select_pre-footer .select__title {
+  width: 100%;
+  padding-left: 40px;
+  border-radius: 0;
+  border: none;
+  background-color: rgba(0,0,0,0)
+}
+.select.select_pre-footer .select__options {
+  position: static;
+  border-radius: 0;
+  border: none;
+  background-color: rgba(0,0,0,0)
+}
+.select.select_pre-footer .select__content {
+  font-size: 12px;
+  line-height: 130%
+}
+.select.select_pre-footer .select__content::before {
+  content: url(../../../img/telegram.webp);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px
+}
+.select.select_pre-footer .select__option {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 130%
+}
+.select.select_pre-footer .select__option:nth-child(1)::before {
+  content: url(../../../img/telegram.webp);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px
+}
+.select.select_pre-footer .select__option:nth-child(2)::before {
+  content: url(../../../img/whatsapp.webp);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px
+}
+.select.select_pre-footer .select__option:nth-child(3)::before {
+  content: url(../../../img/viber.webp);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px
+}
 .menu .header-mb__button-wrapper {
   position: relative;
   width: 35px;
@@ -933,6 +1001,17 @@ body {
 .founders__wrapper {
   margin-bottom: 20px
 }
+.founders__slide {
+  -webkit-perspective: 1000px;
+  perspective: 1000px
+}
+.card {
+  width: 268px;
+  height: 423px;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: relative
+}
 .founders__slide-card-front {
   width: 268px;
   height: 423px
@@ -978,6 +1057,7 @@ body {
   z-index: -1;
   width: 268px;
   height: 423px;
+  max-height: 700px;
   background-image: url(../img/founders/back-bg-card.webp);
   background-repeat: no-repeat;
   background-size: cover
@@ -988,6 +1068,12 @@ body {
   top: 0;
   left: 0;
   right: 0
+}
+.founders-card-back__bg-top img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .founders-card-back__bg-top-vector {
   position: absolute;
@@ -1000,14 +1086,20 @@ body {
   position: absolute;
   z-index: 6;
   height: 259px;
-  top: -33px;
-  left: -53px;
+  bottom: -20px;
+  left: 0;
   right: 0
+}
+.founders-card-back__bg-avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .founders-card-back__name-box {
   position: absolute;
   z-index: 8;
-  top: 15px;
+  top: 20px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -1026,7 +1118,41 @@ body {
   width: 93px;
   height: 57px;
   top: 61px;
-  left: -24px
+  left: -15px
+}
+.founders-card-back__bg-decor.slide3 {
+  width: 143px;
+  height: 87px;
+  left: -50px;
+  top: 91px
+}
+.founders-card-back__bg-decor.slide4 {
+  width: 175px;
+  height: 119px;
+  left: -50px;
+  top: 71px
+}
+.founders-card-back__bg-decor.slide5 {
+  top: 151px
+}
+.founders-card-back__bg-decor-2.slide3 {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  top: 35px;
+  right: 4px
+}
+.founders-card-back__bg-decor-2.slide4 {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  top: 130px;
+  right: 14px;
+  z-index: 1
+}
+.founders-card-back__bg-decor-2.slide5 {
+  -webkit-transform: rotate(36deg);
+  transform: rotate(36deg);
+  top: 160px;
+  z-index: 1
 }
 .founders-card-back__bg-decor-2 {
   position: absolute;
@@ -1038,6 +1164,25 @@ body {
   -webkit-transform: rotate(51deg);
   transform: rotate(51deg)
 }
+.founders-card-back__top-icon-box {
+  position: absolute;
+  top: 139px;
+  right: 16px;
+  z-index: 8;
+  color: #fff
+}
+.founders-card-back__top-icon-box.slide3 {
+  top: 144px;
+  right: 13px
+}
+.founders-card-back__top-icon-box.variant2 {
+  top: 145px;
+  left: 20px
+}
+.founders-card-back__top-icon {
+  width: 54px;
+  height: 37px
+}
 .founders-card-back__bg-eclipse {
   position: absolute;
   z-index: 10;
@@ -1046,12 +1191,18 @@ body {
 .founders-card-back__bg-position {
   position: absolute;
   z-index: 12;
-  bottom: -40px;
+  bottom: -33px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 249px;
-  height: 62px
+  height: auto
+}
+.founders-card-back__bg-position img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .founders-card-back__bg-position-text {
   position: absolute;
@@ -1075,8 +1226,11 @@ body {
 .founders-card-back__bottom-content {
   position: absolute;
   z-index: 20;
-  bottom: 18px;
+  bottom: 10px;
   width: 100%
+}
+.founders-card-back__bottom-content.slide3 {
+  bottom: 37px
 }
 .founders-card-back__bottom-text-box {
   padding-bottom: 5px;
@@ -1105,21 +1259,41 @@ body {
   width: 13px;
   height: 13px
 }
-.founders__slide-card-back-test {
-  position: relative;
-  min-width: 268px;
-  height: 423px
-}
-.founders__slide-card-back-test>img {
+.founders__slide-card-front {
   width: 100%;
-  height: 100%
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  top: -423px;
+  left: 0;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s,-webkit-transform 1s;
+  z-index: 2;
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0)
 }
-.founders__slide-card-back-content-box {
-  width: 268px;
-  position: absolute;
-  z-index: 20;
-  left: 49px;
-  bottom: -10px
+.founders__slide-card-back {
+  z-index: 1;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg)
+}
+.card:hover .founders__slide-card-front {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg)
+}
+.card:hover .founders__slide-card-back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0)
+}
+.flipped .founders__slide-card-front {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg)
+}
+.flipped .founders__slide-card-back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0)
 }
 .pre-footer {
   margin-bottom: 20px
@@ -1162,6 +1336,9 @@ body {
   font-weight: 500;
   line-height: 130%;
   font-size: 12px
+}
+.pre-footer__form-input.nickname {
+  padding-left: 20px
 }
 .pre-footer__form-input::-webkit-input-placeholder {
   font-weight: 500;
@@ -1601,6 +1778,71 @@ body {
   .hero__button-text {
     font-size: 22px
   }
+  .founders-card-back__name {
+    font-size: 32px
+  }
+  .founders-card-back__bg-decor {
+    width: 149px;
+    height: 91px;
+    top: 75px
+  }
+  .founders-card-back__bg-decor.slide3 {
+    width: 200px;
+    height: 130px;
+    left: -70px
+  }
+  .founders-card-back__bg-decor-2.slide3 {
+    -webkit-transform: rotate(354deg);
+    transform: rotate(354deg);
+    right: -15px
+  }
+  .founders-card-back__bg-decor.slide4 {
+    width: 300px;
+    height: 181px;
+    left: -100px;
+    top: 71px
+  }
+  .founders-card-back__bg-decor-2.slide4 {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    width: 202px;
+    height: 112px;
+    right: -44px;
+    z-index: 1
+  }
+  .founders-card-back__bg-decor.slide5 {
+    top: 191px
+  }
+  .founders-card-back__bg-decor-2.slide5 {
+    top: 180px
+  }
+  .founders-card-back__bg-decor-2 {
+    width: 143px;
+    height: 87px
+  }
+  .founders-card-back__bg-position {
+    width: 90%;
+    height: auto;
+    bottom: -30px
+  }
+  .founders-card-back__bg-bottom {
+    width: 205px;
+    height: 205px
+  }
+  .founders-card-back__bottom-content {
+    bottom: 6px
+  }
+  .founders-card-back__bottom-text-box {
+    padding-bottom: 9px;
+    padding-top: 10px
+  }
+  .founders-card-back__bottom-text {
+    font-size: 16px
+  }
+  .founders-card-back__bottom-text-icon {
+    width: 20px;
+    height: 20px
+  }
 }
 @media (min-width:101.5em) {
   .hero__content {
@@ -1684,6 +1926,37 @@ body {
   }
 }
 @media (min-width:1200px) {
+  .select.select_pre-footer {
+    width: 515px;
+    padding: 15px 20px
+  }
+  .select.select_pre-footer .select__content {
+    font-size: 16px
+  }
+  .select.select_pre-footer .select__option {
+    font-size: 16px
+  }
+  .select.select_pre-footer .select__option:nth-child(1)::before {
+    content: url(../../../img/telegram.webp);
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px
+  }
+  .select.select_pre-footer .select__option:nth-child(2)::before {
+    content: url(../../../img/whatsapp.webp);
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px
+  }
+  .select.select_pre-footer .select__option:nth-child(3)::before {
+    content: url(../../../img/viber.webp);
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px
+  }
   .footer {
     padding-top: 75px;
     padding-bottom: 53px
@@ -1725,11 +1998,81 @@ body {
     flex-wrap: wrap;
     gap: 39px 152px
   }
+  .card {
+    width: 350px;
+    height: 550px;
+    -webkit-perspective: 1000px;
+    perspective: 1000px
+  }
   .founders__slide-card-front {
     width: 350px;
     max-width: 430px;
     height: auto;
     max-height: 700px
+  }
+  .founders__slide-card-back {
+    width: 350px;
+    max-width: 430px;
+    height: 550px;
+    max-height: 700px;
+    background-image: url(../img/founders/back-bg-card-pc.webp)
+  }
+  .founders-card-back__bg-avatar {
+    height: 315px;
+    bottom: 0;
+    left: 0;
+    right: 0
+  }
+  .founders-card-back__top-icon-box {
+    top: 190px;
+    right: 25px
+  }
+  .founders-card-back__top-icon-box.variant2 {
+    top: 190px;
+    left: 30px
+  }
+  .founders-card-back__top-icon {
+    width: 86px;
+    height: 58px
+  }
+  .founders__slide-card-back,
+  .founders__slide-card-front {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s,-webkit-transform 1s
+  }
+  .founders__slide-card-front {
+    z-index: 2;
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0)
+  }
+  .founders__slide-card-back {
+    z-index: 1;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg)
+  }
+  .card:hover .founders__slide-card-front {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+  }
+  .card:hover .founders__slide-card-back {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0)
+  }
+  .flipped .founders__slide-card-front {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+  }
+  .flipped .founders__slide-card-back {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0)
   }
   .pre-footer {
     margin-bottom: 225px
@@ -1771,8 +2114,15 @@ body {
   .pre-footer__form-input::placeholder {
     font-size: 16px
   }
+  .pre-footer__input-icon-box {
+    top: 11px
+  }
   .pre-footer__form-input-box.name {
     margin-bottom: 40px
+  }
+  .pre-footer__input-icon {
+    width: 32px;
+    height: 32px
   }
   .pre-footer__button {
     width: 515px;
@@ -1780,7 +2130,7 @@ body {
     background-image: url(../img/pre-footer__button-bg-pc.webp)
   }
   .pre-footer__button-text {
-    font-size: 32px
+    font-size: 16px
   }
 }
 @media (min-width:1467.98px) {

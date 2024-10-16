@@ -4135,4 +4135,10 @@
             observer.observe(card);
         }));
     }));
+    const cards = document.querySelectorAll(".card");
+    if (cards) cards.forEach((card => {
+        card.addEventListener("mouseover", (() => {
+            card.classList.add("flipped");
+        }));
+    }));
 })();
