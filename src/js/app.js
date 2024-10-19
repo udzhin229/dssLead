@@ -94,7 +94,7 @@ flsFunctions.tabs();
 Документація: https://template.fls.guru/template-docs/funkcional-popup.html
 Сніппет (HTML): pl, pop
 */
-// import './libs/popup.js'
+import './libs/popup.js';
 
 /*
 Модуль паралаксу мишею
@@ -277,3 +277,30 @@ if (cards) {
 		});
 	  });
 }
+
+
+// ======================== ПІДКРЕСЛЕННЯ ЗАГОЛОВКІВ ======================= 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('_active');
+    }
+  });
+}, { threshold: 0.5 });
+
+// Вибір всіх заголовків з класом .title-box
+const titleBoxes = document.querySelectorAll('.bg-title-effect');
+const titlesLineBg = document.querySelectorAll('.title-line');
+titleBoxes.forEach(titleBox => {
+  observer.observe(titleBox);
+});
+
+titlesLineBg.forEach(titleLineBg => {
+  observer.observe(titleLineBg);
+});
+
+
+
+
+
+

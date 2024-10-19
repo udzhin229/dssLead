@@ -34,10 +34,9 @@
   z-index: -1;
   filter: blur(10px);
 }
-.hero-thumb > img {
+.hero-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .hero__content {
@@ -47,7 +46,7 @@
   transform: translateX(-50%);
   width: 100%;
   height: 56%;
-  z-index: 5;
+  z-index: 10001;
 }
 @media (min-width: $tablet) {
   .hero__content {
@@ -115,6 +114,8 @@
   position: relative;
   width: 245px;
   height: 60px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .hero__button-box > img {
@@ -131,9 +132,7 @@
   .hero__button-box {
     width: 515px;
     height: 100px;
-  }
-
-  .hero__button-box::before {
+    min-height: 100px;
   }
 }
 
@@ -200,8 +199,10 @@
 
 .philosophy__title-box {
   position: relative;
+  width: fit-content;
   margin-bottom: 20px;
 }
+
 @media (min-width: $tablet) {
   .philosophy__title-box {
     width: fit-content;
@@ -211,13 +212,14 @@
 .philosophy__title-box::after {
   content: "";
   position: absolute;
-  right: -15px;
+  right: -75px;
   top: -35px;
   width: 103px;
   height: 78px;
   background-image: url(../img/decor.png);
   background-size: cover;
   background-repeat: no-repeat;
+  animation: parallaxAnimation 15s ease-in-out infinite;
 }
 @media (min-width: $tablet) {
   .philosophy__title-box::after {
@@ -228,6 +230,28 @@
     background-image: url(../img/decor-pc.png);
   }
 }
+
+@keyframes parallaxAnimation {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(5px, -5px) scale(1.02); /* Рух вгору вправо та збільшення масштабу */
+  }
+  40% {
+    transform: translate(-5px, 5px) scale(0.95); /* Рух вниз вліво та зменшення масштабу */
+  }
+  60% {
+    transform: translate(-5px, -5px) scale(1.02); /* Рух вгору вліво та збільшення масштабу */
+  }
+  80% {
+    transform: translate(5px, 5px) scale(0.95); /* Рух вниз вправо та зменшення масштабу */
+  }
+  100% {
+    transform: translate(0, 0) scale(1); /* Повернення до початкової позиції та масштабу */
+  }
+}
+
 .philosophy__title {
   font-family: Spaceland;
   font-size: 32px;
@@ -235,6 +259,7 @@
   letter-spacing: 1.6px;
   text-transform: uppercase;
 }
+
 @media (min-width: $tablet) {
   .philosophy__title {
     font-size: 90px;
@@ -365,7 +390,61 @@
 .advantages__container {
 }
 .advantages__title-box.title-box {
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
 }
+.advantages__title-box.title-box::after {
+  content: "";
+  position: absolute;
+  left: -115px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 149px;
+  height: 90px;
+  background-image: url(../img/advantages-decor.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: subtleParallaxAnimation 20s ease-in-out infinite;
+}
+@media (min-width: $tablet) {
+  .advantages__title-box.title-box::after {
+    left: -350px;
+    width: 398px;
+    height: 240px;
+    background-image: url(../img/advantages-decor-pc.png);
+  }
+}
+@keyframes subtleParallaxAnimation {
+  0% {
+    transform: translateY(-50%) translate(0, 0) scale(1); /* Початкова позиція */
+  }
+  12.5% {
+    transform: translateY(-51%) translate(4px, 6px) scale(1.01); /* Рух вгору вправо */
+  }
+  25% {
+    transform: translateY(-50%) translate(0, 0) scale(1); /* Повернення до початкової позиції */
+  }
+  37.5% {
+    transform: translateY(-49%) translate(-4px, -6px) scale(1.05); /* Рух вгору вліво */
+  }
+  50% {
+    transform: translateY(-50%) translate(-4px, 10px) scale(0.99); /* Рух вниз вліво */
+  }
+  62.5% {
+    transform: translateY(-49%) translate(4px, 4px) scale(1.05); /* Рух вниз вправо */
+  }
+  75% {
+    transform: translateY(-50%) translate(0, 0) scale(1); /* Повернення до початкової позиції */
+  }
+  87.5% {
+    transform: translateY(-51%) translate(-4px, 4px) scale(1.01); /* Рух вгору вліво */
+  }
+  100% {
+    transform: translateY(-50%) translate(0, 0) scale(1); /* Завершення */
+  }
+}
+
 .advantages__title.title {
   max-width: 248px;
   margin-left: auto;
@@ -595,6 +674,7 @@
 
 // ========================================================================================
 .perspective {
+  position: relative;
   margin-bottom: 80px;
 }
 @media (min-width: 1200px) {
@@ -602,6 +682,145 @@
     margin-bottom: 413px;
   }
 }
+
+.perspective-decor-thumb {
+  position: absolute;
+  top: 40px;
+  left: -45px;
+  width: 120px;
+  height: 65px;
+  opacity: 0.3;
+  filter: blur(0.1px);
+  overflow: hidden;
+}
+.perspective-decor-thumb.thumb-1 {
+  animation: moveAround1 25s ease infinite;
+}
+@media (min-width: $tablet) {
+  .perspective-decor-thumb.thumb-1 {
+    width: 209px;
+    height: 128px;
+    top: 170px;
+    left: -25px;
+  }
+}
+@media (min-width: $pc) {
+  .perspective-decor-thumb.thumb-1 {
+    top: 170px;
+    left: 25px;
+  }
+}
+
+.perspective-decor-thumb.thumb-2 {
+  width: 138px;
+  height: 117px;
+  top: -60px;
+  right: -20px;
+  left: auto;
+  animation: moveAround2 20s ease-in-out infinite;
+}
+@media (min-width: $tablet) {
+  .perspective-decor-thumb.thumb-2 {
+    width: 238px;
+    height: 146px;
+    top: 0;
+    right: auto;
+    left: 930px;
+  }
+}
+@media (min-width: $pc) {
+  .perspective-decor-thumb.thumb-2 {
+    top: -30px;
+    left: 1060px;
+  }
+}
+
+.perspective-decor-thumb.thumb-3 {
+  display: none;
+}
+@media (min-width: $mobile) {
+  .perspective-decor-thumb.thumb-3 {
+    display: block;
+    width: 524px;
+    height: 342px;
+    top: -160px;
+    left: auto;
+    right: -90px;
+    opacity: 0.2;
+    filter: blur(0.5px);
+    animation: moveAround3 22s ease-in-out infinite;
+  }
+}
+@media (min-width: $pc) {
+  .perspective-decor-thumb.thumb-3 {
+    width: 624px;
+    height: 382px;
+    top: -170px;
+    left: auto;
+    right: 0;
+  }
+}
+
+.perspective-decor-thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes moveAround1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(15px, -15px) scale(1.05);
+  }
+  50% {
+    transform: translate(-15px, 15px) scale(1.05);
+  }
+  75% {
+    transform: translate(10px, -10px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes moveAround2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(10px, 15px) scale(1.05);
+  }
+  50% {
+    transform: translate(15px, -10px) scale(1.05);
+  }
+  75% {
+    transform: translate(-15px, 15px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes moveAround3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-20px, -20px) scale(1.05); /* Вгору і вліво */
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.05); /* Вгору і вправо */
+  }
+  75% {
+    transform: translate(-20px, 20px) scale(1.05); /* Вниз і вліво */
+  }
+  100% {
+    transform: translate(0, 0) scale(1); /* Повертаємося до початкової позиції */
+  }
+}
+
 .perspective__container {
 }
 .perspective__title-box.title-box {
@@ -955,6 +1174,8 @@
 .founders__container {
 }
 .founders__title-box {
+  width: fit-content;
+  margin-left: auto;
   margin-bottom: 40px;
 }
 @media (min-width: 1200px) {
@@ -1131,7 +1352,7 @@
     right: 0;
   }
 }
-.founders-card-back__bg-avatar img{
+.founders-card-back__bg-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1165,39 +1386,39 @@
   top: 61px;
   left: -15px;
 }
-.founders-card-back__bg-decor.slide3{
+.founders-card-back__bg-decor.slide3 {
   width: 143px;
   height: 87px;
   left: -50px;
   top: 91px;
 }
-.founders-card-back__bg-decor.slide4{
+.founders-card-back__bg-decor.slide4 {
   width: 175px;
   height: 119px;
   left: -50px;
   top: 71px;
 }
-.founders-card-back__bg-decor.slide5{
+.founders-card-back__bg-decor.slide5 {
   top: 151px;
 }
-// 
-.founders-card-back__bg-decor-2.slide3{
+//
+.founders-card-back__bg-decor-2.slide3 {
   transform: rotate(0);
   top: 35px;
   right: 4px;
 }
-.founders-card-back__bg-decor-2.slide4{
+.founders-card-back__bg-decor-2.slide4 {
   transform: rotate(0);
   top: 130px;
   right: 14px;
   z-index: 1;
 }
-.founders-card-back__bg-decor-2.slide5{
+.founders-card-back__bg-decor-2.slide5 {
   transform: rotate(36deg);
   top: 160px;
   z-index: 1;
 }
-// 
+//
 @media (min-width: $min-pc) {
   .founders-card-back__bg-decor {
     width: 149px;
@@ -1205,25 +1426,25 @@
     top: 75px;
   }
 
-  .founders-card-back__bg-decor.slide3{
+  .founders-card-back__bg-decor.slide3 {
     width: 200px;
     height: 130px;
     left: -70px;
   }
 
-  .founders-card-back__bg-decor-2.slide3{
+  .founders-card-back__bg-decor-2.slide3 {
     transform: rotate(354deg);
     right: -15px;
   }
 
-  .founders-card-back__bg-decor.slide4{
+  .founders-card-back__bg-decor.slide4 {
     width: 300px;
     height: 181px;
     left: -100px;
     top: 71px;
   }
 
-  .founders-card-back__bg-decor-2.slide4{
+  .founders-card-back__bg-decor-2.slide4 {
     transform: rotate(0);
     width: 202px;
     height: 112px;
@@ -1231,11 +1452,11 @@
     z-index: 1;
   }
 
-  .founders-card-back__bg-decor.slide5{
+  .founders-card-back__bg-decor.slide5 {
     top: 191px;
   }
 
-  .founders-card-back__bg-decor-2.slide5{
+  .founders-card-back__bg-decor-2.slide5 {
     top: 180px;
   }
 }
@@ -1262,7 +1483,7 @@
   z-index: 8;
   color: $main-color;
 }
-.founders-card-back__top-icon-box.slide3{
+.founders-card-back__top-icon-box.slide3 {
   top: 144px;
   right: 13px;
 }
@@ -1333,7 +1554,6 @@
   height: 18px;
 }
 
-
 // =======================================
 .founders-card-back__bg-bottom {
   position: absolute;
@@ -1358,7 +1578,7 @@
   bottom: 10px;
   width: 100%;
 }
-.founders-card-back__bottom-content.slide3{
+.founders-card-back__bottom-content.slide3 {
   bottom: 37px;
 }
 @media (min-width: $min-pc) {
@@ -1413,52 +1633,51 @@
   }
 }
 
-
 // =============================================
 .founders__slide-card-front {
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; 
-    // position: absolute;
-    position: relative;
-    top: -423px;
-    left: 0;
-    transition: transform 1s; /* Ефект анімації */
-  }
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  // position: absolute;
+  position: relative;
+  top: -423px;
+  left: 0;
+  transition: transform 1s; /* Ефект анімації */
+}
 
-  .founders__slide-card-front {
-    z-index: 2;
-    transform: rotateY(0deg); /* Початкова позиція передньої сторони */
-  }
+.founders__slide-card-front {
+  z-index: 2;
+  transform: rotateY(0deg); /* Початкова позиція передньої сторони */
+}
 
-  .founders__slide-card-back {
-    z-index: 1;
-    transform: rotateY(-180deg); /* Початкова позиція задньої сторони */
-  }
+.founders__slide-card-back {
+  z-index: 1;
+  transform: rotateY(-180deg); /* Початкова позиція задньої сторони */
+}
 
-  /* Ховер для 3D ефекту */
-  .card:hover .founders__slide-card-front {
-    transform: rotateY(180deg);
-  }
+/* Ховер для 3D ефекту */
+.card:hover .founders__slide-card-front {
+  transform: rotateY(180deg);
+}
 
-  .card:hover .founders__slide-card-back {
-    transform: rotateY(0deg);
-  }
+.card:hover .founders__slide-card-back {
+  transform: rotateY(0deg);
+}
 
-  .flipped .founders__slide-card-front {
-    transform: rotateY(180deg);
-  }
+.flipped .founders__slide-card-front {
+  transform: rotateY(180deg);
+}
 
-  .flipped .founders__slide-card-back {
-    transform: rotateY(0deg);
-  }
+.flipped .founders__slide-card-back {
+  transform: rotateY(0deg);
+}
 
 @media (min-width: 1200px) {
   .founders__slide-card-front,
   .founders__slide-card-back {
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; 
+    backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -1493,25 +1712,6 @@
   }
 }
 
-// ==============================================================
-// .founders__slide-card-back-test{
-//   position: relative;
-//   min-width: 268px;
-//   height: 423px;
-// }
-// .founders__slide-card-back-test > img{
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .founders__slide-card-back-content-box{
-//   width: 268px;
-//   position: absolute;
-//   z-index: 20;
-//   left: 49px;
-//   bottom: -10px;
-// }
-
 // ==========================================================================================
 .pre-footer {
   margin-bottom: 20px;
@@ -1525,6 +1725,7 @@
 .pre-footer__container {
 }
 .pre-footer__title-box {
+  width: fit-content;
   margin-bottom: 34px;
 }
 @media (min-width: 1200px) {

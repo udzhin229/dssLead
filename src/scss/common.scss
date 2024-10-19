@@ -1,4 +1,8 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.title-box{
+  position: relative;
+}
+
 .title{
     font-family: Spaceland;
         font-size: 32px;
@@ -10,4 +14,55 @@
     .title {
       font-size: 90px;
     }
+  }
+
+  .bg-title-effect{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0%;
+    height: 40%;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, #F00000 0%, #8A0000 100%);
+    opacity: 0.7;
+    filter: blur(12px);
+    transition: width 1s ease-out;
+    z-index: -1;
+  }
+  .bg-title-effect._active{
+    width: 100%;
+  }
+
+  @media (min-width: $tablet) {
+    .bg-title-effect{
+      filter: blur(25px);
+    }
+  }
+
+  .title-line{
+    position: relative;
+    display: inline-block;
+  }
+  .title-line::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0%;
+    height: 40%;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, #F00000 0%, #8A0000 100%);
+    opacity: 0.7;
+    filter: blur(12px);
+    transition: width 1s ease-out;
+    z-index: -1;
+  }
+  @media (min-width: $tablet) {
+    .title-line::before{
+      filter: blur(25px);
+    }
+  }
+
+  .title-line._active::before{
+    width: 100%;
   }

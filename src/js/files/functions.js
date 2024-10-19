@@ -162,147 +162,142 @@ export let bodyLock = (delay = 500) => {
 	}
 }
 // Модуль роботи зі спойлерами =======================================================================================================================================================================================================================
-export function spollers() {
-	const spollersArray = document.querySelectorAll('[data-spollers]');
-	if (spollersArray.length > 0) {
-		// Подія кліку
-		document.addEventListener("click", setSpollerAction);
-		// Отримання звичайних слойлерів
-		const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
-			return !item.dataset.spollers.split(",")[0];
-		});
-		// Ініціалізація звичайних слойлерів
-		if (spollersRegular.length) {
-			initSpollers(spollersRegular);
-		}
-		// Отримання слойлерів з медіа-запитами
-		let mdQueriesArray = dataMediaQueries(spollersArray, "spollers");
-		if (mdQueriesArray && mdQueriesArray.length) {
-			mdQueriesArray.forEach(mdQueriesItem => {
-				// Подія
-				mdQueriesItem.matchMedia.addEventListener("change", function () {
-					initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-				});
-				initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-			});
-		}
-		// Ініціалізація
-		function initSpollers(spollersArray, matchMedia = false) {
-			spollersArray.forEach(spollersBlock => {
-				spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
-				if (matchMedia.matches || !matchMedia) {
-					spollersBlock.classList.add('_spoller-init');
-					initSpollerBody(spollersBlock);
-				} else {
-					spollersBlock.classList.remove('_spoller-init');
-					initSpollerBody(spollersBlock, false);
-				}
-			});
-		}
-		// Робота з контентом
-		function initSpollerBody(spollersBlock, hideSpollerBody = true) {
-			let spollerItems = spollersBlock.querySelectorAll('details');
-			if (spollerItems.length) {
-				//spollerItems = Array.from(spollerItems).filter(item => item.closest('[data-spollers]') === spollersBlock);
-				spollerItems.forEach(spollerItem => {
-					let spollerTitle = spollerItem.querySelector('summary');
-					if (hideSpollerBody) {
-						spollerTitle.removeAttribute('tabindex');
-						if (!spollerItem.hasAttribute('data-open')) {
-							spollerItem.open = false;
-							spollerTitle.nextElementSibling.hidden = true;
-						} else {
-							spollerTitle.classList.add('_spoller-active');
-							spollerItem.open = true;
-						}
-					} else {
-						spollerTitle.setAttribute('tabindex', '-1');
-						spollerTitle.classList.remove('_spoller-active');
-						spollerItem.open = true;
-						spollerTitle.nextElementSibling.hidden = false;
-					}
-				});
-			}
-		}
-		function setSpollerAction(e) {
-			const el = e.target;
-			if (el.closest('summary') && el.closest('[data-spollers]')) {
-				e.preventDefault();
-				if (el.closest('[data-spollers]').classList.contains('_spoller-init')) {
-					const spollerTitle = el.closest('summary');
-					const spollerBlock = spollerTitle.closest('details');
-					const spollersBlock = spollerTitle.closest('[data-spollers]');
-					const oneSpoller = spollersBlock.hasAttribute('data-one-spoller');
-					const scrollSpoller = spollerBlock.hasAttribute('data-spoller-scroll');
-					const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
-					if (!spollersBlock.querySelectorAll('._slide').length) {
-						if (oneSpoller && !spollerBlock.open) {
-							hideSpollersBody(spollersBlock);
-						}
+// export function spollers() {
+// 	const spollersArray = document.querySelectorAll('[data-spollers]');
+// 	if (spollersArray.length > 0) {
+// 		// Подія кліку
+// 		document.addEventListener("click", setSpollerAction);
+// 		// Отримання звичайних слойлерів
+// 		const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
+// 			return !item.dataset.spollers.split(",")[0];
+// 		});
+// 		// Ініціалізація звичайних слойлерів
+// 		if (spollersRegular.length) {
+// 			initSpollers(spollersRegular);
+// 		}
+// 		// Отримання слойлерів з медіа-запитами
+// 		let mdQueriesArray = dataMediaQueries(spollersArray, "spollers");
+// 		if (mdQueriesArray && mdQueriesArray.length) {
+// 			mdQueriesArray.forEach(mdQueriesItem => {
+// 				// Подія
+// 				mdQueriesItem.matchMedia.addEventListener("change", function () {
+// 					initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+// 				});
+// 				initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+// 			});
+// 		}
+// 		// Ініціалізація
+// 		function initSpollers(spollersArray, matchMedia = false) {
+// 			spollersArray.forEach(spollersBlock => {
+// 				spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
+// 				if (matchMedia.matches || !matchMedia) {
+// 					spollersBlock.classList.add('_spoller-init');
+// 					initSpollerBody(spollersBlock);
+// 				} else {
+// 					spollersBlock.classList.remove('_spoller-init');
+// 					initSpollerBody(spollersBlock, false);
+// 				}
+// 			});
+// 		}
+// 		// Робота з контентом
+// 		function initSpollerBody(spollersBlock, hideSpollerBody = true) {
+// 			let spollerItems = spollersBlock.querySelectorAll('details');
+// 			if (spollerItems.length) {
+// 				//spollerItems = Array.from(spollerItems).filter(item => item.closest('[data-spollers]') === spollersBlock);
+// 				spollerItems.forEach(spollerItem => {
+// 					let spollerTitle = spollerItem.querySelector('summary');
+// 					if (hideSpollerBody) {
+// 						spollerTitle.removeAttribute('tabindex');
+// 						if (!spollerItem.hasAttribute('data-open')) {
+// 							spollerItem.open = false;
+// 							spollerTitle.nextElementSibling.hidden = true;
+// 						} else {
+// 							spollerTitle.classList.add('_spoller-active');
+// 							spollerItem.open = true;
+// 						}
+// 					} else {
+// 						spollerTitle.setAttribute('tabindex', '-1');
+// 						spollerTitle.classList.remove('_spoller-active');
+// 						spollerItem.open = true;
+// 						spollerTitle.nextElementSibling.hidden = false;
+// 					}
+// 				});
+// 			}
+// 		}
+// 		function setSpollerAction(e) {
+// 			const el = e.target;
+// 			if (el.closest('summary') && el.closest('[data-spollers]')) {
+// 				e.preventDefault();
+// 				if (el.closest('[data-spollers]').classList.contains('_spoller-init')) {
+// 					const spollerTitle = el.closest('summary');
+// 					const spollerBlock = spollerTitle.closest('details');
+// 					const spollersBlock = spollerTitle.closest('[data-spollers]');
+// 					const oneSpoller = spollersBlock.hasAttribute('data-one-spoller');
+// 					const scrollSpoller = spollerBlock.hasAttribute('data-spoller-scroll');
+// 					const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+// 					if (!spollersBlock.querySelectorAll('._slide').length) {
+// 						if (oneSpoller && !spollerBlock.open) {
+// 							hideSpollersBody(spollersBlock);
+// 						}
 
-						!spollerBlock.open ? spollerBlock.open = true : setTimeout(() => { spollerBlock.open = false }, spollerSpeed);
+// 						!spollerBlock.open ? spollerBlock.open = true : setTimeout(() => { spollerBlock.open = false }, spollerSpeed);
 
-						spollerTitle.classList.toggle('_spoller-active');
-						_slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
+// 						spollerTitle.classList.toggle('_spoller-active');
+// 						_slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
 
-						if (scrollSpoller && spollerTitle.classList.contains('_spoller-active')) {
-							const scrollSpollerValue = spollerBlock.dataset.spollerScroll;
-							const scrollSpollerOffset = +scrollSpollerValue ? +scrollSpollerValue : 0;
-							const scrollSpollerNoHeader = spollerBlock.hasAttribute('data-spoller-scroll-noheader') ? document.querySelector('.header').offsetHeight : 0;
+// 						if (scrollSpoller && spollerTitle.classList.contains('_spoller-active')) {
+// 							const scrollSpollerValue = spollerBlock.dataset.spollerScroll;
+// 							const scrollSpollerOffset = +scrollSpollerValue ? +scrollSpollerValue : 0;
+// 							const scrollSpollerNoHeader = spollerBlock.hasAttribute('data-spoller-scroll-noheader') ? document.querySelector('.header').offsetHeight : 0;
 
-							//setTimeout(() => {
-							window.scrollTo(
-								{
-									top: spollerBlock.offsetTop - (scrollSpollerOffset + scrollSpollerNoHeader),
-									behavior: "smooth",
-								}
-							);
-							//}, spollerSpeed);
-						}
-					}
-				}
-			}
-			// Закриття при кліку поза спойлером
-			if (!el.closest('[data-spollers]')) {
-				const spollersClose = document.querySelectorAll('[data-spoller-close]');
-				if (spollersClose.length) {
-					spollersClose.forEach(spollerClose => {
-						const spollersBlock = spollerClose.closest('[data-spollers]');
-						const spollerCloseBlock = spollerClose.parentNode;
-						if (spollersBlock.classList.contains('_spoller-init')) {
-							const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
-							spollerClose.classList.remove('_spoller-active');
-							_slideUp(spollerClose.nextElementSibling, spollerSpeed);
-							setTimeout(() => { spollerCloseBlock.open = false }, spollerSpeed);
-						}
-					});
-				}
-			}
-		}
-		function hideSpollersBody(spollersBlock) {
-			const spollerActiveBlock = spollersBlock.querySelector('details[open]');
-			if (spollerActiveBlock && !spollersBlock.querySelectorAll('._slide').length) {
-				const spollerActiveTitle = spollerActiveBlock.querySelector('summary');
-				const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
-				spollerActiveTitle.classList.remove('_spoller-active');
-				_slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
-				setTimeout(() => { spollerActiveBlock.open = false }, spollerSpeed);
-			}
-		}
-	}
-}
+// 							//setTimeout(() => {
+// 							window.scrollTo(
+// 								{
+// 									top: spollerBlock.offsetTop - (scrollSpollerOffset + scrollSpollerNoHeader),
+// 									behavior: "smooth",
+// 								}
+// 							);
+// 							//}, spollerSpeed);
+// 						}
+// 					}
+// 				}
+// 			}
+// 			// Закриття при кліку поза спойлером
+// 			if (!el.closest('[data-spollers]')) {
+// 				const spollersClose = document.querySelectorAll('[data-spoller-close]');
+// 				if (spollersClose.length) {
+// 					spollersClose.forEach(spollerClose => {
+// 						const spollersBlock = spollerClose.closest('[data-spollers]');
+// 						const spollerCloseBlock = spollerClose.parentNode;
+// 						if (spollersBlock.classList.contains('_spoller-init')) {
+// 							const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+// 							spollerClose.classList.remove('_spoller-active');
+// 							_slideUp(spollerClose.nextElementSibling, spollerSpeed);
+// 							setTimeout(() => { spollerCloseBlock.open = false }, spollerSpeed);
+// 						}
+// 					});
+// 				}
+// 			}
+// 		}
+// 		function hideSpollersBody(spollersBlock) {
+// 			const spollerActiveBlock = spollersBlock.querySelector('details[open]');
+// 			if (spollerActiveBlock && !spollersBlock.querySelectorAll('._slide').length) {
+// 				const spollerActiveTitle = spollerActiveBlock.querySelector('summary');
+// 				const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+// 				spollerActiveTitle.classList.remove('_spoller-active');
+// 				_slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
+// 				setTimeout(() => { spollerActiveBlock.open = false }, spollerSpeed);
+// 			}
+// 		}
+// 	}
+// }
 // Модуль роботи з табами =======================================================================================================================================================================================================================
 export function tabs() {
 	const viewportWidth = window.innerWidth;
 	const tabs = document.querySelectorAll('[data-tabs]');
 	let tabsActiveHash = [];
 
-	if (viewportWidth > 769) {
-		return
-	}
-
 	if (tabs.length > 0) {
-		console.log("first")
 		const hash = getHash();
 		if (hash && hash.startsWith('tab-')) {
 			tabsActiveHash = hash.replace('tab-', '').split('-');
@@ -354,23 +349,35 @@ export function tabs() {
 		let tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*');
 		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
 		const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
-
-		if (tabsActiveHashBlock) {
-			const tabsActiveTitle = tabsBlock.querySelector('[data-tabs-titles]>._tab-active');
-			tabsActiveTitle ? tabsActiveTitle.classList.remove('_tab-active') : null;
-		}
-		if (tabsContent.length) {
+	  
+		// Якщо екран більше ніж 768px і tabsBlock має клас "desktop-only"
+		if (viewportWidth >= 768 && tabsBlock.classList.contains('tab-disabled-on-pc')) {
+		  // Додаємо клас _tab-active для всіх табів у цьому блоці, щоб їхній контент був видимий
+		  tabsTitles.forEach((tabsTitleItem) => {
+			tabsTitleItem.classList.add('_tab-active');
+		  });
+		  tabsContent.forEach((tabsContentItem) => {
+			tabsContentItem.hidden = false;
+		  });
+		} else {
+		  // Стандартна логіка для мобільних пристроїв
+		  if (tabsContent.length) {
 			tabsContent.forEach((tabsContentItem, index) => {
-				tabsTitles[index].setAttribute('data-tabs-title', '');
-				tabsContentItem.setAttribute('data-tabs-item', '');
-
-				if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
-					tabsTitles[index].classList.add('_tab-active');
-				}
-				tabsContentItem.hidden = !tabsTitles[index].classList.contains('_tab-active');
+			  tabsTitles[index]?.setAttribute('data-tabs-title', '');
+			  tabsContentItem?.setAttribute('data-tabs-item', '');
+	  
+			  if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
+				tabsTitles[index].classList.add('_tab-active');
+			  }
+			  tabsContentItem.hidden = !tabsTitles[index]?.classList.contains('_tab-active');
 			});
+		  }
 		}
-	}
+	  }
+	  
+	  
+
+	  
 	function setTabsStatus(tabsBlock) {
 		let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
 		let tabsContent = tabsBlock.querySelectorAll('[data-tabs-item]');
@@ -386,7 +393,7 @@ export function tabs() {
 			tabsContent = Array.from(tabsContent).filter(item => item.closest('[data-tabs]') === tabsBlock);
 			tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[data-tabs]') === tabsBlock);
 			tabsContent.forEach((tabsContentItem, index) => {
-				if (tabsTitles[index].classList.contains('_tab-active')) {
+				if (tabsTitles[index]?.classList.contains('_tab-active')) {
 					if (tabsBlockAnimate) {
 						_slideDown(tabsContentItem, tabsBlockAnimate);
 					} else {
@@ -407,9 +414,19 @@ export function tabs() {
 	}
 	function setTabsAction(e) {
 		const el = e.target;
+
+		const viewportWidth = window.innerWidth; // Перевіряємо ширину екрана
+		const mobileWidth = 767; // Наприклад, для мобільних <= 767px
+
 		if (el.closest('[data-tabs-title]')) {
 			const tabTitle = el.closest('[data-tabs-title]');
 			const tabsBlock = tabTitle.closest('[data-tabs]');
+
+			// Перевіряємо клас елемента і розмір екрану
+		if (viewportWidth > mobileWidth && tabsBlock.classList.contains('tab-disabled-on-pc')) {
+			return; // Вимикаємо функціонал для одного з елементів на ПК
+		}
+		
 			if (!tabTitle.classList.contains('_tab-active') && !tabsBlock.querySelector('._slide')) {
 				let tabActiveTitle = tabsBlock.querySelectorAll('[data-tabs-title]._tab-active');
 				tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter(item => item.closest('[data-tabs]') === tabsBlock) : null;
@@ -658,7 +675,7 @@ export function customCursor(isShadowTrue) {
 export function FLS(message) {
 	setTimeout(() => {
 		if (window.FLS) {
-			console.log(message);
+			// console.log(message);
 		}
 	}, 0);
 }

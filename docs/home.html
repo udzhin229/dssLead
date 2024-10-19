@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241016094639">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241019123312">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -123,14 +123,22 @@
 		<main class="page">
 			<section class="hero">
 				<div class="hero-thumb">
-					<img src="img/hero-bg-mb.webp" alt="robot" srcset="
+					<!-- <img
+              src="img/hero-bg-mb.webp"
+              alt="robot"
+              srcset="
     img/hero-bg-mb.webp 600w,
     img/hero-bg-mb-2x.webp 1200w 2x,
     img/hero-bg-mb-3x.webp 1800w 3x,
     img/hero-bg-pc.webp 1200w,
     img/hero-bg-pc-2x.webp 2400w,
     img/hero-bg-pc-3x.webp 3600w
-  " />
+  "
+            /> -->
+					<picture>
+						<source srcset="img/hero-bg-mb-2x.webp" media="(max-width: 767px)">
+						<img src="img/hero-bg-pc-2x.webp" alt="background slide">
+					</picture>
 					<div class="hero__content">
 						<div class="hero__content-wrapper">
 							<p class="hero__text">
@@ -138,17 +146,18 @@
 								<br class="transfer" />
 								на рынке Gambling
 							</p>
-							<div class="hero__button-box">
+							<button class="hero__button-box" data-popup="#popup" type="button">
 								<img src="img/bg-button.webp" alt="bg-button" />
 								<p class="hero__button-text">Начать путешествие!</p>
-							</div>
+							</button>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section class="philosophy">
 				<div class="philosophy__container">
-					<div class="philosophy__title-box">
+					<div class="philosophy__title-box title-box">
+						<div class="bg-title-effect"></div>
 						<h2 class="philosophy__title">Наша философия бренда</h2>
 					</div>
 					<p class="philosophy__description">
@@ -190,7 +199,8 @@
 				<div class="advantages__container">
 					<div class="advantages__title-box title-box">
 						<h2 class="advantages__title title">
-							Почему все выбирают работать с нами?
+							<span class="title-line">Почему все выбирают</span>
+							<span class="title-line">работать с нами?</span>
 						</h2>
 					</div>
 					<div class="advantages__card-container">
@@ -314,11 +324,12 @@
 				<div class="perspective__container">
 					<div class="perspective__title-box title-box">
 						<h2 class="perspective__title title">
-							Что будет, когда и ты выберешь работать с нами?
+							<span class="title-line">Что будет, когда и ты</span>
+							<span class="title-line">выберешь работать с нами?</span>
 						</h2>
 					</div>
 					<div class="perspective__tabs">
-						<div data-tabs class="tabs">
+						<div data-tabs class="tabs tab-disabled-on-pc">
 							<nav data-tabs-titles class="tabs__navigation">
 								<button type="button" class="tabs__title _tab-active">
 									<p class="tabs__title-text">Вебмастер</p>
@@ -412,10 +423,20 @@
 						</div>
 					</div>
 				</div>
+				<div class="perspective-decor-thumb thumb-1">
+					<img src="img/perspective-decor-pc.webp" alt="decor element">
+				</div>
+				<div class="perspective-decor-thumb thumb-2">
+					<img src="img/perspective-decor-2-pc.webp" alt="decor element">
+				</div>
+				<div class="perspective-decor-thumb thumb-3">
+					<img src="img/perspective-decor-3-pc.webp" alt="decor element">
+				</div>
 			</section>
 			<section class="founders">
 				<div class="founders__container">
 					<div class="founders__title-box title-box">
+						<div class="bg-title-effect"></div>
 						<h2 class="founders__title title">драконы-основатели</h2>
 					</div>
 				</div>
@@ -827,6 +848,7 @@
 			<section class="pre-footer">
 				<div class="pre-footer__container">
 					<div class="pre-footer__title-box title-box">
+						<div class="bg-title-effect"></div>
 						<h2 class="pre-footer__title title">СВЯЖИСЬ С НАМИ!</h2>
 					</div>
 				</div>
@@ -922,7 +944,73 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20241016094639"></script>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div data-tabs class="tabs-popup">
+					<div data-tabs-body class="tabs-popup__content">
+						<div class="tabs-popup__body tabs1">
+							<div class="tabs-popup__body-content">
+								<div class="tabs-popup__body-content-line"></div>
+								<div class="tabs-popup__body-content-wrapper">
+									<h3 class="tabs-popup__body-content-title">ВебМастер</h3>
+									<p class="tabs-popup__body-content-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Quisque non nibh fermentum, suscipit ex quis, porta augue.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="tabs-popup__body tabs2">
+							<div class="tabs-popup__body-content">
+								<div class="tabs-popup__body-content-line"></div>
+								<div class="tabs-popup__body-content-wrapper">
+									<h3 class="tabs-popup__body-content-title">Прямой рекламодатель</h3>
+									<p class="tabs-popup__body-content-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+									</p>
+								</div>
+							</div>
+						</div>
+						<nav data-tabs-titles class="tabs-popup__navigation">
+							<button type="button" class="tabs-popup__title _tab-active">
+								<div class="tabs-popup__title-thumb tabs1">
+								</div>
+							</button>
+							<button type="button" class="tabs-popup__title">
+								<div class="tabs-popup__title-thumb tabs2">
+								</div>
+							</button>
+						</nav>
+						<!-- <div class="tabs-popup-main__title-box title-box">
+            <h2 class="tabs-popup-main__title title">выбери свой класс</h2>
+          </div>
+          <button data-close type="button" class="popup__close">
+            <svg class="popup__close-icon">
+              <use xlink:href="img/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <button type="button" class="tabs-popup__button-choose">
+            <p class="tabs-popup__button-choose-text">Выбрать</p>
+          </button> -->
+					</div>
+				</div>
+				<div class="tabs-popup-main__title-box title-box">
+					<h2 class="tabs-popup-main__title title">выбери свой класс</h2>
+				</div>
+				<button data-close type="button" class="popup__close">
+					<svg class="popup__close-icon">
+						<use xlink:href="img/icons/icons.svg#close"></use>
+					</svg>
+				</button>
+				<button type="button" class="tabs-popup__button-choose">
+					<p class="tabs-popup__button-choose-text">Выбрать</p>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/app.min.js?_v=20241019123312"></script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@
       <main class="page">
         <section class="hero">
           <div class="hero-thumb">
-            <img
+            <!-- <img
               src="@img/hero-bg-mb.png"
               alt="robot"
               srcset="
@@ -18,7 +18,11 @@
     @img/hero-bg-pc-2x.png 2400w,
     @img/hero-bg-pc-3x.png 3600w
   "
-            />
+            /> -->
+            <picture>
+              <source srcset="@img/hero-bg-mb-2x.png" media="(max-width: 767px)">
+              <img src="@img/hero-bg-pc-2x.png" alt="background slide">
+            </picture>
             <div class="hero__content">
               <div class="hero__content-wrapper">
                 <p class="hero__text">
@@ -26,17 +30,18 @@
                   <br class="transfer" />
                   на рынке Gambling
                 </p>
-                <div class="hero__button-box">
+                <button class="hero__button-box" data-popup="#popup" type="button">
                   <img src="@img/bg-button.png" alt="bg-button" />
                   <p class="hero__button-text">Начать путешествие!</p>
-                </div>
+                </button>
               </div>
             </div>
           </div>
         </section>
         <section class="philosophy">
           <div class="philosophy__container">
-            <div class="philosophy__title-box">
+            <div class="philosophy__title-box title-box">
+              <div class="bg-title-effect"></div>
               <h2 class="philosophy__title">Наша философия бренда</h2>
             </div>
             <p class="philosophy__description">
@@ -78,7 +83,8 @@
           <div class="advantages__container">
             <div class="advantages__title-box title-box">
               <h2 class="advantages__title title">
-                Почему все выбирают работать с нами?
+                <span class="title-line">Почему все выбирают</span>
+                <span class="title-line">работать с нами?</span>
               </h2>
             </div>
             <div class="advantages__card-container">
@@ -217,11 +223,12 @@
           <div class="perspective__container">
             <div class="perspective__title-box title-box">
               <h2 class="perspective__title title">
-                Что будет, когда и ты выберешь работать с нами?
+                <span class="title-line">Что будет, когда и ты</span>
+                <span class="title-line">выберешь работать с нами?</span>
               </h2>
             </div>
             <div class="perspective__tabs">
-              <div data-tabs class="tabs">
+              <div data-tabs class="tabs tab-disabled-on-pc">
                 <nav data-tabs-titles class="tabs__navigation">
                   <button type="button" class="tabs__title _tab-active">
                     <p class="tabs__title-text">Вебмастер</p>
@@ -320,10 +327,20 @@
               </div>
             </div>
           </div>
+          <div class="perspective-decor-thumb thumb-1">
+            <img src="@img/perspective-decor-pc.png" alt="decor element">
+          </div>
+          <div class="perspective-decor-thumb thumb-2">
+            <img src="@img/perspective-decor-2-pc.png" alt="decor element">
+          </div>
+          <div class="perspective-decor-thumb thumb-3">
+            <img src="@img/perspective-decor-3-pc.png" alt="decor element">
+          </div>
         </section>
         <section class="founders">
           <div class="founders__container">
             <div class="founders__title-box title-box">
+              <div class="bg-title-effect"></div>
               <h2 class="founders__title title">драконы-основатели</h2>
             </div>
           </div>
@@ -936,6 +953,7 @@
         <section class="pre-footer">
           <div class="pre-footer__container">
             <div class="pre-footer__title-box title-box">
+              <div class="bg-title-effect"></div>
               <h2 class="pre-footer__title title">СВЯЖИСЬ С НАМИ!</h2>
             </div>
           </div>
@@ -993,6 +1011,7 @@
       </main>
       @@include('html/_footer.htm',{})
     </div>
+    @@include('html/_popup.htm',{})
     @@include('html/_js.htm',{})
   </body>
 </html>
