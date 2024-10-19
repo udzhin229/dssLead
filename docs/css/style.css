@@ -1566,6 +1566,24 @@ body::after {
   width: fit-content;
   margin-left: auto
 }
+.founders__container-swiper {
+  position: relative
+}
+.founders__container-swiper::before {
+  content: "";
+  position: absolute;
+  width: 666px;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  border-radius: 30%;
+  opacity: .2;
+  -webkit-filter: blur(200px);
+  filter: blur(200px);
+  background: linear-gradient(90deg,#8c421d 0,#fbe67b 33%,#fcfbe7 54%,#f7d14e 77%,#d4a041 100%)
+}
 .founders__wrapper {
   margin-bottom: 20px
 }
@@ -1739,9 +1757,30 @@ body::after {
   z-index: 8;
   color: #fff
 }
+.founders-card-back__top-icon-box.slide1 {
+  top: 67px;
+  right: 55px
+}
 .founders-card-back__top-icon-box.slide3 {
   top: 144px;
   right: 13px
+}
+.founders-card-back__top-icon-box.slide-left-3 {
+  top: 149px;
+  right: 182px
+}
+.founders-card-back__top-icon-box.slide4 {
+  top: 49px;
+  right: 75px;
+  z-index: 5
+}
+.founders-card-back__top-icon-box.slide-right-5 {
+  top: 74px;
+  right: 35px
+}
+.founders-card-back__top-icon-box.slide-left-5 {
+  top: 104px;
+  right: 180px
 }
 .founders-card-back__top-icon-box.variant2 {
   top: 145px;
@@ -1750,6 +1789,26 @@ body::after {
 .founders-card-back__top-icon {
   width: 54px;
   height: 37px
+}
+.founders-card-back__top-icon.slide1 {
+  width: 49px;
+  height: 38px
+}
+.founders-card-back__top-icon.slide-left-3 {
+  width: 60px;
+  height: 73px
+}
+.founders-card-back__top-icon.slide4 {
+  width: 116px;
+  height: 101px
+}
+.founders-card-back__top-icon.slide-right-5 {
+  width: 61px;
+  height: 56px
+}
+.founders-card-back__top-icon.slide-left-5 {
+  width: 48px;
+  height: 45px
 }
 .founders-card-back__bg-eclipse {
   position: absolute;
@@ -1765,6 +1824,39 @@ body::after {
   transform: translateX(-50%);
   width: 249px;
   height: auto
+}
+.founders-card-back__bg-position-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 13;
+  color: #fff
+}
+.founders-card-back__bg-position-title.card2,
+.founders-card-back__bg-position-title.card3 {
+  top: 22px
+}
+.founders-card-back__bg-position-title-icon.card1 {
+  width: 135px;
+  height: 18px
+}
+.founders-card-back__bg-position-title-icon.card2 {
+  width: 122px;
+  height: 16px
+}
+.founders-card-back__bg-position-title-icon.card3 {
+  width: 91px;
+  height: 14px
+}
+.founders-card-back__bg-position-title-icon.card4 {
+  width: 200px;
+  height: 24px
+}
+.founders-card-back__bg-position-title-icon.card5 {
+  width: 205px;
+  height: 27px
 }
 .founders-card-back__bg-position img {
   width: 100%;
@@ -1797,6 +1889,9 @@ body::after {
   bottom: 10px;
   width: 100%
 }
+.founders-card-back__bottom-content.slide2 {
+  bottom: 20px
+}
 .founders-card-back__bottom-content.slide3 {
   bottom: 37px
 }
@@ -1805,7 +1900,12 @@ body::after {
   padding-top: 5px;
   border-bottom: 1px solid hsla(0,0%,100%,.571)
 }
-.founders-card-back__bottom-text-box.last-child {
+.founders-card-back__bottom-text-box.smaller-width {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto
+}
+.founders-card-back__bottom-text-box:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1819,6 +1919,16 @@ body::after {
   font-size: 12px;
   line-height: 130%;
   text-align: center
+}
+.founders-card-back__bottom-text.small {
+  max-width: 201px;
+  margin-right: auto;
+  margin-left: auto
+}
+.founders-card-back__bottom-text.medium {
+  max-width: 201px;
+  margin-right: auto;
+  margin-left: auto
 }
 .founders-card-back__bottom-text-icon-box {
   color: #fff
@@ -2458,6 +2568,46 @@ body::after {
     right: auto;
     left: 930px
   }
+  .founders__container-swiper::before {
+    width: 100%;
+    -webkit-filter: blur(250px);
+    filter: blur(250px)
+  }
+  .founders-card-back__bg-position-title.card2,
+  .founders-card-back__bg-position-title.card3 {
+    top: 32px
+  }
+  .founders-card-back__bg-position-title-icon.card1 {
+    width: 217px;
+    height: 28px
+  }
+  .founders-card-back__bg-position-title-icon.card2 {
+    width: 196px;
+    height: 25px
+  }
+  .founders-card-back__bg-position-title-icon.card3 {
+    width: 146px;
+    height: 23px
+  }
+  .founders-card-back__bg-position-title-icon.card4 {
+    width: 321px;
+    height: 38px
+  }
+  .founders-card-back__bg-position-title-icon.card5 {
+    width: 328px;
+    height: 44px
+  }
+  .founders-card-back__bottom-text-box.smaller-width {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto
+  }
+  .founders-card-back__bottom-text.small {
+    max-width: 281px
+  }
+  .founders-card-back__bottom-text.medium {
+    max-width: 241px
+  }
 }
 @media (min-width:81.25em) {
   .hero__content-wrapper {
@@ -2516,7 +2666,9 @@ body::after {
   }
   .founders-card-back__bg-decor-2 {
     width: 143px;
-    height: 87px
+    height: 87px;
+    top: 125px;
+    right: -24px
   }
   .founders-card-back__bg-position {
     width: 90%;
@@ -2741,6 +2893,25 @@ body::after {
     top: 190px;
     right: 25px
   }
+  .founders-card-back__top-icon-box.slide1 {
+    top: 67px;
+    right: 55px
+  }
+  .founders-card-back__top-icon-box.slide-left-3 {
+    top: 190px;
+    right: 235px
+  }
+  .founders-card-back__top-icon-box.slide4 {
+    right: 85px
+  }
+  .founders-card-back__top-icon-box.slide-right-5 {
+    top: 74px;
+    right: 35px
+  }
+  .founders-card-back__top-icon-box.slide-left-5 {
+    top: 118px;
+    right: 225px
+  }
   .founders-card-back__top-icon-box.variant2 {
     top: 190px;
     left: 30px
@@ -2748,6 +2919,26 @@ body::after {
   .founders-card-back__top-icon {
     width: 86px;
     height: 58px
+  }
+  .founders-card-back__top-icon.slide1 {
+    width: 79px;
+    height: 61px
+  }
+  .founders-card-back__top-icon.slide-left-3 {
+    width: 96px;
+    height: 100px
+  }
+  .founders-card-back__top-icon.slide4 {
+    width: 186px;
+    height: 162px
+  }
+  .founders-card-back__top-icon.slide-right-5 {
+    width: 97px;
+    height: 90px
+  }
+  .founders-card-back__top-icon.slide-left-5 {
+    width: 77px;
+    height: 72px
   }
   .founders__slide-card-back,
   .founders__slide-card-front {
