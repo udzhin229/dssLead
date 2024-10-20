@@ -210,7 +210,7 @@
   }
 
   & .select__content::before{
-    content: url(../../../img/telegram.png);
+    content: url(../img/telegram.png);
     position: absolute;
     top: 0;
     left: 0;
@@ -229,7 +229,7 @@
   }
 
   & .select__option:nth-child(1)::before{
-    content: url(../../../img/telegram.png);
+    content: url(../img/telegram.png);
     position: absolute;
     left: 0;
     top: 0;
@@ -239,7 +239,7 @@
   }
 
   & .select__option:nth-child(2)::before{
-    content: url(../../../img/whatsapp.png);
+    content: url(../img/whatsapp.png);
     position: absolute;
     left: 0;
     top: 0;
@@ -249,7 +249,7 @@
   }
 
   & .select__option:nth-child(3)::before{
-    content: url(../../../img/viber.png);
+    content: url(../img/viber.png);
     position: absolute;
     left: 0;
     top: 0;
@@ -274,7 +274,7 @@
     }
 
     & .select__option:nth-child(1)::before{
-      content: url(../../../img/telegram.png);
+      content: url(../img/telegram.png);
       position: absolute;
       left: 0;
       width: 24px;
@@ -283,7 +283,7 @@
     }
   
     & .select__option:nth-child(2)::before{
-      content: url(../../../img/whatsapp.png);
+      content: url(../img/whatsapp.png);
       position: absolute;
       left: 0;
       width: 24px;
@@ -292,7 +292,7 @@
     }
   
     & .select__option:nth-child(3)::before{
-      content: url(../../../img/viber.png);
+      content: url(../img/viber.png);
       position: absolute;
       left: 0;
       width: 24px;

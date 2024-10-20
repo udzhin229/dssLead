@@ -320,7 +320,7 @@ class Popup {
 
 		const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace('.', "#")}"]`);
 
-		this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ?
+		this.youTubeCode = buttons?.getAttribute(this.options.youtubeAttribute) ?
 			buttons.getAttribute(this.options.youtubeAttribute) :
 			null;
 
