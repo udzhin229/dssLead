@@ -103,6 +103,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	z-index: 5;
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
