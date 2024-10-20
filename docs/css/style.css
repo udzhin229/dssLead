@@ -125,6 +125,9 @@ h6 {
   font-weight: inherit;
   font-size: inherit
 }
+html {
+  scroll-behavior: smooth
+}
 body {
   background-color: #191919;
   color: #fff
@@ -334,7 +337,7 @@ body {
   line-height: 130%
 }
 .select.select_pre-footer .select__content::before {
-  content: url(../../../img/telegram.webp);
+  content: url(../img/telegram.webp);
   position: absolute;
   top: 0;
   left: 0;
@@ -350,7 +353,7 @@ body {
   line-height: 130%
 }
 .select.select_pre-footer .select__option:nth-child(1)::before {
-  content: url(../../../img/telegram.webp);
+  content: url(../img/telegram.webp);
   position: absolute;
   left: 0;
   top: 0;
@@ -358,7 +361,7 @@ body {
   height: 20px
 }
 .select.select_pre-footer .select__option:nth-child(2)::before {
-  content: url(../../../img/whatsapp.webp);
+  content: url(../img/whatsapp.webp);
   position: absolute;
   left: 0;
   top: 0;
@@ -366,7 +369,7 @@ body {
   height: 20px
 }
 .select.select_pre-footer .select__option:nth-child(3)::before {
-  content: url(../../../img/viber.webp);
+  content: url(../img/viber.webp);
   position: absolute;
   left: 0;
   top: 0;
@@ -461,12 +464,12 @@ body::after {
 .tabs-popup__body.tabs1 {
   padding-top: 78px;
   padding-left: 96px;
-  background-image: url(../../img/popup-bg.webp)
+  background-image: url(../img/popup-bg.webp)
 }
 .tabs-popup__body.tabs2 {
   padding-top: 159px;
   padding-left: 96px;
-  background-image: url(../../img/popup-bg-2.webp)
+  background-image: url(../img/popup-bg-2.webp)
 }
 .tabs-popup__body-content {
   display: flex;
@@ -573,7 +576,7 @@ body::after {
   right: 30px;
   width: 80px;
   height: 26px;
-  background-image: url(../../img/popup-button-choose-bg.webp);
+  background-image: url(../img/popup-button-choose-bg.webp);
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer
@@ -771,7 +774,8 @@ body::after {
 .footer-mail-box {
   display: flex;
   align-items: center;
-  gap: 10px
+  gap: 10px;
+  cursor: pointer
 }
 .footer-mail-icon {
   width: 24px;
@@ -2369,12 +2373,12 @@ body::after {
   .tabs-popup__body.tabs1 {
     padding-top: 165px;
     padding-left: 248px;
-    background-image: url(../../img/popup-bg-pc.webp)
+    background-image: url(../img/popup-bg-pc.webp)
   }
   .tabs-popup__body.tabs2 {
     padding-top: 342px;
     padding-left: 248px;
-    background-image: url(../../img/popup-bg-2-pc.webp)
+    background-image: url(../img/popup-bg-2-pc.webp)
   }
   .tabs-popup__body-content-line {
     width: 100px;
@@ -2434,7 +2438,7 @@ body::after {
     right: 58px;
     width: 170px;
     height: 56px;
-    background-image: url(../../img/popup-button-choose-bg-pc.webp)
+    background-image: url(../img/popup-button-choose-bg-pc.webp)
   }
   .tabs-popup__button-choose-text {
     font-size: 18px
@@ -2804,21 +2808,21 @@ body::after {
     font-size: 16px
   }
   .select.select_pre-footer .select__option:nth-child(1)::before {
-    content: url(../../../img/telegram.webp);
+    content: url(../img/telegram.webp);
     position: absolute;
     left: 0;
     width: 24px;
     height: 24px
   }
   .select.select_pre-footer .select__option:nth-child(2)::before {
-    content: url(../../../img/whatsapp.webp);
+    content: url(../img/whatsapp.webp);
     position: absolute;
     left: 0;
     width: 24px;
     height: 24px
   }
   .select.select_pre-footer .select__option:nth-child(3)::before {
-    content: url(../../../img/viber.webp);
+    content: url(../img/viber.webp);
     position: absolute;
     left: 0;
     width: 24px;

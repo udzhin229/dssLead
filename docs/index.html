@@ -1,179 +1,1060 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+	<title>HomePage</title>
 	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20241020102006">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Верстка «dssLeads»</title>
 </head>
 
 <body>
-	<div class="rootpage">
-		<h1>Верстка «dssLeads»</h1>
-		<div class="rootpage__info">
-			Опис проєкту
-		</div>
-		<h2>Готові сторінки:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html">Головна</a></li>
-		</ol>
-		<h2>Попапи:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html#"></a></li>
-		</ol>
-		<div class="rootpage__tnx">
-			<h2>Дякую за замовлення!</h2>
-			<p>Буду радий (да) гарному відгуку.</p>
-			<p>Звертайтесь ще!</p>
-		</div>
-		<div class="rootpage__contacts">
-			<h2>Мої контакти:</h2>
-			<p>Пошта: <a href="mailto:email@gmail.com">email@gmail.com</a></p>
-			<p>Телефон: <a href="tel:8800800800">8 800 800 800</a></p>
-			<p>Соц. мережі: <a href="">посилання</a></p>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo-thumb">
+					<img class="header__logo" src="img/logo.svg" alt="logo" />
+				</div>
+				<div class="header__menu-pc">
+					<div class="header__language-wrapper">
+						<select name="form[]" data-class-modif="form" class="header-select">
+							<option class="header-select__option" value="1" selected>Ru</option>
+							<option class="header-select__option" value="2">En</option>
+							<option class="header-select__option" value="3">Ua</option>
+						</select>
+					</div>
+					<nav class="header__menu-nav menu-nav">
+						<ul class="menu-nav__list" data-da=".menu__body-nav, 1007.98, 0">
+							<li class="menu-nav__item">
+								<a href="#about-brand" class="menu-nav__link"> О бренде </a>
+							</li>
+							<li class="menu-nav__item">
+								<a href="#unique-features" class="menu-nav__link"> Уникальные фишки </a>
+							</li>
+							<li class="menu-nav__item">
+								<a href="#perspective" class="menu-nav__link"> Что будет дальше? </a>
+							</li>
+							<li class="menu-nav__item">
+								<a href="#founders" class="menu-nav__link"> О команде </a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__auth-nav auth-nav">
+						<div class="auth-nav__log-in-wrapper" data-da=".menu__body-nav, 1007.98, 1">
+							<a href="#" class="auth-nav__log-in-link">Войти</a>
+							<a href="#" class="auth-nav__sign-in-link">Регистрация</a>
+						</div>
+						<div class="auth-nav__log-out-wrapper">
+							<a href="#" class="auth-nav__log-out-link">
+								<svg class="auth-nav__log-out-link-icon">
+									<use xlink:href="img/icons/icons.svg#log-out"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="header__menu menu">
+					<div class="header-mb__button-wrapper">
+						<button type="button" class="menu__icon icon-menu">
+							<span></span>
+						</button>
+					</div>
+					<div class="menu__body">
+						<div class="menu-body__wrapper">
+							<nav class="menu__body-nav"></nav>
+							<div class="menu-body__socials-link-box socials-links">
+								<ul class="socials-links__list">
+									<li class="socials-links__item">
+										<a href="#" class="socials-links__link">
+											<svg class="socials-links__link-icon telegram">
+												<use xlink:href="img/icons/icons.svg#telegram"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="socials-links__item">
+										<a href="#" class="socials-links__link-another">
+											<svg class="socials-links__link-icon">
+												<use xlink:href="img/icons/icons.svg#youtube"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="socials-links__item">
+										<a href="#" class="socials-links__link-another">
+											<svg class="socials-links__link-icon">
+												<use xlink:href="img/icons/icons.svg#instagram"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="socials-links__item">
+										<a href="#" class="socials-links__link-another">
+											<svg class="socials-links__link-icon">
+												<use xlink:href="img/icons/icons.svg#facebook"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="menu-body__language-box">
+								<label>
+									<input type="radio" name="language" value="RU" />
+									<span class="radio-text">Ru</span>
+								</label>
+								<label>
+									<input type="radio" name="language" value="EN" />
+									<span class="radio-text">Eng</span>
+								</label>
+								<label>
+									<input type="radio" name="language" value="UA" />
+									<span class="radio-text">Ua</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+			<section class="hero">
+				<div class="hero-thumb">
+					<picture>
+						<source srcset="img/hero-bg-mb-2x.webp" media="(max-width: 767px)">
+						<img src="img/hero-bg-pc-2x.webp" alt="background slide">
+					</picture>
+					<div class="hero__content">
+						<div class="hero__content-wrapper">
+							<p class="hero__text">
+								самый Быстрый  и Удобный источник траффика
+								<br class="transfer" />
+								на рынке Gambling
+							</p>
+							<button class="hero__button-box" data-popup="#popup" type="button">
+								<img src="img/bg-button.webp" alt="bg-button" />
+								<p class="hero__button-text">Начать путешествие!</p>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="philosophy" id="about-brand">
+				<div class="philosophy__container">
+					<div class="philosophy__title-box title-box">
+						<div class="bg-title-effect"></div>
+						<h2 class="philosophy__title">Наша философия бренда</h2>
+					</div>
+					<p class="philosophy__description">
+						При создании DSS-Leads, в проект была заложена одна конкретная
+						концепция. На любых рынках предприниматели сталкиваются с дилеммой
+						- принести на рынок, что-то концептуально новое или использовать
+						проверенные временем механизмы, привычные конечному пользователю?
+						Философия бренда DSS строится на четком балансе между инновациями
+						и комфортом. Данная идея заложена во всех аспектах работы DSS,
+						начиная с логотипа. <br /><br />
+						Белый дракон - олицетворение комфорта, надёжности и удобства.
+						Команда DSS понимает, что клиент хочет получить понятное и
+						интуитивное решение. Мы делает все, для того, чтобы пользователь
+						мог начать взаимодействие с продуктом в пару кликов, без долгих
+						обучений и чтения мануалов. Удобные отчеты и статистика, понятные
+						инструменты менеджмента и интуитивная навигация по продукту.
+						<br /><br />
+						Красный дракон - отражает агрессию, жажду перемен и стремление к
+						новому. Команда DSS искренне верит, что рынок IGaming слишком
+						долго стоит на месте, глобально не предлагая ничего нового. Мы в
+						корне не согласны с подходом: “Если все и так работает, то и
+						менять ничего не надо!”. Геймификация, современные подходы к
+						созданию продуктов, смелые маркетинговые решения, концептуально
+						новый подход к работе с траффиком. Мы хотим перемен!
+					</p>
+				</div>
+				<div class="philosophy__icon-right-box">
+					<svg class="philosophy__icon-right">
+						<use xlink:href="img/icons/icons.svg#decor-right"></use>
+					</svg>
+				</div>
+				<div class="philosophy__icon-left-box">
+					<svg class="philosophy__icon-left">
+						<use xlink:href="img/icons/icons.svg#decor-left"></use>
+					</svg>
+				</div>
+			</section>
+			<section class="advantages" id="unique-features">
+				<div class="advantages__container">
+					<div class="advantages__title-box title-box">
+						<h2 class="advantages__title title">
+							<span class="title-line">Почему все выбирают</span>
+							<span class="title-line">работать с нами?</span>
+						</h2>
+					</div>
+					<div class="advantages__card-container">
+						<div class="advantages__card left">
+							<div class="advantages__card-front">
+								<!-- Зворотній бік картки (початковий вигляд) -->
+								<div class="advantages__card-icon-box">
+									<svg class="advantages__card-icon">
+										<use xlink:href="img/icons/icons.svg#white-dragon"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="advantages__card-back">
+								<ul class="advantages__card-back-list card-back-list">
+									<li class="card-back-list__item">
+										<div class="card-back-list__item-thumb">
+											<img src="img/marker.webp" alt="marker item" />
+										</div>
+										<p class="card-back-list__item-text big">
+											Детальнейшие отчеты и статистика.
+											<span class="card-back-list__item-text-accent">Полная прозрачность</span>
+											в делах
+										</p>
+									</li>
+									<li class="card-back-list__item">
+										<div class="card-back-list__item-thumb">
+											<img src="img/marker.webp" alt="marker item" />
+										</div>
+										<p class="card-back-list__item-text big">
+											Аналитика проходящего через нас траффика в формате
+											<span class="card-back-list__item-text-accent">Live 24/7</span>
+										</p>
+									</li>
+									<li class="card-back-list__item">
+										<div class="card-back-list__item-thumb">
+											<img src="img/marker.webp" alt="marker item" />
+										</div>
+										<p class="card-back-list__item-text big">
+											<span class="card-back-list__item-text-accent">Твёрдые гарантии</span>
+											результата, оговоренные заранее
+										</p>
+									</li>
+									<li class="card-back-list__item">
+										<div class="card-back-list__item-thumb">
+											<img src="img/marker.webp" alt="marker item" />
+										</div>
+										<p class="card-back-list__item-text super-big">
+											<span class="card-back-list__item-text-accent">Только проверенные</span>
+											рынком, временем и НАМИ прямые рекламодатели и
+											вебмастера
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="advantages__card right">
+							<div class="advantages__card-front">
+								<div class="advantages__card-icon-box red-icon">
+									<svg class="advantages__card-icon">
+										<use xlink:href="img/icons/icons.svg#red-dragon"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="advantages__card-back">
+								<!-- Контент картки -->
+								<ul class="advantages__card-back-list card-back-list">
+									<li class="card-back-list__item">
+										<div class="card-back-list__item-thumb">
+											<img src="img/marker-2.webp" alt="marker item" />
+										</div>
+										<p class="card-back-list__item-text small">
+											<span class="card-back-list__item-text-accent red">Постоянные Гивы</span>
+											и акции для вебов и прямых реклов
+										</p>
+									</li>
+									<li class="card-back-list__item">
+										<div class="card-back-list__item-thumb">
+											<img src="img/marker-2.webp" alt="marker item" />
+										</div>
+										<p class="card-back-list__item-text small">
+											Всё более
+											<span class="card-back-list__item-text-accent red">горячие оффера</span>
+											с каждой новой выплатой
+										</p>
+									</li>
+									<li class="card-back-list__item">
+										<div class="card-back-list__item-thumb">
+											<img src="img/marker-2.webp" alt="marker item" />
+										</div>
+										<p class="card-back-list__item-text medium">
+											Приводи друзей и
+											<span class="card-back-list__item-text-accent red">получай до 10%</span>
+											от каждой их выплаты
+										</p>
+									</li>
+									<li class="card-back-list__item">
+										<div class="card-back-list__item-thumb">
+											<img src="img/marker-2.webp" alt="marker item" />
+										</div>
+										<p class="card-back-list__item-text big">
+											<span class="card-back-list__item-text-accent red">Кричи о нашем партнерстве
+											</span>
+											и забирай самые пламенные предложения
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="advantages__bg-icon-box">
+					<svg class="advantages__bg-icon mb">
+						<use xlink:href="img/icons/icons.svg#bg-advantages"></use>
+					</svg>
+					<svg class="advantages__bg-icon pc">
+						<use xlink:href="img/icons/icons.svg#bg-advantages-2"></use>
+					</svg>
+				</div>
+			</section>
+			<section class="perspective" id="perspective">
+				<div class="perspective__container">
+					<div class="perspective__title-box title-box">
+						<h2 class="perspective__title title">
+							<span class="title-line">Что будет, когда и ты</span>
+							<span class="title-line">выберешь работать с нами?</span>
+						</h2>
+					</div>
+					<div class="perspective__tabs">
+						<div data-tabs class="tabs tab-disabled-on-pc">
+							<nav data-tabs-titles class="tabs__navigation">
+								<button type="button" class="tabs__title _tab-active">
+									<p class="tabs__title-text">Вебмастер</p>
+								</button>
+								<button type="button" class="tabs__title">
+									<p class="tabs__title-text">Прямой рекламодатель</p>
+								</button>
+							</nav>
+							<div data-tabs-body class="tabs__content">
+								<div class="tabs__body webmaster-tabs">
+									<button type="button" class="webmaster-tabs__button">
+										<p class="tabs__body-start-text">Начать путешествие!</p>
+									</button>
+									<div class="webmaster-tabs__content">
+										<ul class="webmaster-tabs__list">
+											<li class="webmaster-tabs__item">
+												<p class="webmaster-tabs__item-text">
+													Регистрация на нашей платформе
+												</p>
+											</li>
+											<li class="webmaster-tabs__item medium">
+												<p class="webmaster-tabs__item-text medium">
+													Наши пламенные аффилиаты свяжутся с тобой в
+													мгновение ока
+												</p>
+											</li>
+											<li class="webmaster-tabs__item big">
+												<p class="webmaster-tabs__item-text">
+													Аффилиаты соберут всю необходимую информацию, чтобы
+													подобрать самый горячий оффер под тебя
+												</p>
+											</li>
+											<li class="webmaster-tabs__item big">
+												<p class="webmaster-tabs__item-text">
+													Уже на следующий день ты получишь
+													обжигающе-привлекательный оффер от проверенного
+													прямого рекламодателя
+												</p>
+											</li>
+											<li class="webmaster-tabs__item big">
+												<p class="webmaster-tabs__item-text big">
+													Ты проливаешь на оффер и зарабатываешь золото вместе
+													с драконами
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tabs__body advertiser-tabs">
+									<button type="button" class="webmaster-tabs__button advertiser">
+										<p class="tabs__body-start-text advertiser">
+											Начать путешествие!
+										</p>
+									</button>
+									<div class="webmaster-tabs__content">
+										<ul class="webmaster-tabs__list">
+											<li class="webmaster-tabs__item advertiser-item">
+												<p class="webmaster-tabs__item-text">
+													Регистрация на нашей платформе
+												</p>
+											</li>
+											<li class="webmaster-tabs__item advertiser-item-medium">
+												<p class="webmaster-tabs__item-text">
+													Наши эффективные и доступные 24/7 Sales Менеджера
+													свяжутся с Вами
+												</p>
+											</li>
+											<li class="webmaster-tabs__item advertiser-item-superbig">
+												<p class="webmaster-tabs__item-text">
+													Sales Менеджера соберут у вас всю необходимую
+													информацию для поиска прибыльных и прозрачных
+													вебмастеров под Ваш оффер и KPI
+												</p>
+											</li>
+											<li class="webmaster-tabs__item advertiser-item-big">
+												<p class="webmaster-tabs__item-text">
+													Уже на следующий день вам будет подобрана команда
+													проверенных вебмастеров
+												</p>
+											</li>
+											<li class="webmaster-tabs__item advertiser-item-big">
+												<p class="webmaster-tabs__item-text superbig">
+													Вы получаете траффик и прибыль, а мы занимаемся
+													анализом входящего к вам траффика 24/7
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="perspective-decor-thumb thumb-1">
+					<img src="img/perspective-decor-pc.webp" alt="decor element">
+				</div>
+				<div class="perspective-decor-thumb thumb-2">
+					<img src="img/perspective-decor-2-pc.webp" alt="decor element">
+				</div>
+				<div class="perspective-decor-thumb thumb-3">
+					<img src="img/perspective-decor-3-pc.webp" alt="decor element">
+				</div>
+			</section>
+			<section class="founders" id="founders">
+				<div class="founders__container">
+					<div class="founders__title-box title-box">
+						<div class="bg-title-effect"></div>
+						<h2 class="founders__title title">драконы-основатели</h2>
+					</div>
+				</div>
+				<div class="founders__container-swiper">
+					<div class="founders__slider swiper">
+						<div class="founders__wrapper swiper-wrapper">
+							<div class="founders__slide swiper-slide">
+								<div class="card">
+									<!-- задня частинка картки -->
+									<div class="founders__slide-card-back founders-card-back">
+										<div class="founders-card-back__bg-top">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-top-pc.webp" />
+												<img src="img/founders/back-bg-card-top.webp" alt="form-bg" />
+											</picture>
+											<div class="founders-card-back__bg-top-vector">
+												<img src="img/founders/back-bg-card-vector.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-avatar">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-avatar-pc.webp" />
+													<img src="img/founders/back-bg-card-avatar.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__name-box">
+												<p class="founders-card-back__name">SOFI S.</p>
+											</div>
+											<div class="founders-card-back__bg-decor">
+												<img src="img/founders/back-bg-card-top-decor.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-decor-2">
+												<img src="img/founders/back-bg-card-top-decor.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__top-icon-box slide1">
+												<svg class="founders-card-back__top-icon slide1">
+													<use xlink:href="img/icons/icons.svg#card-top-decor-1"></use>
+												</svg>
+											</div>
+											<div class="founders-card-back__bg-eclipse">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-top-eclipse-pc.webp
+                              " />
+													<img src="img/founders/back-bg-card-top-eclipse.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__bg-position">
+												<img src="img/founders/back-card-bg-position.webp" alt="Image" />
+												<div class="founders-card-back__bg-position-title">
+													<svg class="founders-card-back__bg-position-title-icon card1">
+														<use xlink:href="img/icons/icons.svg#position-title-1"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+										<div class="founders-card-back__bg-bottom">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
+												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
+											</picture>
+										</div>
+										<div class="founders-card-back__bottom-content">
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text">
+													Более 600 закрытых офферов
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text small">
+													Ex-Team Lead of Affiliates в крупнейших брендах
+													казино
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box smaller-width">
+												<p class="founders-card-back__bottom-text">
+													Instagram&Youtube influencer
+												</p>
+											</div>
+											<a class="founders-card-back__bottom-text-box last-child" href="#">
+												<div class="founders-card-back__bottom-text-icon-box">
+													<svg class="founders-card-back__bottom-text-icon">
+														<use xlink:href="img/icons/icons.svg#instagram"></use>
+													</svg>
+												</div>
+												<p class="founders-card-back__bottom-text">
+													sofi_liate
+												</p>
+											</a>
+										</div>
+									</div>
+									<!-- передня частина картки -->
+									<div class="founders__slide-card-front">
+										<img src="img/founders/front-card-1.webp" alt="dracon" />
+									</div>
+								</div>
+							</div>
+							<div class="founders__slide swiper-slide">
+								<div class="card">
+									<!-- задня частинка картки -->
+									<div class="founders__slide-card-back founders-card-back">
+										<div class="founders-card-back__bg-top">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-top-2-pc.webp" />
+												<img src="img/founders/back-bg-card-top-2.webp" alt="form-bg" />
+											</picture>
+											<div class="founders-card-back__bg-top-vector">
+												<img src="img/founders/back-bg-card-vector.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-avatar">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-avatar-2-pc.webp
+                              " />
+													<img src="img/founders/back-bg-card-avatar-2.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__name-box">
+												<p class="founders-card-back__name">ERIK T.</p>
+											</div>
+											<div class="founders-card-back__bg-decor">
+												<img src="img/founders/back-bg-card-top-decor-2.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-decor-2">
+												<img src="img/founders/back-bg-card-top-decor-2.2.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__top-icon-box">
+												<svg class="founders-card-back__top-icon">
+													<use xlink:href="img/icons/icons.svg#card-top-decor-2"></use>
+												</svg>
+											</div>
+											<div class="founders-card-back__top-icon-box variant2">
+												<svg class="founders-card-back__top-icon">
+													<use xlink:href="img/icons/icons.svg#card-top-decor-2.2"></use>
+												</svg>
+											</div>
+											<div class="founders-card-back__bg-eclipse">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-top-eclipse-pc.webp
+                              " />
+													<img src="img/founders/back-bg-card-top-eclipse.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__bg-position">
+												<img src="img/founders/back-card-bg-position.webp" alt="Image" />
+												<div class="founders-card-back__bg-position-title card2">
+													<svg class="founders-card-back__bg-position-title-icon card2">
+														<use xlink:href="img/icons/icons.svg#position-title-2"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+										<div class="founders-card-back__bg-bottom">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
+												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
+											</picture>
+										</div>
+										<div class="founders-card-back__bottom-content">
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text">
+													Более 6 лет опыта в сферах Gambling/Betting/Forex
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text">
+													CEO&Founder DragonSSpin
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box smaller-width">
+												<p class="founders-card-back__bottom-text">
+													Ex-CEO платежного агрегатора для high-risk
+												</p>
+											</div>
+											<a class="founders-card-back__bottom-text-box last-child" href="#">
+												<div class="founders-card-back__bottom-text-icon-box">
+													<svg class="founders-card-back__bottom-text-icon">
+														<use xlink:href="img/icons/icons.svg#instagram"></use>
+													</svg>
+												</div>
+												<p class="founders-card-back__bottom-text">
+													e_ihorovych
+												</p>
+											</a>
+										</div>
+									</div>
+									<!-- передня частина картки -->
+									<div class="founders__slide-card-front">
+										<img src="img/founders/front-card-2.webp" alt="dracon" />
+									</div>
+								</div>
+							</div>
+							<div class="founders__slide swiper-slide">
+								<div class="card">
+									<!-- задня частинка картки -->
+									<div class="founders__slide-card-back founders-card-back">
+										<div class="founders-card-back__bg-top">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-top-3-pc.webp" />
+												<img src="img/founders/back-bg-card-top-3.webp" alt="form-bg" />
+											</picture>
+											<div class="founders-card-back__bg-top-vector">
+												<img src="img/founders/back-bg-card-vector.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-avatar">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-avatar-3-pc.webp
+                              " />
+													<img src="img/founders/back-bg-card-avatar-3.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__name-box">
+												<p class="founders-card-back__name">ANNA N.</p>
+											</div>
+											<div class="founders-card-back__bg-decor slide3">
+												<img src="img/founders/back-bg-card-top-decor-2.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-decor-2 slide3">
+												<img src="img/founders/back-bg-card-top-decor-2.2.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__top-icon-box slide-left-3">
+												<svg class="founders-card-back__top-icon slide-left-3">
+													<use xlink:href="img/icons/icons.svg#card-top-decor-3"></use>
+												</svg>
+											</div>
+											<div class="founders-card-back__top-icon-box slide3">
+												<svg class="founders-card-back__top-icon">
+													<use xlink:href="img/icons/icons.svg#card-top-decor-2"></use>
+												</svg>
+											</div>
+											<div class="founders-card-back__bg-eclipse">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-top-eclipse-pc.webp
+                              " />
+													<img src="img/founders/back-bg-card-top-eclipse.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__bg-position">
+												<img src="img/founders/back-card-bg-position.webp" alt="Image" />
+												<div class="founders-card-back__bg-position-title card3">
+													<svg class="founders-card-back__bg-position-title-icon card3">
+														<use xlink:href="img/icons/icons.svg#position-title-3"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+										<div class="founders-card-back__bg-bottom">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
+												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
+											</picture>
+										</div>
+										<div class="founders-card-back__bottom-content slide3">
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text">
+													Бизнес-тренер по SPIN-продажам
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text small">
+													Автор маркетинговой стратегии DSS-Groups
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text small">
+													Ex-CMO команды из 300+ вебмастеров в сфере Education
+												</p>
+											</div>
+										</div>
+									</div>
+									<!-- передня частина картки -->
+									<div class="founders__slide-card-front">
+										<img src="img/founders/front-card-3.webp" alt="dracon" />
+									</div>
+								</div>
+							</div>
+							<div class="founders__slide swiper-slide">
+								<div class="card">
+									<!-- задня частинка картки -->
+									<div class="founders__slide-card-back founders-card-back">
+										<div class="founders-card-back__bg-top">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-top-4-pc.webp" />
+												<img src="img/founders/back-bg-card-top-4.webp" alt="form-bg" />
+											</picture>
+											<div class="founders-card-back__bg-top-vector">
+												<img src="img/founders/back-bg-card-vector.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-avatar">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-avatar-4-pc.webp
+                              " />
+													<img src="img/founders/back-bg-card-avatar-4.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__name-box">
+												<p class="founders-card-back__name">NASTYA S.</p>
+											</div>
+											<div class="founders-card-back__bg-decor slide4">
+												<img src="img/founders/back-bg-card-top-decor-4-left.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-decor-2 slide4">
+												<img src="img/founders/back-bg-card-top-decor-4-right.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__top-icon-box slide4">
+												<svg class="founders-card-back__top-icon slide4">
+													<use xlink:href="img/icons/icons.svg#card-top-decor-4"></use>
+												</svg>
+											</div>
+											<div class="founders-card-back__bg-eclipse">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-top-eclipse-pc.webp
+                              " />
+													<img src="img/founders/back-bg-card-top-eclipse.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__bg-position">
+												<img src="img/founders/back-card-bg-position.webp" alt="Image" />
+												<div class="founders-card-back__bg-position-title">
+													<svg class="founders-card-back__bg-position-title-icon card4">
+														<use xlink:href="img/icons/icons.svg#position-title-4"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+										<div class="founders-card-back__bg-bottom">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
+												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
+											</picture>
+										</div>
+										<div class="founders-card-back__bottom-content slide2">
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text small">
+													Ex-CBDO провайдера софта для компаний сферы Betting
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text medium">
+													30 успешных интеграций для DragonSSpin
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text medium">
+													17 закрытых инфлюэнсеров для DSS-Leads
+												</p>
+											</div>
+										</div>
+									</div>
+									<!-- передня частина картки -->
+									<div class="founders__slide-card-front">
+										<img src="img/founders/front-card-4.webp" alt="dracon" />
+									</div>
+								</div>
+							</div>
+							<div class="founders__slide swiper-slide">
+								<div class="card">
+									<!-- задня частинка картки -->
+									<div class="founders__slide-card-back founders-card-back">
+										<div class="founders-card-back__bg-top">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-top-5-pc.webp" />
+												<img src="img/founders/back-bg-card-top-5.webp" alt="form-bg" />
+											</picture>
+											<div class="founders-card-back__bg-top-vector">
+												<img src="img/founders/back-bg-card-vector.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-avatar">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-avatar-5-pc.webp" />
+													<img src="img/founders/back-bg-card-avatar-5.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__name-box">
+												<p class="founders-card-back__name">MARK G.</p>
+											</div>
+											<div class="founders-card-back__bg-decor slide5">
+												<img src="img/founders/back-bg-card-top-decor.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__bg-decor-2 slide5">
+												<img src="img/founders/back-bg-card-top-decor.webp" alt="Image" />
+											</div>
+											<div class="founders-card-back__top-icon-box slide-right-5">
+												<svg class="founders-card-back__top-icon slide-right-5">
+													<use xlink:href="img/icons/icons.svg#card-top-decor-5-right"></use>
+												</svg>
+											</div>
+											<div class="founders-card-back__top-icon-box slide-left-5">
+												<svg class="founders-card-back__top-icon slide-left-5">
+													<use xlink:href="img/icons/icons.svg#card-top-decor-5-left"></use>
+												</svg>
+											</div>
+											<div class="founders-card-back__bg-eclipse">
+												<picture>
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-top-eclipse-pc.webp
+                              " />
+													<img src="img/founders/back-bg-card-top-eclipse.webp" alt="form-bg" />
+												</picture>
+											</div>
+											<div class="founders-card-back__bg-position">
+												<img src="img/founders/back-card-bg-position.webp" alt="Image" />
+												<div class="founders-card-back__bg-position-title">
+													<svg class="founders-card-back__bg-position-title-icon card5">
+														<use xlink:href="img/icons/icons.svg#position-title-5"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+										<div class="founders-card-back__bg-bottom">
+											<picture>
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
+												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
+											</picture>
+										</div>
+										<div class="founders-card-back__bottom-content">
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text">
+													Прирожденный аналитик
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box">
+												<p class="founders-card-back__bottom-text small">
+													Гений, Миллиардер, Плейбой, Филантроп
+												</p>
+											</div>
+											<div class="founders-card-back__bottom-text-box smaller-width">
+												<p class="founders-card-back__bottom-text">
+													Излишне скромный
+												</p>
+											</div>
+											<a class="founders-card-back__bottom-text-box last-child" href="#">
+												<div class="founders-card-back__bottom-text-icon-box">
+													<svg class="founders-card-back__bottom-text-icon">
+														<use xlink:href="img/icons/icons.svg#anonim"></use>
+													</svg>
+												</div>
+												<p class="founders-card-back__bottom-text">
+													#!\%#*$^
+												</p>
+											</a>
+										</div>
+									</div>
+									<!-- передня частина картки -->
+									<div class="founders__slide-card-front">
+										<img src="img/founders/front-card-5.webp" alt="dracon" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</section>
+			<section class="pre-footer">
+				<div class="pre-footer__container">
+					<div class="pre-footer__title-box title-box">
+						<div class="bg-title-effect"></div>
+						<h2 class="pre-footer__title title">СВЯЖИСЬ С НАМИ!</h2>
+					</div>
+				</div>
+				<div class="pre-footer__content-box">
+					<picture>
+						<source media="(min-width: 1200px)" srcset="img/pre-footer-bg-pc.webp" />
+						<img src="img/pre-footer-bg.webp" alt="form-bg" />
+					</picture>
+					<div class="pre-footer__content-form-box">
+						<form class="pre-footer__content-form">
+							<label for="name" class="pre-footer__form-label">Напиши своё имя
+							</label>
+							<div class="pre-footer__form-input-box name">
+								<input class="pre-footer__form-input" type="text" id="name" placeholder="Имя" />
+								<div class="pre-footer__input-icon-box">
+									<svg class="pre-footer__input-icon">
+										<use xlink:href="img/icons/icons.svg#user"></use>
+									</svg>
+								</div>
+							</div>
+							<label for="telegram" class="pre-footer__form-label">Месенджер для связи
+							</label>
+							<div class="pre-footer__form-input-box telegram">
+								<select name="pre-footer" data-class-modif="pre-footer">
+									<option value="1" selected>Telegram</option>
+									<option value="2">WhatsApp</option>
+									<option value="3">Viber</option>
+								</select>
+							</div>
+							<div class="pre-footer__form-input-box nickname">
+								<input class="pre-footer__form-input nickname" type="text" id="nickname" placeholder="ID или @nickname" />
+							</div>
+							<button type="button" class="pre-footer__button">
+								<p class="pre-footer__button-text">Начать путишествие!</p>
+							</button>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__top-content">
+					<div class="footer-socials">
+						<div class="footer__title-box title-box">
+							<h2 class="footer__title title">Свяжитесь с нами:</h2>
+						</div>
+						<div class="footer-socials__list">
+							<div class="footer-socials__element">
+								<svg class="footer-socials__element-icon">
+									<use xlink:href="img/icons/icons.svg#telegram"></use>
+								</svg>
+							</div>
+							<div class="footer-socials__element">
+								<svg class="footer-socials__element-icon">
+									<use xlink:href="img/icons/icons.svg#youtube"></use>
+								</svg>
+							</div>
+							<div class="footer-socials__element">
+								<svg class="footer-socials__element-icon">
+									<use xlink:href="img/icons/icons.svg#instagram"></use>
+								</svg>
+							</div>
+							<div class="footer-socials__element">
+								<svg class="footer-socials__element-icon">
+									<use xlink:href="img/icons/icons.svg#facebook"></use>
+								</svg>
+							</div>
+						</div>
+						<a class="footer-mail-box" href="mailto:support@dssleads.com" target="_blank">
+							<div class="footer-mail-icon-box">
+								<svg class="footer-mail-icon">
+									<use xlink:href="img/icons/icons.svg#mail"></use>
+								</svg>
+							</div>
+							<p class="footer-mail-text">support@dssleads.com</p>
+						</a>
+					</div>
+					<div class="footer__bottom-content" data-da=".footer__container, 1200, 1">
+						<p class="footer__bottom-content-text">Политика конфиденциальности</p>
+						<p class="footer__bottom-content-text">Публичная оферта</p>
+						<p class="footer__bottom-content-text">
+							© 2024 DSS Leads. All rights reserved.
+						</p>
+					</div>
+					<div class="footer-logo-box">
+						<img class="footer-logo-box__icon" src="img/logo.svg" alt="logo">
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div data-tabs class="tabs-popup">
+					<div data-tabs-body class="tabs-popup__content">
+						<div class="tabs-popup__body tabs1">
+							<div class="tabs-popup__body-content">
+								<div class="tabs-popup__body-content-line"></div>
+								<div class="tabs-popup__body-content-wrapper">
+									<h3 class="tabs-popup__body-content-title">ВебМастер</h3>
+									<p class="tabs-popup__body-content-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Quisque non nibh fermentum, suscipit ex quis, porta augue.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="tabs-popup__body tabs2">
+							<div class="tabs-popup__body-content">
+								<div class="tabs-popup__body-content-line"></div>
+								<div class="tabs-popup__body-content-wrapper">
+									<h3 class="tabs-popup__body-content-title">Прямой рекламодатель</h3>
+									<p class="tabs-popup__body-content-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+									</p>
+								</div>
+							</div>
+						</div>
+						<nav data-tabs-titles class="tabs-popup__navigation">
+							<button type="button" class="tabs-popup__title _tab-active">
+								<div class="tabs-popup__title-thumb tabs1">
+								</div>
+							</button>
+							<button type="button" class="tabs-popup__title">
+								<div class="tabs-popup__title-thumb tabs2">
+								</div>
+							</button>
+						</nav>
+						<!-- <div class="tabs-popup-main__title-box title-box">
+            <h2 class="tabs-popup-main__title title">выбери свой класс</h2>
+          </div>
+          <button data-close type="button" class="popup__close">
+            <svg class="popup__close-icon">
+              <use xlink:href="img/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <button type="button" class="tabs-popup__button-choose">
+            <p class="tabs-popup__button-choose-text">Выбрать</p>
+          </button> -->
+					</div>
+				</div>
+				<div class="tabs-popup-main__title-box title-box">
+					<h2 class="tabs-popup-main__title title">выбери свой класс</h2>
+				</div>
+				<button data-close type="button" class="popup__close">
+					<svg class="popup__close-icon">
+						<use xlink:href="img/icons/icons.svg#close"></use>
+					</svg>
+				</button>
+				<button type="button" class="tabs-popup__button-choose">
+					<p class="tabs-popup__button-choose-text">Выбрать</p>
+				</button>
+			</div>
 		</div>
 	</div>
+
+	<script src="js/app.min.js?_v=20241020102006"></script>
 </body>
-<style>
-	@charset "UTF-8";
-	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-
-	*,
-	*::before,
-	*::after {
-		padding: 0px;
-		margin: 0px;
-		border: 0px;
-		box-sizing: border-box;
-	}
-
-	html,
-	body {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		min-width: 320px;
-		width: 100%;
-		color: #fff;
-		background-color: #5e5373;
-	}
-
-	body {
-		font-family: Montserrat;
-		font-size: 100%;
-		line-height: 1;
-		font-size: 1rem;
-	}
-
-	a {
-		text-decoration: underline;
-		color: #ebe691
-	}
-
-	a:visited {
-		text-decoration: underline;
-		color: #aaa768;
-	}
-
-	a:hover {
-		text-decoration: none;
-	}
-
-	ul li {
-		list-style: none;
-	}
-
-	img {
-		vertical-align: top;
-	}
-
-	.wrapper {
-		width: 100%;
-		min-height: 100%;
-		overflow: hidden;
-	}
-
-	.rootpage {
-		padding: 30px;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	@media (max-width: 767px) {
-		.rootpage {
-			padding: 30px 15px;
-		}
-	}
-
-	h1 {
-		color: #ebe691;
-		font-size: 2.5rem;
-		margin: 0px 0px 1.25rem 0px;
-	}
-
-	@media (max-width: 767px) {
-		h1 {
-			font-size: 1.85rem;
-			margin: 0px 0px 1.25rem 0px;
-		}
-	}
-
-	h2 {
-		color: #ebe691;
-		font-size: 1.25rem;
-		margin: 0px 0px 1rem 0px;
-	}
-
-	@media (max-width: 767px) {
-		h2 {
-			font-size: 1.125rem;
-			margin: 0px 0px 1rem 0px;
-		}
-	}
-
-	.rootpage__info {
-		line-height: 140%;
-		margin: 0px 0px 1.5rem 0px;
-	}
-
-	.rootpage__list {
-		margin: 0px 0px 2.25rem 1.25rem;
-	}
-
-	.rootpage__list li:not(:last-child) {
-		margin: 0px 0px 15px 0px;
-	}
-
-	.rootpage__contacts,
-	.rootpage__tnx {
-		border-radius: 200px;
-		padding: 20px 65px;
-		line-height: 140%;
-	}
-
-	@media (max-width: 767px) {
-
-		.rootpage__contacts,
-		.rootpage__tnx {
-			border-radius: 40px;
-			padding: 20px;
-		}
-	}
-
-	.rootpage__contacts {
-		background: #32b5a4;
-
-	}
-
-	.rootpage__contacts a {
-		color: #ebe691;
-	}
-
-	.rootpage__tnx {
-		background: #c22d63;
-		margin: 0px 0px 1rem 0px;
-	}
-</style>
 
 </html>
+
+<!-- 
+<svg class="philosophy__icon-left">
+  <use xlink:href="img/icons/icons.svg#decor-left"></use>
+</svg> -->
+
+<!-- <picture>
+  <source media="(min-width: 1200px)" srcset="img/large-pre-footer-bg.webp">
+  <img src="img/pre-footer-bg.webp" alt="form-bg" />
+</picture> -->
