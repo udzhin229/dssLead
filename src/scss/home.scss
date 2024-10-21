@@ -115,11 +115,39 @@
   display: inline-block;
   width: 245px;
   height: 60px;
+  clip-path: polygon(4% 0, 86% 0, 100% 50%, 97% 100%, 10% 100%, 0 44%);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   cursor: pointer;
   border: none;
   overflow: hidden;
   transition: all 1s ease;
+}
+
+.hero__button-box::before {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    172deg,
+    #7a96ac 0%,
+    #eaeff3 18%,
+    #c2d4e1 31%,
+    #ffffff 49%,
+    #d4dee5 62%,
+    #abbdc8 79%,
+    #bccad7 95%
+  );
+  background-size: 200% 200%;
+  transition: all 0.4s ease;
+}
+
+.hero__button-box:hover::before {
+  background-position: 100% 0;
 }
 
 .hero__button-box > img {
@@ -131,34 +159,6 @@
   .hero__button-box {
     width: 315px;
     height: 80px;
-    clip-path: polygon(4% 0, 84% 0, 100% 50%, 97% 100%, 10% 100%, 0 44%);
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero__button-box::before {
-    content: '';
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      172deg,
-      #7a96ac 0%,
-      #eaeff3 18%,
-      #c2d4e1 31%,
-      #ffffff 49%,
-      #d4dee5 62%,
-      #abbdc8 79%,
-      #bccad7 95%
-    );
-    background-size: 200% 200%;
-    transition: all 0.4s ease;
-  }
-  
-  .hero__button-box:hover::before {
-    background-position: 100% 0;
   }
 }
 @media (min-width: $pc) {
