@@ -112,13 +112,18 @@
 
 .hero__button-box {
   position: relative;
+  display: inline-block;
   width: 245px;
   height: 60px;
   overflow: hidden;
   cursor: pointer;
+  border: none;
+  overflow: hidden;
+  transition: all 1s ease;
 }
 
 .hero__button-box > img {
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -126,6 +131,34 @@
   .hero__button-box {
     width: 315px;
     height: 80px;
+    clip-path: polygon(4% 0, 84% 0, 100% 50%, 97% 100%, 10% 100%, 0 44%);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero__button-box::before {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      172deg,
+      #7a96ac 0%,
+      #eaeff3 18%,
+      #c2d4e1 31%,
+      #ffffff 49%,
+      #d4dee5 62%,
+      #abbdc8 79%,
+      #bccad7 95%
+    );
+    background-size: 200% 200%;
+    transition: all 0.4s ease;
+  }
+  
+  .hero__button-box:hover::before {
+    background-position: 100% 0;
   }
 }
 @media (min-width: $pc) {
@@ -1191,10 +1224,10 @@
   margin-left: auto;
 }
 
-.founders__container-swiper{
+.founders__container-swiper {
   position: relative;
 }
-.founders__container-swiper::before{
+.founders__container-swiper::before {
   content: "";
   position: absolute;
   width: 666px;
@@ -1205,16 +1238,17 @@
   border-radius: 30%;
   opacity: 0.2;
   filter: blur(200px);
-  background: linear-gradient(90deg, 
-    #8C421D 0%,
-    #FBE67B 33%,
-    #FCFBE7 54%,
-    #F7D14E 77%,
-    #D4A041 100%
-);
+  background: linear-gradient(
+    90deg,
+    #8c421d 0%,
+    #fbe67b 33%,
+    #fcfbe7 54%,
+    #f7d14e 77%,
+    #d4a041 100%
+  );
 }
 @media (min-width: $tablet) {
-  .founders__container-swiper::before{
+  .founders__container-swiper::before {
     width: 100%;
     filter: blur(250px);
   }
@@ -1514,7 +1548,7 @@
   z-index: 8;
   color: $main-color;
 }
-.founders-card-back__top-icon-box.slide1{
+.founders-card-back__top-icon-box.slide1 {
   top: 67px;
   right: 55px;
 }
@@ -1524,21 +1558,21 @@
   right: 13px;
 }
 
-.founders-card-back__top-icon-box.slide-left-3{
+.founders-card-back__top-icon-box.slide-left-3 {
   top: 149px;
   right: 182px;
 }
 
-.founders-card-back__top-icon-box.slide4{
+.founders-card-back__top-icon-box.slide4 {
   top: 49px;
   right: 75px;
   z-index: 5;
 }
-.founders-card-back__top-icon-box.slide-right-5{
+.founders-card-back__top-icon-box.slide-right-5 {
   top: 74px;
   right: 35px;
 }
-.founders-card-back__top-icon-box.slide-left-5{
+.founders-card-back__top-icon-box.slide-left-5 {
   top: 104px;
   right: 180px;
 }
@@ -1548,25 +1582,25 @@
     right: 25px;
   }
 
-  .founders-card-back__top-icon-box.slide1{
+  .founders-card-back__top-icon-box.slide1 {
     top: 67px;
     right: 55px;
   }
 
-  .founders-card-back__top-icon-box.slide-left-3{
+  .founders-card-back__top-icon-box.slide-left-3 {
     top: 190px;
     right: 235px;
   }
 
-  .founders-card-back__top-icon-box.slide4{
+  .founders-card-back__top-icon-box.slide4 {
     right: 85px;
   }
 
-  .founders-card-back__top-icon-box.slide-right-5{
+  .founders-card-back__top-icon-box.slide-right-5 {
     top: 74px;
     right: 35px;
   }
-  .founders-card-back__top-icon-box.slide-left-5{
+  .founders-card-back__top-icon-box.slide-left-5 {
     top: 118px;
     right: 225px;
   }
@@ -1587,23 +1621,23 @@
   width: 54px;
   height: 37px;
 }
-.founders-card-back__top-icon.slide1{
+.founders-card-back__top-icon.slide1 {
   width: 49px;
   height: 38px;
 }
-.founders-card-back__top-icon.slide-left-3{
+.founders-card-back__top-icon.slide-left-3 {
   width: 60px;
   height: 73px;
 }
-.founders-card-back__top-icon.slide4{
+.founders-card-back__top-icon.slide4 {
   width: 116px;
   height: 101px;
 }
-.founders-card-back__top-icon.slide-right-5{
+.founders-card-back__top-icon.slide-right-5 {
   width: 61px;
   height: 56px;
 }
-.founders-card-back__top-icon.slide-left-5{
+.founders-card-back__top-icon.slide-left-5 {
   width: 48px;
   height: 45px;
 }
@@ -1612,23 +1646,23 @@
     width: 86px;
     height: 58px;
   }
-  .founders-card-back__top-icon.slide1{
+  .founders-card-back__top-icon.slide1 {
     width: 79px;
     height: 61px;
   }
-  .founders-card-back__top-icon.slide-left-3{
+  .founders-card-back__top-icon.slide-left-3 {
     width: 96px;
     height: 100px;
   }
-  .founders-card-back__top-icon.slide4{
+  .founders-card-back__top-icon.slide4 {
     width: 186px;
     height: 162px;
   }
-  .founders-card-back__top-icon.slide-right-5{
+  .founders-card-back__top-icon.slide-right-5 {
     width: 97px;
     height: 90px;
   }
-  .founders-card-back__top-icon.slide-left-5{
+  .founders-card-back__top-icon.slide-left-5 {
     width: 77px;
     height: 72px;
   }
@@ -1650,7 +1684,7 @@
   height: auto;
 }
 
-.founders-card-back__bg-position-title{
+.founders-card-back__bg-position-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1658,11 +1692,13 @@
   z-index: 13;
   color: $main-color;
 }
-.founders-card-back__bg-position-title.card2, .founders-card-back__bg-position-title.card3{
+.founders-card-back__bg-position-title.card2,
+.founders-card-back__bg-position-title.card3 {
   top: 22px;
 }
 @media (min-width: $tablet) {
-  .founders-card-back__bg-position-title.card2, .founders-card-back__bg-position-title.card3{
+  .founders-card-back__bg-position-title.card2,
+  .founders-card-back__bg-position-title.card3 {
     top: 32px;
   }
 }
@@ -1721,7 +1757,6 @@
     height: 44px;
   }
 }
-
 
 @media (min-width: $min-pc) {
   .founders-card-back__bg-position {
@@ -1787,13 +1822,13 @@
   padding-top: 5px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.571);
 }
-.founders-card-back__bottom-text-box.smaller-width{
+.founders-card-back__bottom-text-box.smaller-width {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 @media (min-width: $tablet) {
-  .founders-card-back__bottom-text-box.smaller-width{
+  .founders-card-back__bottom-text-box.smaller-width {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -1822,22 +1857,22 @@
   line-height: 130%;
   text-align: center;
 }
-.founders-card-back__bottom-text.small{
+.founders-card-back__bottom-text.small {
   max-width: 201px;
   margin-right: auto;
   margin-left: auto;
 }
-.founders-card-back__bottom-text.medium{
+.founders-card-back__bottom-text.medium {
   max-width: 201px;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: $tablet) {
-  .founders-card-back__bottom-text.small{
+  .founders-card-back__bottom-text.small {
     max-width: 281px;
   }
 
-  .founders-card-back__bottom-text.medium{
+  .founders-card-back__bottom-text.medium {
     max-width: 241px;
   }
 }
