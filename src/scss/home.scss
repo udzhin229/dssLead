@@ -116,7 +116,7 @@
   width: 245px;
   height: 60px;
   clip-path: polygon(4% 0, 86% 0, 100% 50%, 97% 100%, 10% 100%, 0 44%);
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   cursor: pointer;
   border: none;
@@ -125,7 +125,7 @@
 }
 
 .hero__button-box::before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 5;
   top: 0;
@@ -1198,6 +1198,44 @@
   .webmaster-tabs__item-text.superbig {
     max-width: 450px;
   }
+}
+
+.animation-wrapper {
+  width: 100%;
+  max-width: 450px;
+  height: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: $tablet) {
+  .animation-wrapper {
+    width: 940px;
+    max-width: 940px;
+    height: 63px;
+  }
+}
+
+.animation-wrapper.top {
+  margin-bottom: 40px;
+}
+.animation-wrapper.bottom {
+  margin-top: 40px;
+  transform: rotate(180deg);
+}
+
+@media (min-width: $tablet) {
+  .animation-wrapper.top {
+    margin-bottom: 70px;
+  }
+  .animation-wrapper.bottom {
+    margin-top: 70px;
+  }
+}
+
+.animation-wrapper > svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 // ===============================================================================

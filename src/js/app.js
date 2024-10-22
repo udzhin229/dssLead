@@ -10,6 +10,67 @@
 Якщо ми хочемо додати модуль
 слід його розкоментувати
 */
+// import lottie from "lottie-web";
+
+// lottie.loadAnimation({
+//   container: document.getElementById("lottie-container-1"),
+//   renderer: "svg",
+//   loop: true,
+//   autoplay: true,
+//   path: "../img/animation/dracon.json",
+// });
+
+// lottie.loadAnimation({
+//   container: document.getElementById("lottie-container-2"),
+//   renderer: "svg",
+//   loop: true,
+//   autoplay: true,
+//   path: "../img/animation/dracon.json",
+// });
+
+import lottie from "lottie-web";
+
+// Функція для завантаження анімації
+function playLottieAnimation(containerId, path) {
+  lottie.loadAnimation({
+    container: document.getElementById(containerId),
+    renderer: "svg",
+    loop: false, // Один цикл анімації
+    autoplay: true,
+    path: path,
+  });
+}
+
+// Налаштування Intersection Observer
+const observerOptions = {
+  root: null, // Відстежуємо вікно перегляду
+  threshold: 0.5, // Запускається, коли 50% елемента потрапляє у видиму область
+};
+
+// Створюємо обсервер для запуску анімації при скролі
+function createObserver(elementId, animationPath) {
+  let animationPlayed = false; // Перевірка, чи анімація вже програлась
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !animationPlayed) {
+        // Коли елемент з'являється у видимій частині екрана і ще не програвався
+        playLottieAnimation(elementId, animationPath);
+        animationPlayed = true; // Анімація програється тільки один раз
+      }
+    });
+  }, observerOptions);
+
+  const target = document.getElementById(elementId);
+  if (target) {
+    observer.observe(target); // Відстежуємо елемент
+  }
+}
+
+// Запускаємо обсервери для кожної анімації
+createObserver("lottie-container-1", "../img/animation/dracon.json");
+createObserver("lottie-container-2", "../img/animation/dracon.json");
+
 
 // Увімкнути/вимкнути FLS (Full Logging System) (в роботі)
 window["FLS"] = true;
@@ -94,7 +155,7 @@ flsFunctions.tabs();
 Документація: https://template.fls.guru/template-docs/funkcional-popup.html
 Сніппет (HTML): pl, pop
 */
-import './libs/popup.js';
+import "./libs/popup.js";
 
 /*
 Модуль паралаксу мишею
@@ -271,36 +332,32 @@ document.addEventListener("DOMContentLoaded", function () {
 const cards = document.querySelectorAll(".card");
 
 if (cards) {
-	cards.forEach((card) => {
-		card.addEventListener("mouseover", () => {
-		  card.classList.add("flipped");
-		});
-	  });
+  cards.forEach((card) => {
+    card.addEventListener("mouseover", () => {
+      card.classList.add("flipped");
+    });
+  });
 }
 
-
-// ======================== ПІДКРЕСЛЕННЯ ЗАГОЛОВКІВ ======================= 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('_active');
-    }
-  });
-}, { threshold: 0.5 });
+// ======================== ПІДКРЕСЛЕННЯ ЗАГОЛОВКІВ =======================
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("_active");
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
 
 // Вибір всіх заголовків з класом .title-box
-const titleBoxes = document.querySelectorAll('.bg-title-effect');
-const titlesLineBg = document.querySelectorAll('.title-line');
-titleBoxes.forEach(titleBox => {
+const titleBoxes = document.querySelectorAll(".bg-title-effect");
+const titlesLineBg = document.querySelectorAll(".title-line");
+titleBoxes.forEach((titleBox) => {
   observer.observe(titleBox);
 });
 
-titlesLineBg.forEach(titleLineBg => {
+titlesLineBg.forEach((titleLineBg) => {
   observer.observe(titleLineBg);
 });
-
-
-
-
-
-

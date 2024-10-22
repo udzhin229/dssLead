@@ -1576,6 +1576,26 @@ body::after {
 .webmaster-tabs__item-text.big {
   max-width: 240px
 }
+.animation-wrapper {
+  width: 100%;
+  max-width: 450px;
+  height: 25px;
+  margin-right: auto;
+  margin-left: auto
+}
+.animation-wrapper.top {
+  margin-bottom: 40px
+}
+.animation-wrapper.bottom {
+  margin-top: 40px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.animation-wrapper>svg {
+  display: block;
+  width: 100%;
+  height: auto
+}
 .founders {
   margin-bottom: 80px
 }
@@ -2593,6 +2613,17 @@ body::after {
     top: 0;
     right: auto;
     left: 930px
+  }
+  .animation-wrapper {
+    width: 940px;
+    max-width: 940px;
+    height: 63px
+  }
+  .animation-wrapper.top {
+    margin-bottom: 70px
+  }
+  .animation-wrapper.bottom {
+    margin-top: 70px
   }
   .founders__container-swiper::before {
     width: 100%;
