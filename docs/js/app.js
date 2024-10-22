@@ -18206,8 +18206,8 @@
             const target = document.getElementById(elementId);
             if (target) observer.observe(target);
         }
-        createObserver("lottie-container-1", "../img/animation/dracon.json");
-        createObserver("lottie-container-2", "../img/animation/dracon.json");
+        createObserver("lottie-container-1", "./img/animation/dracon.json");
+        createObserver("lottie-container-2", "./img/animation/dracon.json");
         window["FLS"] = true;
         menuInit();
         tabs();

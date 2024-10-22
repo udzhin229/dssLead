@@ -68,8 +68,8 @@ function createObserver(elementId, animationPath) {
 }
 
 // Запускаємо обсервери для кожної анімації
-createObserver("lottie-container-1", "../img/animation/dracon.json");
-createObserver("lottie-container-2", "../img/animation/dracon.json");
+createObserver("lottie-container-1", "./img/animation/dracon.json");
+createObserver("lottie-container-2", "./img/animation/dracon.json");
 
 
 // Увімкнути/вимкнути FLS (Full Logging System) (в роботі)
