@@ -316,6 +316,7 @@ body::after {
 
 .tabs-popup__button-choose {
   position: absolute;
+  display: block;
   bottom: 48px;
   right: 30px;
   width: 80px;
@@ -336,6 +337,10 @@ body::after {
 }
 
 .tabs-popup__button-choose-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: Gilroy;
   font-size: 8.48px;
   font-weight: 700;

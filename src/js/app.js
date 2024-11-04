@@ -71,6 +71,18 @@ function createObserver(elementId, animationPath) {
 createObserver("lottie-container-1", "./img/animation/dracon.json");
 createObserver("lottie-container-2", "./img/animation/dracon.json");
 
+function handleScroll() {
+  const block = document.querySelector('.falling-block');
+  const blockPosition = block?.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.5;
+
+  if (blockPosition < screenPosition) {
+    block.classList.add('active'); // Додає клас для анімації падіння
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
 
 // Увімкнути/вимкнути FLS (Full Logging System) (в роботі)
 window["FLS"] = true;
@@ -319,7 +331,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("flipped");
+        setTimeout(() => {
+          entry.target.classList.add("flipped");
+        }, 400);
       }
     });
   });
@@ -328,6 +342,7 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(card);
   });
 });
+
 
 const cards = document.querySelectorAll(".card");
 
@@ -360,4 +375,50 @@ titleBoxes.forEach((titleBox) => {
 
 titlesLineBg.forEach((titleLineBg) => {
   observer.observe(titleLineBg);
+});
+
+
+// ============================= АНІМАЦІЯ ПОЯВИ ХАДЕР =================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".header");
+  const firstSection = document.querySelector(".hero__button-box");
+
+  window.addEventListener("scroll", function () {
+    const firstSectionBottom = firstSection.getBoundingClientRect().bottom;
+
+    // Якщо скрол перевищує нижню межу першої секції, додаємо клас
+    if (firstSectionBottom <= 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+});
+
+// ===================== ДИНАМІЧНЕ ПЕРЕНАПРАВЛЯННЯ ЮЗЕРА ПРИ ВИБОРІ КЛАСА У ПОПАПІ ===============================
+document.addEventListener("DOMContentLoaded", function () {
+  const chooseButton = document.querySelector(".tabs-popup__button-choose");
+
+  function updateChooseButtonLink() {
+    const activeTab = document.querySelector(".tabs-popup__title._tab-active");
+
+    if (activeTab) {
+      if (activeTab.classList.contains("tabs1")) {
+        chooseButton.onclick = function () {
+          window.location.href = "https://dss-leads.partner.alanbase.com";
+        };
+      } 
+      else if (activeTab.classList.contains("tabs2")) {
+        chooseButton.onclick = function () {
+          window.location.href = "https://dss-leads.advertiser.alanbase.com";
+        };
+      }
+    }
+  }
+
+  document.querySelectorAll(".tabs-popup__title").forEach(tab => {
+    tab.addEventListener("click", updateChooseButtonLink);
+  });
+
+  updateChooseButtonLink();
 });

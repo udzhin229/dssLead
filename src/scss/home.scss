@@ -56,7 +56,7 @@
 @media (min-width: $pc) {
   .hero__content {
     top: 283px;
-    width: fit-content;
+    // width: fit-content;
   }
 }
 
@@ -93,6 +93,13 @@
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
+  word-spacing: -3px;
+}
+@media (min-width: $tablet) {
+  .hero__text {
+    max-width: 560px;
+    word-spacing: normal;
+  }
 }
 @media (min-width: $min-pc) {
   .hero__text {
@@ -103,10 +110,72 @@
 }
 @media (min-width: $pc) {
   .hero__text {
-    max-width: 1365px;
+    max-width: 0;
     min-width: 1300px;
     margin-bottom: 100px;
     font-size: 72px;
+  }
+}
+
+.hero__text-accent-box {
+  position: relative;
+  top: 5px;
+  width: 160px;
+  height: 33px;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (min-width: $tablet) {
+  .hero__text-accent-box {
+    top: 28px;
+    width: 174px;
+    height: 80px;
+  }
+}
+@media (min-width: $min-pc) {
+  .hero__text-accent-box {
+    width: 334px;
+    height: 90px;
+  }
+}
+@media (min-width: $pc) {
+  .hero__text-accent-box {
+    top: 25px;
+    width: 494px;
+    height: 110px;
+    background-size: cover;
+  }
+}
+
+.hero__text-accent-box.v1 {
+  background-image: url(../img/bg-hero-text-1-mb.png);
+}
+.hero__text-accent-box.v2 {
+  background-image: url(../img/bg-hero-text-2-mb.png);
+}
+@media (min-width: $min-pc) {
+  .hero__text-accent-box.v1 {
+    background-image: url(../img/bg-hero-text-1.png);
+  }
+  .hero__text-accent-box.v2 {
+    background-image: url(../img/bg-hero-text-2.png);
+  }
+}
+
+.hero__text-accent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  height: fit-content;
+  padding-top: 3px;
+}
+@media (min-width: $tablet) {
+  .hero__text-accent {
+    padding-top: 0;
   }
 }
 
@@ -159,6 +228,7 @@
   .hero__button-box {
     width: 315px;
     height: 80px;
+    min-height: 80px;
   }
 }
 @media (min-width: $pc) {
@@ -213,9 +283,9 @@
 .philosophy__container::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 72px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   width: 350px;
   height: 452px;
   background-image: url(../img/logo-mb.png);
@@ -226,6 +296,8 @@
   .philosophy__container::before {
     width: 491px;
     height: 634px;
+    top: 50%;
+    transform: translate(-50%, -50%);
     background-image: url(../img/logo-pc.png);
   }
 }
@@ -266,24 +338,31 @@
 
 @keyframes parallaxAnimation {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
-  20% {
-    transform: translate(5px, -5px) scale(1.02); /* Рух вгору вправо та збільшення масштабу */
+  15% {
+    transform: translate(7px, -7px) scale(1.03) rotate(2deg);
   }
-  40% {
-    transform: translate(-5px, 5px) scale(0.95); /* Рух вниз вліво та зменшення масштабу */
+  30% {
+    transform: translate(-7px, 7px) scale(0.97) rotate(-10deg);
+  }
+  45% {
+    transform: translate(10px, -10px) scale(1.05) rotate(5deg);
   }
   60% {
-    transform: translate(-5px, -5px) scale(1.02); /* Рух вгору вліво та збільшення масштабу */
+    transform: translate(-10px, 10px) scale(0.98) rotate(-1deg);
   }
-  80% {
-    transform: translate(5px, 5px) scale(0.95); /* Рух вниз вправо та зменшення масштабу */
+  75% {
+    transform: translate(5px, -5px) scale(1.02) rotate(10deg);
+  }
+  90% {
+    transform: translate(-5px, 5px) scale(1) rotate(-1.5deg);
   }
   100% {
-    transform: translate(0, 0) scale(1); /* Повернення до початкової позиції та масштабу */
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
 }
+
 
 .philosophy__title {
   font-family: Spaceland;
@@ -450,31 +529,37 @@
 }
 @keyframes subtleParallaxAnimation {
   0% {
-    transform: translateY(-50%) translate(0, 0) scale(1); /* Початкова позиція */
+    transform: translateY(-50%) translate(0, 0) scale(1) rotate(0deg);
   }
-  12.5% {
-    transform: translateY(-51%) translate(4px, 6px) scale(1.01); /* Рух вгору вправо */
+  10% {
+    transform: translateY(-48%) translate(6px, 4px) scale(1.1) rotate(2deg);
   }
-  25% {
-    transform: translateY(-50%) translate(0, 0) scale(1); /* Повернення до початкової позиції */
+  20% {
+    transform: translateY(-49%) translate(-5px, -5px) scale(0.95) rotate(-3deg);
   }
-  37.5% {
-    transform: translateY(-49%) translate(-4px, -6px) scale(1.05); /* Рух вгору вліво */
+  30% {
+    transform: translateY(-50%) translate(8px, 2px) scale(1.05) rotate(1deg);
+  }
+  40% {
+    transform: translateY(-49%) translate(-6px, 8px) scale(0.98) rotate(-2deg);
   }
   50% {
-    transform: translateY(-50%) translate(-4px, 10px) scale(0.99); /* Рух вниз вліво */
+    transform: translateY(-50%) translate(4px, 4px) scale(1.03) rotate(0deg);
   }
-  62.5% {
-    transform: translateY(-49%) translate(4px, 4px) scale(1.05); /* Рух вниз вправо */
+  60% {
+    transform: translateY(-51%) translate(-8px, -6px) scale(1.12) rotate(3deg);
   }
-  75% {
-    transform: translateY(-50%) translate(0, 0) scale(1); /* Повернення до початкової позиції */
+  70% {
+    transform: translateY(-50%) translate(6px, 6px) scale(0.97) rotate(-1deg);
   }
-  87.5% {
-    transform: translateY(-51%) translate(-4px, 4px) scale(1.01); /* Рух вгору вліво */
+  80% {
+    transform: translateY(-49%) translate(-2px, 10px) scale(1.06) rotate(2deg);
+  }
+  90% {
+    transform: translateY(-50%) translate(0, -4px) scale(1.01) rotate(0deg);
   }
   100% {
-    transform: translateY(-50%) translate(0, 0) scale(1); /* Завершення */
+    transform: translateY(-50%) translate(0, 0) scale(1) rotate(0deg);
   }
 }
 
@@ -522,7 +607,7 @@
     width: 920px;
     height: 500px;
     transform-style: preserve-3d;
-    transition: transform 1.5s ease;
+    transition: transform 1.4s ease;
   }
 }
 
@@ -534,6 +619,7 @@
 @media (min-width: $mobile) {
   .advantages__card.right {
     position: static;
+    transition-delay: 1.5s;
   }
   .advantages__card.left {
     margin-top: 6%;
@@ -802,55 +888,64 @@
 
 @keyframes moveAround1 {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
-  25% {
-    transform: translate(15px, -15px) scale(1.05);
+  20% {
+    transform: translate(15px, -15px) scale(1.05) rotate(5deg);
   }
-  50% {
-    transform: translate(-15px, 15px) scale(1.05);
+  40% {
+    transform: translate(-15px, 15px) scale(1.1) rotate(-5deg);
   }
-  75% {
-    transform: translate(10px, -10px) scale(1.05);
+  60% {
+    transform: translate(10px, -10px) scale(1.05) rotate(3deg);
+  }
+  80% {
+    transform: translate(-5px, 5px) scale(1.1) rotate(-2deg);
   }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
 }
 
 @keyframes moveAround2 {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
-  25% {
-    transform: translate(10px, 15px) scale(1.05);
+  20% {
+    transform: translate(10px, 15px) scale(1.05) rotate(6deg);
   }
-  50% {
-    transform: translate(15px, -10px) scale(1.05);
+  40% {
+    transform: translate(15px, -10px) scale(1.1) rotate(-4deg);
   }
-  75% {
-    transform: translate(-15px, 15px) scale(1.05);
+  60% {
+    transform: translate(-15px, 15px) scale(1.05) rotate(5deg);
+  }
+  80% {
+    transform: translate(5px, -5px) scale(1.1) rotate(-3deg);
   }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
 }
 
 @keyframes moveAround3 {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
-  25% {
-    transform: translate(-20px, -20px) scale(1.05); /* Вгору і вліво */
+  20% {
+    transform: translate(-20px, -20px) scale(1.1) rotate(-6deg);
   }
-  50% {
-    transform: translate(20px, -20px) scale(1.05); /* Вгору і вправо */
+  40% {
+    transform: translate(20px, -20px) scale(1.05) rotate(4deg);
   }
-  75% {
-    transform: translate(-20px, 20px) scale(1.05); /* Вниз і вліво */
+  60% {
+    transform: translate(-20px, 20px) scale(1.1) rotate(-5deg);
+  }
+  80% {
+    transform: translate(0, 10px) scale(1.05) rotate(3deg);
   }
   100% {
-    transform: translate(0, 0) scale(1); /* Повертаємося до початкової позиції */
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
 }
 
@@ -1200,6 +1295,47 @@
   }
 }
 
+.falling-block {
+  width: 300px;
+  height: 150px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  color: black;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5em;
+  position: relative;
+  opacity: 0; /* Спочатку невидимий */
+  transform: translateY(-500px); /* Початкова позиція високо над екраном */
+  transition: opacity 0.1s ease-in-out;
+}
+
+.falling-block.active {
+  opacity: 1;
+  animation: fallAndBounce 1.3s cubic-bezier(0.5, 0.9, 0.4, 1.5) forwards;
+}
+
+/* Анімація для падіння з відскоком */
+@keyframes fallAndBounce {
+  0% {
+    transform: translateY(-500px); /* Початкова позиція високо над екраном */
+  }
+  80% {
+    transform: translateY(0); /* Швидке падіння до нижньої межі */
+  }
+  90% {
+    transform: translateY(-30px); /* Невеликий відскок вгору */
+  }
+  100% {
+    transform: translateY(0); /* Зупинка на місці */
+  }
+}
+
 .animation-wrapper {
   width: 100%;
   max-width: 450px;
@@ -1217,7 +1353,9 @@
 
 .animation-wrapper.top {
   margin-bottom: 40px;
+  position: relative;
 }
+
 .animation-wrapper.bottom {
   margin-top: 40px;
   transform: rotate(180deg);
@@ -1525,6 +1663,28 @@
     width: 149px;
     height: 91px;
     top: 75px;
+    animation: smoothFloat1 20s ease-in-out infinite;
+  }
+
+  @keyframes smoothFloat1 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    20% {
+      transform: translate(10px, -5px) scale(1.02) rotate(1deg);
+    }
+    40% {
+      transform: translate(-5px, 10px) scale(1.03) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-10px, -5px) scale(1.02) rotate(0.5deg);
+    }
+    80% {
+      transform: translate(5px, 10px) scale(1.03) rotate(-0.5deg);
+    }
+    100% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
   }
 
   .founders-card-back__bg-decor.slide3 {
@@ -1569,6 +1729,7 @@
   top: 95px;
   right: -14px;
   transform: rotate(51deg);
+  animation: smoothFloat2 20s ease-in-out infinite;
 }
 @media (min-width: $min-pc) {
   .founders-card-back__bg-decor-2 {
@@ -1576,6 +1737,30 @@
     height: 87px;
     top: 125px;
     right: -24px;
+  }
+}
+
+@keyframes smoothFloat2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  15% {
+    transform: translate(-8px, 6px) scale(1.01) rotate(-5deg);
+  }
+  30% {
+    transform: translate(10px, -8px) scale(1.02) rotate(5deg);
+  }
+  45% {
+    transform: translate(-6px, 10px) scale(1.01) rotate(-1deg);
+  }
+  60% {
+    transform: translate(8px, -10px) scale(1.02) rotate(1deg);
+  }
+  75% {
+    transform: translate(-10px, 8px) scale(1.03) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
 }
 
