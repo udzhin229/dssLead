@@ -18208,6 +18208,13 @@
         }
         createObserver("lottie-container-1", "./img/animation/dracon.json");
         createObserver("lottie-container-2", "./img/animation/dracon.json");
+        function handleScroll() {
+            const block = document.querySelector(".falling-block");
+            const blockPosition = block?.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.5;
+            if (blockPosition < screenPosition) block.classList.add("active");
+        }
+        window.addEventListener("scroll", handleScroll);
         window["FLS"] = true;
         menuInit();
         tabs();
@@ -18215,7 +18222,9 @@
             const cards = document.querySelectorAll(".advantages__card");
             const observer = new IntersectionObserver((entries => {
                 entries.forEach((entry => {
-                    if (entry.isIntersecting) entry.target.classList.add("flipped");
+                    if (entry.isIntersecting) setTimeout((() => {
+                        entry.target.classList.add("flipped");
+                    }), 400);
                 }));
             }));
             cards.forEach((card => {
@@ -18242,6 +18251,29 @@
         }));
         titlesLineBg.forEach((titleLineBg => {
             observer.observe(titleLineBg);
+        }));
+        document.addEventListener("DOMContentLoaded", (function() {
+            const header = document.querySelector(".header");
+            const firstSection = document.querySelector(".hero__button-box");
+            window.addEventListener("scroll", (function() {
+                const firstSectionBottom = firstSection.getBoundingClientRect().bottom;
+                if (firstSectionBottom <= 0) header.classList.add("scrolled"); else header.classList.remove("scrolled");
+            }));
+        }));
+        document.addEventListener("DOMContentLoaded", (function() {
+            const chooseButton = document.querySelector(".tabs-popup__button-choose");
+            function updateChooseButtonLink() {
+                const activeTab = document.querySelector(".tabs-popup__title._tab-active");
+                if (activeTab) if (activeTab.classList.contains("tabs1")) chooseButton.onclick = function() {
+                    window.location.href = "https://dss-leads.partner.alanbase.com";
+                }; else if (activeTab.classList.contains("tabs2")) chooseButton.onclick = function() {
+                    window.location.href = "https://dss-leads.advertiser.alanbase.com";
+                };
+            }
+            document.querySelectorAll(".tabs-popup__title").forEach((tab => {
+                tab.addEventListener("click", updateChooseButtonLink);
+            }));
+            updateChooseButtonLink();
         }));
     })();
 })();

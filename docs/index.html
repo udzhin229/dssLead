@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241022192406">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241104233509">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,13 +122,21 @@
 			<section class="hero">
 				<div class="hero-thumb">
 					<picture>
-						<source srcset="img/hero-bg-mb-2x.webp" media="(max-width: 767px)">
-						<img src="img/hero-bg-pc-2x.webp" alt="background slide">
+						<source srcset="img/hero-bg-mb-2x.webp" media="(max-width: 767px)" />
+						<img src="img/hero-bg-pc-2x.webp" alt="background slide" />
 					</picture>
 					<div class="hero__content">
 						<div class="hero__content-wrapper">
 							<p class="hero__text">
-								самый Быстрый  и Удобный источник траффика
+								самый
+								<span class="hero__text-accent-box v1">
+									<span class="hero__text-accent">Быстрый</span>
+								</span>
+								и
+								<span class="hero__text-accent-box v2">
+									<span class="hero__text-accent">Удобный</span>
+								</span>
+								источник траффика
 								<br class="transfer" />
 								на рынке Gambling
 							</p>
@@ -142,6 +150,9 @@
 			</section>
 			<section class="philosophy" id="about-brand">
 				<div class="philosophy__container">
+					<!-- <div class="falling-block">
+              <h2>Контент тут</h2>
+            </div> -->
 					<div class="animation-wrapper top" id="lottie-container-1"></div>
 					<div class="philosophy__title-box title-box">
 						<div class="bg-title-effect"></div>
@@ -412,13 +423,13 @@
 					</div>
 				</div>
 				<div class="perspective-decor-thumb thumb-1">
-					<img src="img/perspective-decor-pc.webp" alt="decor element">
+					<img src="img/perspective-decor-pc.webp" alt="decor element" />
 				</div>
 				<div class="perspective-decor-thumb thumb-2">
-					<img src="img/perspective-decor-2-pc.webp" alt="decor element">
+					<img src="img/perspective-decor-2-pc.webp" alt="decor element" />
 				</div>
 				<div class="perspective-decor-thumb thumb-3">
-					<img src="img/perspective-decor-3-pc.webp" alt="decor element">
+					<img src="img/perspective-decor-3-pc.webp" alt="decor element" />
 				</div>
 			</section>
 			<section class="founders" id="founders">
@@ -798,7 +809,9 @@
 											</div>
 											<div class="founders-card-back__bg-avatar">
 												<picture>
-													<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-avatar-5-pc.webp" />
+													<source media="(min-width: 1200px)" srcset="
+                                img/founders/back-bg-card-avatar-5-pc.webp
+                              " />
 													<img src="img/founders/back-bg-card-avatar-5.webp" alt="form-bg" />
 												</picture>
 											</div>
@@ -1001,7 +1014,9 @@
 							<div class="tabs-popup__body-content">
 								<div class="tabs-popup__body-content-line"></div>
 								<div class="tabs-popup__body-content-wrapper">
-									<h3 class="tabs-popup__body-content-title">Прямой рекламодатель</h3>
+									<h3 class="tabs-popup__body-content-title">
+										Прямой рекламодатель
+									</h3>
 									<p class="tabs-popup__body-content-text">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 									</p>
@@ -1009,26 +1024,13 @@
 							</div>
 						</div>
 						<nav data-tabs-titles class="tabs-popup__navigation">
-							<button type="button" class="tabs-popup__title _tab-active">
-								<div class="tabs-popup__title-thumb tabs1">
-								</div>
+							<button type="button" class="tabs-popup__title _tab-active tabs1">
+								<div class="tabs-popup__title-thumb tabs1"></div>
 							</button>
-							<button type="button" class="tabs-popup__title">
-								<div class="tabs-popup__title-thumb tabs2">
-								</div>
+							<button type="button" class="tabs-popup__title tabs2">
+								<div class="tabs-popup__title-thumb tabs2"></div>
 							</button>
 						</nav>
-						<!-- <div class="tabs-popup-main__title-box title-box">
-            <h2 class="tabs-popup-main__title title">выбери свой класс</h2>
-          </div>
-          <button data-close type="button" class="popup__close">
-            <svg class="popup__close-icon">
-              <use xlink:href="img/icons/icons.svg#close"></use>
-            </svg>
-          </button>
-          <button type="button" class="tabs-popup__button-choose">
-            <p class="tabs-popup__button-choose-text">Выбрать</p>
-          </button> -->
 					</div>
 				</div>
 				<div class="tabs-popup-main__title-box title-box">
@@ -1039,14 +1041,13 @@
 						<use xlink:href="img/icons/icons.svg#close"></use>
 					</svg>
 				</button>
-				<button type="button" class="tabs-popup__button-choose">
+				<a href="#" class="tabs-popup__button-choose" target="_blank">
 					<p class="tabs-popup__button-choose-text">Выбрать</p>
-				</button>
+				</a>
 			</div>
 		</div>
 	</div>
-
-	<script src="js/app.min.js?_v=20241022192406"></script>
+	<script src="js/app.min.js?_v=20241104233509"></script>
 </body>
 
 </html>
