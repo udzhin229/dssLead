@@ -386,7 +386,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", function () {
     const firstSectionBottom = firstSection.getBoundingClientRect().bottom;
 
-    // Якщо скрол перевищує нижню межу першої секції, додаємо клас
     if (firstSectionBottom <= 0) {
       header.classList.add("scrolled");
     } else {

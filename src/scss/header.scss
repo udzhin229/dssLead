@@ -18,7 +18,8 @@
 .header.scrolled {
   position: fixed;
   top: 0;
-  transition: transform 0.5s ease;
+  padding-top: 5px; 
+  transition: transform 0.5s ease, padding-top 0.5s ease;
 }
 
 .header__container {
@@ -64,6 +65,7 @@
   background-color: $blur-bg;
   border: $main-border;
   border-radius: $main-border-radius;
+  backdrop-filter: blur(25px);
 }
 .menu-nav__list {
   margin-bottom: 30px;
@@ -115,14 +117,13 @@
   .menu-nav__link {
     padding-top: 0;
     padding-bottom: 0;
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1467.98px) {
   .menu-nav__link {
     padding-top: 16px;
     padding-bottom: 16px;
-    font-size: 24px;
   }
 }
 
