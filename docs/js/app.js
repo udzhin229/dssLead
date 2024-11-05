@@ -18396,9 +18396,7 @@
             const cards = document.querySelectorAll(".advantages__card");
             const observer = new IntersectionObserver((entries => {
                 entries.forEach((entry => {
-                    if (entry.isIntersecting) setTimeout((() => {
-                        entry.target.classList.add("flipped");
-                    }), 400);
+                    if (entry.isIntersecting) entry.target.classList.add("flipped");
                 }));
             }));
             cards.forEach((card => {
@@ -18436,16 +18434,20 @@
         }));
         document.addEventListener("DOMContentLoaded", (function() {
             const chooseButton = document.querySelector(".tabs-popup__button-choose");
+            const partner = "https://dss-leads.partner.alanbase.com";
+            const advertiser = "https://dss-leads.advertiser.alanbase.com";
             function updateChooseButtonLink() {
                 const activeTab = document.querySelector(".tabs-popup__title._tab-active");
-                if (activeTab) if (activeTab.classList.contains("tabs1")) chooseButton.onclick = function() {
-                    window.location.href = "https://dss-leads.partner.alanbase.com";
-                }; else if (activeTab.classList.contains("tabs2")) chooseButton.onclick = function() {
-                    window.location.href = "https://dss-leads.advertiser.alanbase.com";
+                if (activeTab) chooseButton.onclick = function() {
+                    if (activeTab.classList.contains("tabs-popup1")) window.location.href = partner; else if (activeTab.classList.contains("tabs-popup2")) window.location.href = advertiser;
                 };
             }
             document.querySelectorAll(".tabs-popup__title").forEach((tab => {
-                tab.addEventListener("click", updateChooseButtonLink);
+                tab.addEventListener("click", (function() {
+                    document.querySelectorAll(".tabs-popup__title").forEach((t => t.classList.remove("_tab-active")));
+                    this.classList.add("_tab-active");
+                    updateChooseButtonLink();
+                }));
             }));
             updateChooseButtonLink();
         }));
