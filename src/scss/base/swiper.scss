@@ -1,6 +1,11 @@
 .swiper {
 	overflow: hidden;
 }
+@media (min-width: 1200px) {
+	.swiper {
+		padding-top: 50px;
+	}
+  }
 .swiper-initialized {
 	touch-action: pan-y;
 }

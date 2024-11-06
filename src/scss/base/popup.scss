@@ -52,7 +52,6 @@ body::after {
   transform: scale(0);
   transition: transform 0.3s ease 0s;
   background-color: $bg-popup;
-  padding: 38px 10px;
   width: 100%;
   max-width: 900px;
   border-radius: 20px;
@@ -63,8 +62,6 @@ body::after {
 @media (min-width: $tablet) {
   .popup__content {
     width: fit-content;
-    padding-left: 38px;
-    padding-right: 38px;
   }
 }
 
@@ -72,6 +69,7 @@ body::after {
   width: 100%;
   height: 253px;
   padding: 10px 20px;
+  padding-right: 17px;
   padding-left: 90px;
   border-radius: 15px;
   background-repeat: no-repeat;
@@ -84,6 +82,7 @@ body::after {
     max-width: 785px;
     height: 537px;
     padding: 30px 60px;
+    padding-right: 25px;
     border-radius: 32px;
   }
 }
@@ -154,6 +153,7 @@ body::after {
 
 .tabs-popup__body-content-text {
   font-family: Gilroy;
+  font-weight: 400;
   font-size: 12px;
 }
 @media (min-width: $tablet) {
@@ -165,14 +165,14 @@ body::after {
 .tabs-popup__navigation {
   position: absolute;
   display: flex;
-  top: 90px;
-  left: 30px;
+  top: 52px;
+  left: 20px;
   flex-direction: column;
   gap: 15px;
 }
 @media (min-width: $tablet) {
   .tabs-popup__navigation {
-    top: 148px;
+    top: 110px;
     left: 68px;
     gap: 37px;
   }
@@ -269,13 +269,13 @@ body::after {
 
 .tabs-popup-main__title-box.title-box {
   position: absolute;
-  top: 48px;
-  left: 30px;
+  top: 10px;
+  left: 20px;
 }
 @media (min-width: $tablet) {
   .tabs-popup-main__title-box.title-box {
-    top: 68px;
-    left: 98px;
+    top:  30px;
+    left: 60px;
   }
 }
 
@@ -292,14 +292,14 @@ body::after {
 
 .popup__close {
   position: absolute;
-  top: 48px;
-  right: 30px;
+  top: 10px;
+  right: 10px;
   color: $main-color;
 }
 @media (min-width: $tablet) {
   .popup__close {
-    top: 68px;
-    right: 98px;
+    top: 20px;
+    right: 20px;
   }
 }
 
@@ -317,8 +317,8 @@ body::after {
 .tabs-popup__button-choose {
   position: absolute;
   display: block;
-  bottom: 48px;
-  right: 30px;
+  bottom: 10px;
+  right: 10px;
   width: 80px;
   height: 26px;
   background-image: url(../img/popup-button-choose-bg.png);
@@ -328,8 +328,8 @@ body::after {
 }
 @media (min-width: $tablet) {
   .tabs-popup__button-choose {
-    bottom: 52px;
-    right: 58px;
+    bottom: 14px;
+    right: 20px;
     width: 170px;
     height: 56px;
     background-image: url(../img/popup-button-choose-bg-pc.png);

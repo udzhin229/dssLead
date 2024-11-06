@@ -598,7 +598,6 @@
   width: 268px;
   height: 240px;
   transform-style: preserve-3d;
-  // transition: transform 1.4s ease, translateY 0.3s ease;
   transition: transform 1.4s ease;
 }
 @media (min-width: $tablet) {
@@ -618,7 +617,7 @@
 @media (min-width: $mobile) {
   .advantages__card.right {
     position: static;
-    // transition-delay: 1.5s;
+    transition-delay: 1.5s;
   }
   .advantages__card.left {
     margin-top: 6%;
@@ -633,7 +632,6 @@
 }
 .advantages__card.right.flipped {
   transform: rotateY(-180deg);
-  animation: flipAndJump 1s ease forwards;
 }
 @media (min-width: $mobile) {
   .advantages__card.right.flipped {
@@ -1415,7 +1413,7 @@
 }
 @media (min-width: 1200px) {
   .founders__title-box {
-    margin-bottom: 50px;
+    margin-bottom: 0;
     margin-right: 204px;
   }
 }
@@ -2426,6 +2424,14 @@
   .card:hover .founders__slide-card-back {
     transform: rotateY(0deg);
   }
+
+  .flipped .founders__slide-card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .flipped .founders__slide-card-back {
+    transform: rotateY(0deg);
+  }
 }
 
 // ==========================================================================================
@@ -2464,7 +2470,7 @@
 @media (min-width: 1200px) {
   .pre-footer__content-box {
     width: 100%;
-    max-width: 1325px;
+    max-width: 1595px;
     margin-right: auto;
     margin-left: auto;
     height: 609px;
@@ -2573,6 +2579,12 @@
 .pre-footer__form-input-box.nickname {
   margin-bottom: 20px;
 }
+@media (min-width: 1200px) {
+  .pre-footer__form-input-box.nickname {
+    margin-bottom: 40px;
+  }
+}
+
 .pre-footer__input-icon {
   width: 24px;
   height: 24px;
@@ -2638,6 +2650,22 @@
 }
 @media (min-width: 1200px) {
   .pre-footer__button-text {
-    font-size: 16px;
+    font-size: 32px;
+  }
+}
+
+#lottie-container-4{
+  display: none;
+}
+#lottie-container-3{
+  display: none;
+}
+
+@media (min-width: $mobile) {
+  #lottie-container-4{
+    display: block;
+  }
+  #lottie-container-3{
+    display: block;
   }
 }

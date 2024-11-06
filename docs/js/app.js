@@ -18444,14 +18444,22 @@
                     if (activeTab.classList.contains("tabs-popup1")) window.location.href = partner; else if (activeTab.classList.contains("tabs-popup2")) window.location.href = advertiser;
                 };
             }
+            function updateTabContent() {
+                const activeTabIndex = [ ...document.querySelectorAll(".tabs-popup__title") ].findIndex((tab => tab.classList.contains("_tab-active")));
+                document.querySelectorAll(".tabs-popup__body").forEach(((content, index) => {
+                    content.style.display = index === activeTabIndex ? "block" : "none";
+                }));
+            }
             document.querySelectorAll(".tabs-popup__title").forEach((tab => {
                 tab.addEventListener("click", (function() {
                     document.querySelectorAll(".tabs-popup__title").forEach((t => t.classList.remove("_tab-active")));
                     this.classList.add("_tab-active");
                     updateChooseButtonLink();
+                    updateTabContent();
                 }));
             }));
             updateChooseButtonLink();
+            updateTabContent();
         }));
     })();
 })();

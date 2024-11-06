@@ -379,7 +379,7 @@ titlesLineBg.forEach((titleLineBg) => {
 });
 
 
-// ============================= АНІМАЦІЯ ПОЯВИ ХАДЕР =================================================
+// ============================= АНІМАЦІЯ ПОЯВИ ХЕДЕР =================================================
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector(".header");
   const firstSection = document.querySelector(".hero__button-box");
@@ -398,13 +398,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===================== ДИНАМІЧНЕ ПЕРЕНАПРАВЛЯННЯ ЮЗЕРА ПРИ ВИБОРІ КЛАСА У ПОПАПІ ===============================
 document.addEventListener("DOMContentLoaded", function () {
   const chooseButton = document.querySelector(".tabs-popup__button-choose");
-  
+
   const partner = "https://dss-leads.partner.alanbase.com";
   const advertiser = "https://dss-leads.advertiser.alanbase.com";
 
   function updateChooseButtonLink() {
     const activeTab = document.querySelector(".tabs-popup__title._tab-active");
-    
+
     if (activeTab) {
       chooseButton.onclick = function () {
         if (activeTab.classList.contains("tabs-popup1")) {
@@ -416,6 +416,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function updateTabContent() {
+    const activeTabIndex = [...document.querySelectorAll(".tabs-popup__title")].findIndex(tab => tab.classList.contains("_tab-active"));
+    document.querySelectorAll(".tabs-popup__body").forEach((content, index) => {
+      content.style.display = index === activeTabIndex ? "block" : "none";
+    });
+  }
+
   document.querySelectorAll(".tabs-popup__title").forEach(tab => {
     tab.addEventListener("click", function () {
       // Зняти клас _tab-active з усіх вкладок
@@ -424,10 +431,12 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("_tab-active");
       // Оновити URL кнопки
       updateChooseButtonLink();
+      // Оновити відображення контенту відповідно до активного таба
+      updateTabContent();
     });
   });
 
+  // Ініціалізація: виставити правильний контент при завантаженні
   updateChooseButtonLink();
+  updateTabContent();
 });
-
-

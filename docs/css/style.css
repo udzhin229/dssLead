@@ -338,9 +338,9 @@ body {
   line-height: 130%
 }
 .select.select_pre-footer .select__content::before {
-  content: url(../img/telegram.webp);
+  content: url(../img/telegram-2.webp);
   position: absolute;
-  top: 0;
+  top: 6px;
   left: 0;
   width: 24px;
   height: 24px
@@ -447,7 +447,6 @@ body::after {
   transition: transform .3s ease 0s;
   transition: transform .3s ease 0s,-webkit-transform .3s ease 0s;
   background-color: #1f1f1f;
-  padding: 38px 10px;
   width: 100%;
   max-width: 900px;
   border-radius: 20px
@@ -459,6 +458,7 @@ body::after {
   width: 100%;
   height: 253px;
   padding: 10px 20px;
+  padding-right: 17px;
   padding-left: 90px;
   border-radius: 15px;
   background-repeat: no-repeat;
@@ -494,13 +494,14 @@ body::after {
 }
 .tabs-popup__body-content-text {
   font-family: Gilroy;
+  font-weight: 400;
   font-size: 12px
 }
 .tabs-popup__navigation {
   position: absolute;
   display: flex;
-  top: 90px;
-  left: 30px;
+  top: 52px;
+  left: 20px;
   flex-direction: column;
   gap: 15px
 }
@@ -555,8 +556,8 @@ body::after {
 }
 .tabs-popup-main__title-box.title-box {
   position: absolute;
-  top: 48px;
-  left: 30px
+  top: 10px;
+  left: 20px
 }
 .tabs-popup-main__title.title {
   font-size: 24px;
@@ -565,8 +566,8 @@ body::after {
 }
 .popup__close {
   position: absolute;
-  top: 48px;
-  right: 30px;
+  top: 10px;
+  right: 10px;
   color: #fff
 }
 .popup__close-icon {
@@ -576,8 +577,8 @@ body::after {
 .tabs-popup__button-choose {
   position: absolute;
   display: block;
-  bottom: 48px;
-  right: 30px;
+  bottom: 10px;
+  right: 10px;
   width: 80px;
   height: 26px;
   background-image: url(../img/popup-button-choose-bg.webp);
@@ -1254,9 +1255,7 @@ body::after {
 }
 .advantages__card.right.flipped {
   -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-  -webkit-animation: flipAndJump 1s ease forwards;
-  animation: flipAndJump 1s ease forwards
+  transform: rotateY(-180deg)
 }
 @-webkit-keyframes flipAndJump {
   0% {
@@ -2484,6 +2483,12 @@ body::after {
   text-align: center;
   z-index: 10
 }
+#lottie-container-4 {
+  display: none
+}
+#lottie-container-3 {
+  display: none
+}
 .swiper {
   overflow: hidden
 }
@@ -2555,7 +2560,8 @@ body::after {
     justify-content: space-between
   }
   .advantages__card.right {
-    position: static
+    position: static;
+    transition-delay: 1.5s
   }
   .advantages__card.left {
     margin-top: 6%;
@@ -2758,20 +2764,25 @@ body::after {
   .founders__wrapper {
     margin-bottom: 40px
   }
+  #lottie-container-4 {
+    display: block
+  }
+  #lottie-container-3 {
+    display: block
+  }
 }
 @media (min-width:61.99875em) {
   .popup__content {
     width: -webkit-fit-content;
     width: -moz-fit-content;
-    width: fit-content;
-    padding-left: 38px;
-    padding-right: 38px
+    width: fit-content
   }
   .tabs-popup__body {
     width: 785px;
     max-width: 785px;
     height: 537px;
     padding: 30px 60px;
+    padding-right: 25px;
     border-radius: 32px
   }
   .tabs-popup__body.tabs1 {
@@ -2797,7 +2808,7 @@ body::after {
     font-size: 18px
   }
   .tabs-popup__navigation {
-    top: 148px;
+    top: 110px;
     left: 68px;
     gap: 37px
   }
@@ -2823,23 +2834,23 @@ body::after {
     background-image: url(../img/tabs-popup-2-pc.webp)
   }
   .tabs-popup-main__title-box.title-box {
-    top: 68px;
-    left: 98px
+    top: 30px;
+    left: 60px
   }
   .tabs-popup-main__title.title {
     font-size: 50px
   }
   .popup__close {
-    top: 68px;
-    right: 98px
+    top: 20px;
+    right: 20px
   }
   .popup__close-icon {
     width: 32px;
     height: 32px
   }
   .tabs-popup__button-choose {
-    bottom: 52px;
-    right: 58px;
+    bottom: 14px;
+    right: 20px;
     width: 170px;
     height: 56px;
     background-image: url(../img/popup-button-choose-bg-pc.webp)
@@ -3369,7 +3380,7 @@ body::after {
     margin-bottom: 413px
   }
   .founders__title-box {
-    margin-bottom: 50px;
+    margin-bottom: 0;
     margin-right: 204px
   }
   .card {
@@ -3479,6 +3490,14 @@ body::after {
     -webkit-transform: rotateY(0);
     transform: rotateY(0)
   }
+  .flipped .founders__slide-card-front {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+  }
+  .flipped .founders__slide-card-back {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0)
+  }
   .pre-footer {
     margin-bottom: 225px
   }
@@ -3487,7 +3506,7 @@ body::after {
   }
   .pre-footer__content-box {
     width: 100%;
-    max-width: 1325px;
+    max-width: 1595px;
     margin-right: auto;
     margin-left: auto;
     height: 609px
@@ -3525,6 +3544,9 @@ body::after {
   .pre-footer__form-input-box.name {
     margin-bottom: 40px
   }
+  .pre-footer__form-input-box.nickname {
+    margin-bottom: 40px
+  }
   .pre-footer__input-icon {
     width: 32px;
     height: 32px
@@ -3534,7 +3556,10 @@ body::after {
     height: 70px
   }
   .pre-footer__button-text {
-    font-size: 16px
+    font-size: 32px
+  }
+  .swiper {
+    padding-top: 50px
   }
 }
 @media (min-width:1280px) {
