@@ -18382,6 +18382,8 @@
         }
         createObserver("lottie-container-1", "./img/animation/dracon.json");
         createObserver("lottie-container-2", "./img/animation/dracon.json");
+        createObserver("lottie-container-3", "./img/animation/dracon.json");
+        createObserver("lottie-container-4", "./img/animation/dracon.json");
         function handleScroll() {
             const block = document.querySelector(".falling-block");
             const blockPosition = block?.getBoundingClientRect().top;
@@ -18405,8 +18407,8 @@
         }));
         const cards = document.querySelectorAll(".card");
         if (cards) cards.forEach((card => {
-            card.addEventListener("mouseover", (() => {
-                card.classList.add("flipped");
+            card.addEventListener("click", (() => {
+                card.classList.toggle("flipped");
             }));
         }));
         const observer = new IntersectionObserver((entries => {

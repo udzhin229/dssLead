@@ -51,18 +51,11 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: 56%;
   z-index: 10001;
-}
-@media (min-width: $tablet) {
-  .hero__content {
-    height: 65%;
-  }
 }
 @media (min-width: $pc) {
   .hero__content {
     top: 283px;
-    // width: fit-content;
   }
 }
 
@@ -189,6 +182,7 @@
   display: inline-block;
   width: 245px;
   height: 60px;
+  min-height: 60px;
   clip-path: polygon(4% 0, 86% 0, 100% 50%, 97% 100%, 10% 100%, 0 44%);
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -604,15 +598,14 @@
   width: 268px;
   height: 240px;
   transform-style: preserve-3d;
-  transition: transform 1s ease, translateY 0.3s ease;
+  // transition: transform 1.4s ease, translateY 0.3s ease;
+  transition: transform 1.4s ease;
 }
 @media (min-width: $tablet) {
   .advantages__card {
-    position: relative;
     max-width: 920px;
     width: 920px;
     height: 500px;
-    transform-style: preserve-3d;
     transition: transform 1.4s ease;
   }
 }
@@ -625,7 +618,7 @@
 @media (min-width: $mobile) {
   .advantages__card.right {
     position: static;
-    transition-delay: 1.5s;
+    // transition-delay: 1.5s;
   }
   .advantages__card.left {
     margin-top: 6%;
@@ -641,7 +634,11 @@
 .advantages__card.right.flipped {
   transform: rotateY(-180deg);
   animation: flipAndJump 1s ease forwards;
-  animation-delay: 1s;
+}
+@media (min-width: $mobile) {
+  .advantages__card.right.flipped {
+    animation-delay: 1s;
+  }
 }
 
 @keyframes flipAndJump {
@@ -1419,9 +1416,8 @@
 @media (min-width: 1200px) {
   .founders__title-box {
     margin-bottom: 50px;
+    margin-right: 204px;
   }
-}
-.title-box {
 }
 
 .title.founders__title {
@@ -1479,7 +1475,7 @@
     max-width: 1300px;
   }
 }
-@media (min-width: $pc) {
+@media (min-width: 1599px) {
   .founders__slider {
     width: 100%;
     max-width: none;
@@ -1769,6 +1765,7 @@
   height: 57px;
   top: 61px;
   left: -15px;
+  animation: smoothFloat1 20s ease-in-out infinite;
 }
 @media (min-width: 1600px) {
   .founders-card-back__bg-decor {
@@ -1813,28 +1810,6 @@
     width: 149px;
     height: 91px;
     top: 75px;
-    animation: smoothFloat1 20s ease-in-out infinite;
-  }
-
-  @keyframes smoothFloat1 {
-    0% {
-      transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-    20% {
-      transform: translate(10px, -5px) scale(1.02) rotate(1deg);
-    }
-    40% {
-      transform: translate(-5px, 10px) scale(1.03) rotate(-1deg);
-    }
-    60% {
-      transform: translate(-10px, -5px) scale(1.02) rotate(0.5deg);
-    }
-    80% {
-      transform: translate(5px, 10px) scale(1.03) rotate(-0.5deg);
-    }
-    100% {
-      transform: translate(0, 0) scale(1) rotate(0deg);
-    }
   }
 
   .founders-card-back__bg-decor.slide3 {
@@ -1869,6 +1844,27 @@
 
   .founders-card-back__bg-decor-2.slide5 {
     top: 180px;
+  }
+}
+
+@keyframes smoothFloat1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  20% {
+    transform: translate(10px, -5px) scale(1.02) rotate(1deg);
+  }
+  40% {
+    transform: translate(-5px, 10px) scale(1.03) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-10px, -5px) scale(1.02) rotate(0.5deg);
+  }
+  80% {
+    transform: translate(5px, 10px) scale(1.03) rotate(-0.5deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
 }
 
@@ -2374,30 +2370,22 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  // position: absolute;
   position: relative;
   top: -423px;
   left: 0;
-  transition: transform 1s; /* Ефект анімації */
+  transition: transform 1s; 
 }
 
 .founders__slide-card-front {
   z-index: 2;
-  transform: rotateY(0deg); /* Початкова позиція передньої сторони */
+  transform: rotateY(0deg); 
 }
 
 .founders__slide-card-back {
   z-index: 1;
-  transform: rotateY(-180deg); /* Початкова позиція задньої сторони */
-}
-
-/* Ховер для 3D ефекту */
-.card:hover .founders__slide-card-front {
-  transform: rotateY(180deg);
-}
-
-.card:hover .founders__slide-card-back {
-  transform: rotateY(0deg);
+  transform: rotateY(-180deg); 
+  backface-visibility: hidden;
+  transition: transform 1s;
 }
 
 .flipped .founders__slide-card-front {
@@ -2417,17 +2405,17 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: transform 1s; /* Ефект анімації */
+    transition: transform 1s; 
   }
 
   .founders__slide-card-front {
     z-index: 2;
-    transform: rotateY(0deg); /* Початкова позиція передньої сторони */
+    transform: rotateY(0deg);
   }
 
   .founders__slide-card-back {
     z-index: 1;
-    transform: rotateY(-180deg); /* Початкова позиція задньої сторони */
+    transform: rotateY(-180deg);
   }
 
   /* Ховер для 3D ефекту */
@@ -2436,14 +2424,6 @@
   }
 
   .card:hover .founders__slide-card-back {
-    transform: rotateY(0deg);
-  }
-
-  .flipped .founders__slide-card-front {
-    transform: rotateY(180deg);
-  }
-
-  .flipped .founders__slide-card-back {
     transform: rotateY(0deg);
   }
 }
