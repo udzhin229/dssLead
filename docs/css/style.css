@@ -1869,6 +1869,9 @@ body::after {
   object-fit: cover
 }
 .swiper-pagination {
+  position: relative;
+  z-index: 120;
+  cursor: pointer;
   height: 16px;
   display: flex;
   align-items: center;
@@ -3262,14 +3265,11 @@ body::after {
     height: auto;
     max-height: 700px
   }
-  .swiper-button {
-    top: 319px
-  }
   .swiper-button.swiper-button-prev {
-    left: -30px
+    left: -20px
   }
   .swiper-button.swiper-button-next {
-    right: -35px
+    right: -20px
   }
 }
 @media (min-width:1000px) {
@@ -3626,16 +3626,22 @@ body::after {
     right: -22px
   }
 }
-@media (min-width:1599px) {
-  .founders__slider {
-    width: 100%;
-    max-width: none
-  }
-}
 @media (min-width:1600px) {
+  .founders__slider {
+    max-width: 1500px
+  }
   .card {
     width: 430px;
     height: 679px
+  }
+  .swiper-button {
+    top: 370px
+  }
+  .swiper-button.swiper-button-prev {
+    left: 15px
+  }
+  .swiper-button.swiper-button-next {
+    right: 15px
   }
   .founders-card-back__bg-avatar {
     height: 415px
@@ -3721,6 +3727,12 @@ body::after {
   .hero-thumb {
     height: 860px;
     min-height: 860px
+  }
+}
+@media (min-width:1800px) {
+  .founders__slider {
+    width: 100%;
+    max-width: none
   }
 }
 @media (max-width:1199px) {

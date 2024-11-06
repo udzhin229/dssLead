@@ -18251,6 +18251,12 @@
                     1600: {
                         slidesPerView: 3,
                         spaceBetween: 0,
+                        slidesOffsetBefore: 35,
+                        centeredSlides: false
+                    },
+                    1800: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
                         slidesOffsetBefore: 55,
                         centeredSlides: false
                     }
