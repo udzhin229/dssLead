@@ -1012,8 +1012,10 @@
   .tabs__navigation {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: normal;
     margin-bottom: 74px;
+    margin-left: 300px;
+    gap: 480px;
     padding: 5px;
     border: none;
     border-radius: 0;
@@ -1109,7 +1111,7 @@
   height: 40px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 80px;
+  // margin-bottom: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1126,7 +1128,7 @@
   .webmaster-tabs__button {
     width: 515px;
     height: 100px;
-    margin-bottom: 190px;
+    margin-bottom: 0;
     background-image: url(../img/bg-perspective-button-pc.png);
   }
 
@@ -1160,8 +1162,115 @@
   color: $bg-color;
 }
 
-.webmaster-tabs__content {
+.tabs__body-animation-wrapper{
+  position: relative;
+  height: 768px;
+  width: 100%;
+  overflow: hidden;
+  // border: 1px solid white;
 }
+@media (min-width: $tablet) {
+  .tabs__body-animation-wrapper{
+    position: relative;
+    height: 1800px;
+    width: 753px;
+  }
+}
+
+.webmaster-tabs__content{
+  position: absolute;
+  top: 70px;
+  width: 100%;
+}
+@media (min-width: $tablet) {
+  .webmaster-tabs__content{
+    position: absolute;
+    top: 175px;
+    width: 100%;
+  }
+}
+
+.snake-animation-container{
+  position: static;
+  height: 100%;
+  transform: translateY(-100%);
+}
+@media (min-width: $tablet) {
+  .snake-animation-container{
+    margin-left: -227px;
+  }
+}
+
+.snake-animation-container.gif-1, .snake-animation-container.gif-2{
+  position: relative;
+  top: -690px;
+  left: auto;
+  width: 1050px;
+  margin-left: -287px;
+  opacity: 0.2;
+}
+.snake-animation-container.gif-2{
+  position: relative;
+  top: -660px;
+  left: auto;
+  width: 1050px;
+  margin-left: -345px;
+  opacity: 0.2;
+}
+@media (min-width: $tablet) {
+  .snake-animation-container.gif-1{
+    top: -210px;
+    width: 1350px;
+    margin-left: -87px;
+  }
+
+  .snake-animation-container.gif-2{
+    top: -140px;
+    width: 1350px;
+    margin-left: -157px;
+  }
+}
+.tabs__body-animation-wrapper.animate .snake-animation-container{
+  animation: slideIn 18s linear forwards;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.snake-animation-container > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.snake-animation-container.gif-1 > img{
+  width: auto;
+  height: auto;
+  transform: scale(0.53);
+  transform-origin: center;
+}
+
+.snake-animation-container.gif-2 > img{
+  width: auto;
+  height: auto;
+  transform: scale(0.52);
+  transform-origin: center;
+}
+@media (min-width: $tablet) {
+  .snake-animation-container.gif-1 > img{
+    transform: scale(1.2);
+  }
+  .snake-animation-container.gif-2 > img{
+    transform: scale(1.2);
+  }
+}
+// 
+
+
 .webmaster-tabs__list {
   width: 100%;
   display: flex;
@@ -1189,7 +1298,34 @@
   background-image: url(../img/bg-webmaster-tabs.png);
   background-size: contain;
   background-repeat: no-repeat;
+
+  // 
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
+.webmaster-tabs__item.show {
+  opacity: 1;
+}
+.webmaster-tabs__item:nth-child(1) {
+  transition-delay: 1s;
+}
+
+.webmaster-tabs__item:nth-child(2) {
+  // transition-delay: 0.5s;
+}
+
+.webmaster-tabs__item:nth-child(3) {
+  // transition-delay: 0.5s;
+}
+
+.webmaster-tabs__item:nth-child(4) {
+  // transition-delay: 0.5s;
+}
+
+.webmaster-tabs__item:nth-child(5) {
+  // transition-delay: 0.5s;
+}
+
 @media (min-width: $mobile) {
   .webmaster-tabs__item {
     width: 547px;
@@ -2480,6 +2616,8 @@
   position: relative;
   width: 100%;
   height: 380px;
+  padding-right: 10px;
+    padding-left: 10px;
 }
 @media (min-width: 1200px) {
   .pre-footer__content-box {
@@ -2487,11 +2625,13 @@
     max-width: 1595px;
     margin-right: auto;
     margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
     height: 609px;
   }
 }
 
-.pre-footer__content-box > img {
+.pre-footer__content-box img {
   width: 100%;
   height: 100%;
 }

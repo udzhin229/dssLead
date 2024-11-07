@@ -18467,5 +18467,23 @@
             updateChooseButtonLink();
             updateTabContent();
         }));
+        const observerDracon = new IntersectionObserver(((entries, observer) => {
+            entries.forEach((entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                    const items = entry.target.querySelectorAll(".webmaster-tabs__item");
+                    items.forEach(((item, index) => {
+                        setTimeout((() => {
+                            item.classList.add("show");
+                        }), index * 4e3);
+                    }));
+                    observer.unobserve(entry.target);
+                }
+            }));
+        }), {
+            threshold: .2
+        });
+        const animationContainers = document.querySelectorAll(".tabs__body-animation-wrapper");
+        animationContainers.forEach((container => observerDracon.observe(container)));
     })();
 })();

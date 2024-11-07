@@ -425,18 +425,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll(".tabs-popup__title").forEach(tab => {
     tab.addEventListener("click", function () {
-      // Зняти клас _tab-active з усіх вкладок
       document.querySelectorAll(".tabs-popup__title").forEach(t => t.classList.remove("_tab-active"));
-      // Додати клас _tab-active до натиснутої вкладки
       this.classList.add("_tab-active");
-      // Оновити URL кнопки
       updateChooseButtonLink();
-      // Оновити відображення контенту відповідно до активного таба
       updateTabContent();
     });
   });
 
-  // Ініціалізація: виставити правильний контент при завантаженні
   updateChooseButtonLink();
   updateTabContent();
 });
+
+
+
+// ================================== АНІМАЦІЯ ПОЯВИ ДРАКОНІВ =========================================
+
+const observerDracon = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+
+      const items = entry.target.querySelectorAll('.webmaster-tabs__item');
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add('show');
+        }, index * 4000); 
+      });
+
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+const animationContainers = document.querySelectorAll('.tabs__body-animation-wrapper');
+
+animationContainers.forEach(container => observerDracon.observe(container));
+
