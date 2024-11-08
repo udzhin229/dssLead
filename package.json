@@ -43,7 +43,7 @@
 		"gulp-filter": "^9.0.1",
 		"gulp-fonter-fix": "latest",
 		"gulp-group-css-media-queries": "latest",
-		"gulp-if": "latest",
+		"gulp-if": "^3.0.0",
 		"gulp-imagemin": "latest",
 		"gulp-newer": "latest",
 		"gulp-notify": "latest",

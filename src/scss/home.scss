@@ -1242,29 +1242,29 @@
   }
 }
 
-.snake-animation-container > img{
+.snake-animation-container > object{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.snake-animation-container.gif-1 > img{
+.snake-animation-container.gif-1 > object{
   width: auto;
   height: auto;
   transform: scale(0.53);
   transform-origin: center;
 }
 
-.snake-animation-container.gif-2 > img{
+.snake-animation-container.gif-2 > object{
   width: auto;
   height: auto;
   transform: scale(0.52);
   transform-origin: center;
 }
 @media (min-width: $tablet) {
-  .snake-animation-container.gif-1 > img{
+  .snake-animation-container.gif-1 > object{
     transform: scale(1.2);
   }
-  .snake-animation-container.gif-2 > img{
+  .snake-animation-container.gif-2 > object{
     transform: scale(1.2);
   }
 }
