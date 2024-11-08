@@ -1,5 +1,64 @@
+// import webp from "gulp-webp";
+// import imagemin from "gulp-imagemin";
+
+// export const WebP = () => {
+// 	return app.gulp.src(app.path.src.images, { encoding: false })
+// 		.pipe(app.plugins.plumber(
+// 			app.plugins.notify.onError({
+// 				title: "IMAGES",
+// 				message: "Error: <%= error.message %>"
+// 			}))
+// 		)
+// 		.pipe(app.plugins.newer(app.path.build.images))
+// 		.pipe(
+// 			app.plugins.if(
+// 				app.isWebP,
+// 				webp()
+// 			)
+// 		)
+// 		.pipe(
+// 			app.plugins.if(
+// 				app.isWebP,
+// 				app.gulp.dest(app.path.build.images)
+// 			)
+// 		)
+// }
+// export const imagesOptimize = () => {
+// 	return app.gulp.src(app.path.src.images, { encoding: false })
+// 		.pipe(app.plugins.plumber(
+// 			app.plugins.notify.onError({
+// 				title: "IMAGES",
+// 				message: "Error: <%= error.message %>"
+// 			}))
+// 		)
+// 		.pipe(app.plugins.newer(app.path.build.images))
+// 		.pipe(
+// 			app.plugins.if(
+// 				app.isImgOpt,
+// 				imagemin({
+// 					progressive: true,
+// 					svgoPlugins: [{ removeViewBox: false }],
+// 					interlaced: true,
+// 					optimizationLevel: 3 // 0 to 7
+// 				})
+// 			)
+// 		)
+// 		.pipe(app.gulp.dest(app.path.build.images))
+// }
+// export const copySvg = () => {
+// 	return app.gulp.src(app.path.src.svg)
+// 		.pipe(app.plugins.plumber(
+// 			app.plugins.notify.onError({
+// 				title: "IMAGES",
+// 				message: "Error: <%= error.message %>"
+// 			}))
+// 		)
+// 		.pipe(app.plugins.newer(app.path.build.images))
+// 		.pipe(app.gulp.dest(app.path.build.images));
+// }
 import webp from "gulp-webp";
 import imagemin from "gulp-imagemin";
+import filter from "gulp-filter"; // Додаємо gulp-filter
 
 export const WebP = () => {
 	return app.gulp.src(app.path.src.images, { encoding: false })
@@ -10,6 +69,7 @@ export const WebP = () => {
 			}))
 		)
 		.pipe(app.plugins.newer(app.path.build.images))
+		.pipe(filter(['**/*', '!**/*.gif'])) // Виключаємо GIF
 		.pipe(
 			app.plugins.if(
 				app.isWebP,
@@ -21,8 +81,9 @@ export const WebP = () => {
 				app.isWebP,
 				app.gulp.dest(app.path.build.images)
 			)
-		)
-}
+		);
+};
+
 export const imagesOptimize = () => {
 	return app.gulp.src(app.path.src.images, { encoding: false })
 		.pipe(app.plugins.plumber(
@@ -43,8 +104,9 @@ export const imagesOptimize = () => {
 				})
 			)
 		)
-		.pipe(app.gulp.dest(app.path.build.images))
-}
+		.pipe(app.gulp.dest(app.path.build.images));
+};
+
 export const copySvg = () => {
 	return app.gulp.src(app.path.src.svg)
 		.pipe(app.plugins.plumber(
@@ -55,4 +117,4 @@ export const copySvg = () => {
 		)
 		.pipe(app.plugins.newer(app.path.build.images))
 		.pipe(app.gulp.dest(app.path.build.images));
-}
+};
