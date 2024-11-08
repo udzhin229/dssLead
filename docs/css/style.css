@@ -1675,8 +1675,8 @@ body::after {
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%)
 }
-.snake-animation-container.webp-1,
-.snake-animation-container.webp-2 {
+.snake-animation-container.gif-1,
+.snake-animation-container.gif-2 {
   position: relative;
   top: -690px;
   left: auto;
@@ -1684,7 +1684,7 @@ body::after {
   margin-left: -287px;
   opacity: .2
 }
-.snake-animation-container.webp-2 {
+.snake-animation-container.gif-2 {
   position: relative;
   top: -660px;
   left: auto;
@@ -1716,13 +1716,13 @@ body::after {
     transform: translateY(0)
   }
 }
-.snake-animation-container>object {
+.snake-animation-container>img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover
 }
-.snake-animation-container.webp-1>object {
+.snake-animation-container.gif-1>img {
   width: auto;
   height: auto;
   -webkit-transform: scale(.53);
@@ -1730,7 +1730,7 @@ body::after {
   -webkit-transform-origin: center;
   transform-origin: center
 }
-.snake-animation-container.webp-2>object {
+.snake-animation-container.gif-2>img {
   width: auto;
   height: auto;
   -webkit-transform: scale(.52);
@@ -3106,21 +3106,21 @@ body::after {
   .snake-animation-container {
     margin-left: -227px
   }
-  .snake-animation-container.webp-1 {
+  .snake-animation-container.gif-1 {
     top: -210px;
     width: 1350px;
     margin-left: -87px
   }
-  .snake-animation-container.webp-2 {
+  .snake-animation-container.gif-2 {
     top: -140px;
     width: 1350px;
     margin-left: -157px
   }
-  .snake-animation-container.webp-1>object {
+  .snake-animation-container.gif-1>img {
     -webkit-transform: scale(1.2);
     transform: scale(1.2)
   }
-  .snake-animation-container.webp-2>object {
+  .snake-animation-container.gif-2>img {
     -webkit-transform: scale(1.2);
     transform: scale(1.2)
   }
