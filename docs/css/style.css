@@ -1926,8 +1926,15 @@ body::after {
   color: #000
 }
 .tabs__body-animation-wrapper {
+  display: none
+}
+.tabs__body-animation-wrapper.animate {
+  display: block;
   position: relative;
-  height: 768px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 768px;
   width: 100%;
   overflow: hidden
 }
@@ -3536,9 +3543,9 @@ body::after {
     right: auto;
     left: 930px
   }
-  .tabs__body-animation-wrapper {
+  .tabs__body-animation-wrapper.animate {
     position: relative;
-    height: 1800px;
+    max-height: 1800px;
     width: 753px
   }
   .webmaster-tabs__content {

@@ -438,29 +438,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// ================================== АНІМАЦІЯ ПОЯВИ ДРАКОНІВ =========================================
+// ================================== АНІМАЦІЯ ПОЯВИ ДРАКОНІВ =========================================// Функція для запуску анімації
+function startAnimation(container) {
+  console.log(container)
+  if (!container.classList.contains('animate')) {
+    container.classList.add('animate');
 
-const observerDracon = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
+    const items = container.querySelectorAll('.webmaster-tabs__item');
+    items.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('show');
+      }, index * 4000);
+    });
+  }
+}
 
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
-
-      const items = entry.target.querySelectorAll('.webmaster-tabs__item');
-      items.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add('show');
-        }, index * 4000); 
-      });
-
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.2
-});
-
+// Отримуємо кнопки та контейнери з анімаціями
+const buttons = document.querySelectorAll('.webmaster-tabs__button');
 const animationContainers = document.querySelectorAll('.tabs__body-animation-wrapper');
 
-animationContainers.forEach(container => observerDracon.observe(container));
-
+// Додаємо обробник кліку для кожної кнопки
+buttons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    const correspondingContainer = animationContainers[index];
+    if (correspondingContainer) {
+      startAnimation(correspondingContainer);
+    }
+  });
+});

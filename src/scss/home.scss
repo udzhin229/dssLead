@@ -1666,18 +1666,24 @@
 .tabs__body-start-text.advertiser {
   color: $bg-color;
 }
+.tabs__body-animation-wrapper{
+  display: none;
+}
 
-.tabs__body-animation-wrapper {
+.tabs__body-animation-wrapper.animate {
+  display: block;
   position: relative;
-  height: 768px;
+  // height: 768px;
+  height: fit-content;
+  max-height: 768px;
   width: 100%;
   overflow: hidden;
-  // border: 1px solid white;
 }
 @media (min-width: $tablet) {
-  .tabs__body-animation-wrapper {
+  .tabs__body-animation-wrapper.animate {
     position: relative;
-    height: 1800px;
+    // height: 1800px;
+    max-height: 1800px;
     width: 753px;
   }
 }
