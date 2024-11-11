@@ -1,4 +1,11 @@
 @font-face {
+	font-family: Blackcraft;
+	font-display: swap;
+	src: url("../fonts/Blackcraft-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
 	font-family: Gilroy;
 	font-display: swap;
 	src: url("../fonts/Gilroy-Bold.woff2") format("woff2");
@@ -15,15 +22,15 @@
 @font-face {
 	font-family: Montserrat;
 	font-display: swap;
-	src: url("../fonts/Montserrat-ExtraBoldItalic.woff2") format("woff2");
-	font-weight: 400;
+	src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
 	font-family: Montserrat;
 	font-display: swap;
-	src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
-	font-weight: 700;
+	src: url("../fonts/Montserrat-ExtraBoldItalic.woff2") format("woff2");
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
@@ -34,17 +41,17 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: Montserrat;
-	font-display: swap;
-	src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
-	font-weight: 600;
-	font-style: normal;
-}
-@font-face {
 	font-family: Spaceland;
 	font-display: swap;
 	src: url("../fonts/Spaceland-TenOblique.woff2") format("woff2");
 	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Montserrat;
+	font-display: swap;
+	src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
+	font-weight: 600;
 	font-style: normal;
 }
 @font-face {
