@@ -18,8 +18,10 @@
 .header.scrolled {
   position: fixed;
   top: 0;
-  padding-top: 5px; 
-  transition: transform 0.5s ease, padding-top 0.5s ease;
+  padding-top: 5px;
+  transition:
+    transform 0.5s ease,
+    padding-top 0.5s ease;
 }
 
 .header__container {
@@ -79,7 +81,9 @@
   font-size: 16px;
   line-height: 130%;
 }
-.header__menu-nav {
+
+.header.scrolled .header__menu-nav {
+  display: none;
 }
 .menu-nav {
   background-color: $blur-bg;
@@ -109,6 +113,12 @@
   .menu-nav__list {
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+
+  .header.scrolled .menu-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
   }
 }
 @media (min-width: 1160px) {
@@ -170,6 +180,11 @@
   align-items: center;
   gap: 10px;
 }
+@media (min-width: 1007.98px) {
+  .auth-nav {
+    gap: 30px;
+  }
+}
 
 .auth-nav__log-in-wrapper {
   display: flex;
@@ -180,45 +195,50 @@
   font-weight: 600;
 }
 @media (min-width: $tablet) {
-    .auth-nav__log-in-wrapper {
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size: 24px;
-      }
+  .auth-nav__log-in-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 24px;
   }
-  @media (min-width: 1007.98px) {
-    .auth-nav__log-in-wrapper {
-      font-size: 16px;
-    }
-  }
-  @media (min-width: 1280px) {
-    .auth-nav__log-in-wrapper {
-      font-size: 18px;
-    }
-  }
-  @media (min-width: 1360px) {
-    .auth-nav__log-in-wrapper {
-      font-size: 22px;
-    }
-  }
-  @media (min-width: 1467.98px) {
-    .auth-nav__log-in-wrapper {
-      font-size: 24px;
-    }
+}
+@media (min-width: 1007.98px) {
+  .auth-nav__log-in-wrapper {
+    font-size: 16px;
   }
 
-  @media (min-width: 1573px) {
-    .auth-nav__log-in-wrapper {
-      gap: 30px;
-    }
+  html.lock.menu-open .auth-nav__log-in-wrapper{
+    display: none;
   }
+}
+@media (min-width: 1280px) {
+  .auth-nav__log-in-wrapper {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1360px) {
+  .auth-nav__log-in-wrapper {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1467.98px) {
+  .auth-nav__log-in-wrapper {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1573px) {
+  .auth-nav__log-in-wrapper {
+    gap: 30px;
+  }
+}
 
 .auth-nav__log-in-link {
   position: relative;
+  z-index: -1;
   text-wrap: nowrap;
 }
 @media (min-width: 1573px) {
-  .auth-nav__log-in-link::before{
+  .auth-nav__log-in-link::before {
     content: "|";
     width: 10px;
     height: 5px;
@@ -227,11 +247,19 @@
   }
 }
 
-
 .auth-nav__sign-in-link {
 }
-.auth-nav__log-out-wrapper {
+
+@media (min-width: 1007.98px) {
+  .auth-nav__log-out-wrapper {
+    display: none;
+  }
+  html.lock.menu-open .auth-nav__log-out-wrapper {
+    display: none;
+  }
 }
+
+
 .auth-nav__log-out-link {
   color: $main-color;
 }

@@ -4,7 +4,7 @@
   }
   // .menu__body
   &__body {
-    @media (max-width: 1007.98px) {
+    // @media (max-width: 1007.98px) {
       position: fixed;
       width: 95%;
       height: 96.5vh;
@@ -32,12 +32,12 @@
           left: 0;
         }
       }
-    }
+    // }
   }
   @media (min-width: 1007.98px) {
     &__body {
-		display: none;
-	  }
+      // display: none;
+    }
   }
   // .menu__list
   &__list {
@@ -58,22 +58,29 @@
     width: 35px;
     height: 35px;
     background-color: $blur-bg;
-    backdrop-filter: blur(25px); /* Застосування ефекту блюру */
-  -webkit-backdrop-filter: blur(25px); /* Для підтримки в Safari */
+    backdrop-filter: blur(25px); 
+    -webkit-backdrop-filter: blur(25px);
     border: $main-border;
     border-radius: 8px;
     z-index: 5;
   }
   @media (min-width: 1007.98px) {
     .header-mb__button-wrapper {
-		display: none;
-	  }
+      display: none;
+    }
+
+    .header-mb__button-wrapper.visible{
+      position: relative;
+      display: block;
+    }
   }
+
+  
 
   //Burger Icon
   .icon-menu {
-    display: none;
-    @media (max-width: 1007.98px) {
+    // display: none;
+    // @media (max-width: 1007.98px) {
       display: block;
       position: relative;
       width: 100%;
@@ -118,10 +125,10 @@
           transform: rotate(45deg);
         }
       }
-    }
+    // }
   }
 
-  @media (max-width: 1007.98px) {
+  // @media (max-width: 1007.98px) {
     .menu-body__wrapper {
       width: 100%;
       height: 100vh;
@@ -180,5 +187,11 @@
       padding: 5px;
       transition: all 0.3s ease;
     }
+  // }
+}
+
+@media (min-width: 1007.98px) {
+  html.lock.menu-open .header-mb__button-wrapper.visible {
+    top: 20px;
   }
 }

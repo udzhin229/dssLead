@@ -18435,9 +18435,16 @@
         document.addEventListener("DOMContentLoaded", (function() {
             const header = document.querySelector(".header");
             const firstSection = document.querySelector(".hero__button-box");
+            const burgerMenu = document.querySelector(".header-mb__button-wrapper");
             window.addEventListener("scroll", (function() {
                 const firstSectionBottom = firstSection.getBoundingClientRect().bottom;
-                if (firstSectionBottom <= 0) header.classList.add("scrolled"); else header.classList.remove("scrolled");
+                if (firstSectionBottom <= 0) {
+                    header.classList.add("scrolled");
+                    burgerMenu.classList.add("visible");
+                } else {
+                    header.classList.remove("scrolled");
+                    burgerMenu.classList.remove("visible");
+                }
             }));
         }));
         document.addEventListener("DOMContentLoaded", (function() {
