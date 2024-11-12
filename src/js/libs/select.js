@@ -285,7 +285,7 @@ class SelectConstructor {
 		console.log(`Selected image URL: ${imgSrc}`);
 		
 		// Устанавливаем CSS-переменную --img-url для выбранного элемента select
-		selectItem.style.setProperty('--img-url', `url(../img/${imgSrc})`);
+		selectItem.style.setProperty('--img-url', `url(../${imgSrc})`);
 		
 		// Добавляем HTML заголовка select в selectItemBody
 		selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
