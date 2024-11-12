@@ -288,12 +288,17 @@ class SelectConstructor {
 			selectItem.style.setProperty('--img-url', `url(../${imgSrc})`);
 		}
 		
+
 		// Проверка наличия атрибута 'data-lang'
 		if (selectedOption.hasAttribute('data-lang')) {
 			const lang = selectedOption.getAttribute('data-lang');
 			// Перенаправляем на страницу с языком, если атрибут присутствует
 			window.location.href = `/${lang}`;
 		}
+
+		// Устанавливаем CSS-переменную --img-url для выбранного элемента select
+		selectItem.style.setProperty('--img-url', `url(../${imgSrc})`);
+
 		
 		// Добавляем HTML заголовка select в selectItemBody
 		selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));

@@ -558,7 +558,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ================================== АНІМАЦІЯ ПОЯВИ ДРАКОНІВ =========================================// Функція для запуску анімації
 function startAnimation(container) {
-  console.log(container)
   if (!container.classList.contains('animate')) {
     container.classList.add('animate');
 
@@ -566,7 +565,7 @@ function startAnimation(container) {
     items.forEach((item, index) => {
       setTimeout(() => {
         item.classList.add('show');
-      }, index * 4000);
+      }, index * 3600);
     });
   }
 }
@@ -585,4 +584,51 @@ buttons.forEach((button, index) => {
   });
 });
 
+// ==================================== АНІМАЦІЯ ЗГОРЯННЯ =====================================================
+document.querySelectorAll('.board-bottom__item').forEach(item => {
+  // Анімація для десктопів
+  item.addEventListener('mouseenter', () => {
+    if (!item.classList.contains('animation-played')) {
+      triggerAnimation(item);
+    }
+  });
 
+  // Анімація для мобільних пристроїв
+  item.addEventListener('touchstart', () => {
+    if (!item.classList.contains('animation-played')) {
+      triggerAnimation(item);
+    }
+  });
+});
+
+// Функція для запуску анімації
+function triggerAnimation(item) {
+  item.classList.add('is-burning'); 
+
+  setTimeout(() => {
+    item.classList.remove('is-burning'); 
+    item.classList.add('is-burnt'); 
+    item.classList.add('animation-played'); 
+  }, 2000); // Час тривалості GIF
+}
+
+
+
+// ====================================== АНІМАЦІЯ ХИТАННЯ ДОШКИ ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const board = document.querySelector('.animate-board');
+  const chains = document.querySelectorAll('.not-cpa__content-chain-left, .not-cpa__content-chain-right');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        board.classList.add('animate');
+        chains.forEach(chain => chain.classList.add('animate-chain'));
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  observer.observe(board);
+});
