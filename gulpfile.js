@@ -76,7 +76,14 @@ export { deployFTP }
 export { deployZIP }
 
 // Виконання сценарію за замовчуванням
-gulp.task('default', development);
+gulp.task('default', function () {
+	return gulp.src('src/index.html')
+		.pipe(i18n({
+			locales: ['en-US'],
+			localeDir: './locales'
+		}))
+		.pipe(gulp.dest('dist'));
+});
 
 
 

@@ -43,6 +43,7 @@
 		"gulp-clean-css": "latest",
 		"gulp-fonter-fix": "latest",
 		"gulp-group-css-media-queries": "latest",
+		"gulp-i18n-localize": "^1.4.0",
 		"gulp-if": "latest",
 		"gulp-imagemin": "latest",
 		"gulp-newer": "latest",
