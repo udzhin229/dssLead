@@ -18848,10 +18848,10 @@
         }));
         document.querySelectorAll(".board-bottom__item").forEach((item => {
             item.addEventListener("mouseenter", (() => {
-                triggerAnimation(item);
+                if (!item.classList.contains("animation-played")) triggerAnimation(item);
             }));
             item.addEventListener("touchstart", (() => {
-                triggerAnimation(item);
+                if (!item.classList.contains("animation-played")) triggerAnimation(item);
             }));
         }));
         function triggerAnimation(item) {
@@ -18859,6 +18859,7 @@
             setTimeout((() => {
                 item.classList.remove("is-burning");
                 item.classList.add("is-burnt");
+                item.classList.add("animation-played");
             }), 2e3);
         }
         document.addEventListener("DOMContentLoaded", (() => {

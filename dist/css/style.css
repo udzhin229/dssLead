@@ -364,7 +364,7 @@ body {
   line-height: 130%
 }
 .select.select_pre-footer .select__option:nth-child(1)::before {
-  content: url(img/telegram.webp);
+  content: url(../img/telegram.webp);
   position: absolute;
   left: 0;
   top: 0;
@@ -372,7 +372,7 @@ body {
   height: 20px
 }
 .select.select_pre-footer .select__option:nth-child(2)::before {
-  content: url(img/whatsapp.webp);
+  content: url(../img/whatsapp.webp);
   position: absolute;
   left: 0;
   top: 0;
@@ -380,7 +380,7 @@ body {
   height: 20px
 }
 .select.select_pre-footer .select__option:nth-child(3)::before {
-  content: url(img/viber.webp);
+  content: url(../img/viber.webp);
   position: absolute;
   left: 0;
   top: 0;
@@ -4359,21 +4359,21 @@ body::after {
     font-size: 16px
   }
   .select.select_pre-footer .select__option:nth-child(1)::before {
-    content: url(img/telegram.webp);
+    content: url(../img/telegram.webp);
     position: absolute;
     left: 0;
     width: 24px;
     height: 24px
   }
   .select.select_pre-footer .select__option:nth-child(2)::before {
-    content: url(img/whatsapp.webp);
+    content: url(../img/whatsapp.webp);
     position: absolute;
     left: 0;
     width: 24px;
     height: 24px
   }
   .select.select_pre-footer .select__option:nth-child(3)::before {
-    content: url(img/viber.webp);
+    content: url(../img/viber.webp);
     position: absolute;
     left: 0;
     width: 24px;

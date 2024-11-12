@@ -588,34 +588,30 @@ buttons.forEach((button, index) => {
 document.querySelectorAll('.board-bottom__item').forEach(item => {
   // Анімація для десктопів
   item.addEventListener('mouseenter', () => {
-    triggerAnimation(item);
+    if (!item.classList.contains('animation-played')) {
+      triggerAnimation(item);
+    }
   });
 
   // Анімація для мобільних пристроїв
   item.addEventListener('touchstart', () => {
-    triggerAnimation(item);
+    if (!item.classList.contains('animation-played')) {
+      triggerAnimation(item);
+    }
   });
 });
 
-// // Функція для запуску анімації
-// function triggerAnimation(item) {
-//   item.classList.add('is-burning');
-
-//   // Видалення класу після завершення анімації
-//   item.addEventListener('animationend', () => {
-//     item.classList.remove('is-burning');
-//   }, { once: true });
-// }
 // Функція для запуску анімації
 function triggerAnimation(item) {
-  item.classList.add('is-burning'); // Додаємо клас для анімації
+  item.classList.add('is-burning'); 
 
-  // Використовуємо setTimeout, щоб дочекатись завершення GIF
   setTimeout(() => {
-    item.classList.remove('is-burning'); // Видаляємо клас згоряння
-    item.classList.add('is-burnt'); // Додаємо клас для нового фону
-  }, 2000); // Час, який триває GIF (відредагуйте залежно від тривалості GIF)
+    item.classList.remove('is-burning'); 
+    item.classList.add('is-burnt'); 
+    item.classList.add('animation-played'); 
+  }, 2000); // Час тривалості GIF
 }
+
 
 
 // ====================================== АНІМАЦІЯ ХИТАННЯ ДОШКИ ========================================
