@@ -585,11 +585,32 @@ buttons.forEach((button, index) => {
 });
 
 // ==================================== АНІМАЦІЯ ЗГОРЯННЯ =====================================================
+// document.querySelectorAll('.board-bottom__item').forEach(item => {
+//   console.log(item)
+//   item.addEventListener('click', (e) => {
+//     // Додаємо клас для анімації
+//     console.log(e.target)
+//     item.classList.add('is-burning');
+//   });
+// });
 document.querySelectorAll('.board-bottom__item').forEach(item => {
-  console.log(item)
-  item.addEventListener('click', (e) => {
-    // Додаємо клас для анімації
-    console.log(e.target)
-    item.classList.add('is-burning');
+  // Анімація для десктопів
+  item.addEventListener('mouseenter', () => {
+    triggerAnimation(item);
+  });
+
+  // Анімація для мобільних пристроїв
+  item.addEventListener('touchstart', () => {
+    triggerAnimation(item);
   });
 });
+
+// Функція для запуску анімації
+function triggerAnimation(item) {
+  item.classList.add('is-burning');
+
+  // Видалення класу після завершення анімації
+  item.addEventListener('animationend', () => {
+    item.classList.remove('is-burning');
+  }, { once: true });
+}

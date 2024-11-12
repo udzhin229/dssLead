@@ -18847,11 +18847,20 @@
             }));
         }));
         document.querySelectorAll(".board-bottom__item").forEach((item => {
-            console.log(item);
-            item.addEventListener("click", (e => {
-                console.log(e.target);
-                item.classList.add("is-burning");
+            item.addEventListener("mouseenter", (() => {
+                triggerAnimation(item);
+            }));
+            item.addEventListener("touchstart", (() => {
+                triggerAnimation(item);
             }));
         }));
+        function triggerAnimation(item) {
+            item.classList.add("is-burning");
+            item.addEventListener("animationend", (() => {
+                item.classList.remove("is-burning");
+            }), {
+                once: true
+            });
+        }
     })();
 })();

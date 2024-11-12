@@ -3311,19 +3311,28 @@ body::after {
     background-position: 0
   }
   .board-bottom__item:nth-child(1).is-burning::after {
-    left: -5px;
+    left: 0;
     background-image: url(../img/gif/item-1.gif);
     -webkit-transform: scale(1.7);
     transform: scale(1.7)
   }
   .board-bottom__item:nth-child(2).is-burning::after {
-    background-image: url(../img/gif/item-2.gif)
+    left: -35px;
+    background-image: url(../img/gif/item-2.gif);
+    -webkit-transform: scale(1.7);
+    transform: scale(1.7)
   }
   .board-bottom__item:nth-child(3).is-burning::after {
-    background-image: url(../img/gif/item-3.gif)
+    left: -35px;
+    background-image: url(../img/gif/item-3.gif);
+    -webkit-transform: scale(1.68);
+    transform: scale(1.68)
   }
   .board-bottom__item:nth-child(4).is-burning::after {
-    background-image: url(../img/gif/item-4.gif)
+    left: -35px;
+    background-image: url(../img/gif/item-4.gif);
+    -webkit-transform: scale(1.68);
+    transform: scale(1.68)
   }
   .board-bottom__item-text {
     max-width: none;
