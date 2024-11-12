@@ -296,9 +296,6 @@ class SelectConstructor {
 			window.location.href = `/${lang}`;
 		}
 
-		// Устанавливаем CSS-переменную --img-url для выбранного элемента select
-		selectItem.style.setProperty('--img-url', `url(../${imgSrc})`);
-
 		
 		// Добавляем HTML заголовка select в selectItemBody
 		selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
