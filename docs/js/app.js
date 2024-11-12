@@ -18493,5 +18493,12 @@
                 if (correspondingContainer) startAnimation(correspondingContainer);
             }));
         }));
+        document.querySelectorAll(".board-bottom__item").forEach((item => {
+            console.log(item);
+            item.addEventListener("click", (e => {
+                console.log(e.target);
+                item.classList.add("is-burning");
+            }));
+        }));
     })();
 })();
