@@ -14556,7 +14556,7 @@
                 const selectedOption = originalSelect.options[originalSelect.selectedIndex];
                 const imgSrc = selectedOption.getAttribute("data-imgsoc") || "";
                 console.log(`Selected image URL: ${imgSrc}`);
-                selectItem.style.setProperty("--img-url", `url(/${imgSrc})`);
+                selectItem.style.setProperty("--img-url", `url(../img/${imgSrc})`);
                 selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
                 originalSelect.hasAttribute("data-search") ? this.searchActions(selectItem) : null;
             }
