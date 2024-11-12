@@ -1625,6 +1625,28 @@ body::after {
 .board-bottom__item:nth-child(4).is-burning::after {
   background-image: url(../img/gif/item-4.gif)
 }
+.board-bottom__item.is-burnt::after {
+  background-image: url(../img/alive-bg-mb.webp);
+  opacity: 0;
+  -webkit-animation: fadeIn 1s forwards;
+  animation: fadeIn 1s forwards
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
 .board-bottom__item-text {
   position: relative;
   max-width: 130px;
@@ -1634,10 +1656,28 @@ body::after {
   font-weight: 600;
   font-style: italic;
   color: #0c0c0c;
-  z-index: 10
+  z-index: 100
+}
+.board-bottom__item-text-after-animation {
+  display: none;
+  max-width: 300px;
+  position: relative;
+  z-index: 10000;
+  text-align: center;
+  font-size: 12px;
+  line-height: 130%;
+  font-weight: 600;
+  font-style: italic;
+  color: #fff
 }
 .board-bottom__item.is-burning .board-bottom__item-text {
   display: none
+}
+.board-bottom__item.is-burnt .board-bottom__item-text {
+  display: none
+}
+.board-bottom__item.is-burnt .board-bottom__item-text-after-animation {
+  display: block
 }
 .advantages {
   position: relative;
@@ -3389,7 +3429,7 @@ body::after {
     background-position: 0
   }
   .board-bottom__item:nth-child(1).is-burning::after {
-    left: 0;
+    left: -35px;
     background-image: url(../img/gif/item-1.gif);
     -webkit-transform: scale(1.7);
     transform: scale(1.7)
@@ -3412,12 +3452,19 @@ body::after {
     -webkit-transform: scale(1.68);
     transform: scale(1.68)
   }
+  .board-bottom__item.is-burnt::after {
+    background-image: url(../img/alive-bg.webp)
+  }
   .board-bottom__item-text {
     max-width: none;
     font-size: 20px
   }
   .board-bottom__item:nth-child(4) .board-bottom__item-text {
     max-width: 237px
+  }
+  .board-bottom__item-text-after-animation {
+    max-width: 300px;
+    font-size: 20px
   }
   .advantages {
     margin-bottom: 316px

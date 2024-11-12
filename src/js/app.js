@@ -597,14 +597,24 @@ document.querySelectorAll('.board-bottom__item').forEach(item => {
   });
 });
 
+// // Функція для запуску анімації
+// function triggerAnimation(item) {
+//   item.classList.add('is-burning');
+
+//   // Видалення класу після завершення анімації
+//   item.addEventListener('animationend', () => {
+//     item.classList.remove('is-burning');
+//   }, { once: true });
+// }
 // Функція для запуску анімації
 function triggerAnimation(item) {
-  item.classList.add('is-burning');
+  item.classList.add('is-burning'); // Додаємо клас для анімації
 
-  // Видалення класу після завершення анімації
-  item.addEventListener('animationend', () => {
-    item.classList.remove('is-burning');
-  }, { once: true });
+  // Використовуємо setTimeout, щоб дочекатись завершення GIF
+  setTimeout(() => {
+    item.classList.remove('is-burning'); // Видаляємо клас згоряння
+    item.classList.add('is-burnt'); // Додаємо клас для нового фону
+  }, 2000); // Час, який триває GIF (відредагуйте залежно від тривалості GIF)
 }
 
 

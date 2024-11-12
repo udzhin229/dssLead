@@ -18856,11 +18856,10 @@
         }));
         function triggerAnimation(item) {
             item.classList.add("is-burning");
-            item.addEventListener("animationend", (() => {
+            setTimeout((() => {
                 item.classList.remove("is-burning");
-            }), {
-                once: true
-            });
+                item.classList.add("is-burnt");
+            }), 2e3);
         }
         document.addEventListener("DOMContentLoaded", (() => {
             const board = document.querySelector(".animate-board");

@@ -532,7 +532,7 @@
   align-items: flex-start;
   justify-content: space-between;
 }
-.not-cpa__content-chains.not-cpa__content-bottom-chains{
+.not-cpa__content-chains.not-cpa__content-bottom-chains {
   z-index: 90;
 }
 .chain {
@@ -567,10 +567,11 @@
   width: 100%;
   height: 395px;
 }
-.animate-board.animate{
+.animate-board.animate {
   animation: swingIn 1.5s ease-out forwards;
 }
-.not-cpa__content-chains, .animate-board {
+.not-cpa__content-chains,
+.animate-board {
   transform-origin: top left;
 }
 @keyframes swingIn {
@@ -604,7 +605,7 @@
     height: 778px;
     padding-top: 24px;
     padding-bottom: 24px;
-    
+
     opacity: 0;
   }
   .not-cpa__content-board-top::after {
@@ -866,7 +867,6 @@
 .not-cpa__content-bottom {
   position: relative;
   top: -35px;
-  // z-index: -10;
 }
 @media (min-width: $mobile) {
   .not-cpa__content-chains.not-cpa__content-bottom-chains {
@@ -879,7 +879,6 @@
   top: -18px;
   width: 100%;
   height: 443px;
-  // z-index: -1;
 }
 @media (min-width: $mobile) {
   .not-cpa__content-board-bottom.board-bottom {
@@ -1059,6 +1058,24 @@
   background-image: url(../img/gif/item-4.gif);
 }
 
+
+// /////
+.board-bottom__item.is-burnt::after {
+  background-image: url(../img/alive-bg-mb.png); /* Новий фон після згоряння */
+  opacity: 0; /* Початкове значення для плавної анімації */
+  animation: fadeIn 1s forwards; /* Анімація плавного з'явлення */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// ////
 @media (min-width: $mobile) {
   .board-bottom__item {
     width: 332px;
@@ -1076,7 +1093,7 @@
   }
 
   .board-bottom__item:nth-child(1).is-burning::after {
-    left: 0;
+    left: -35px;
     background-image: url(../img/gif/item-1.gif);
     transform: scale(1.7);
   }
@@ -1095,6 +1112,10 @@
     background-image: url(../img/gif/item-4.gif);
     transform: scale(1.68);
   }
+
+  .board-bottom__item.is-burnt::after {
+    background-image: url(../img/alive-bg.png); /* Новий фон після згоряння */
+  }
 }
 
 .board-bottom__item-text {
@@ -1106,8 +1127,21 @@
   font-weight: 600;
   font-style: italic;
   color: #0c0c0c;
-  z-index: 10;
+  z-index: 100;
 }
+.board-bottom__item-text-after-animation{
+  display: none;
+  max-width: 300px;
+  position: relative;
+  z-index: 10000;
+  text-align: center;
+  font-size: 12px;
+  line-height: 130%;
+  font-weight: 600;
+  font-style: italic;
+  color: #FFFFFF;
+}
+
 @media (min-width: $mobile) {
   .board-bottom__item-text {
     max-width: none;
@@ -1117,10 +1151,23 @@
   .board-bottom__item:nth-child(4) .board-bottom__item-text {
     max-width: 237px;
   }
+
+  .board-bottom__item-text-after-animation{
+    max-width: 300px;
+    font-size: 20px;
+  }
 }
 
 .board-bottom__item.is-burning .board-bottom__item-text {
   display: none;
+}
+
+.board-bottom__item.is-burnt .board-bottom__item-text {
+  display: none;
+}
+
+.board-bottom__item.is-burnt .board-bottom__item-text-after-animation{
+  display: block;
 }
 
 // ==============================================================================================================
