@@ -30,7 +30,7 @@
   justify-content: space-between;
 }
 .header__logo-thumb {
-  margin-right: 61px;
+  margin-right: 25px;
 }
 @media (min-width: 1000px) {
   .header__logo-thumb {
@@ -39,12 +39,12 @@
 }
 @media (min-width: 1280px) {
   .header__logo-thumb {
-    margin-right: 41px;
+    margin-right: 25px;
   }
 }
 @media (min-width: 1360px) {
   .header__logo-thumb {
-    margin-right: 61px;
+    margin-right: 25px;
   }
 }
 .header__logo {
@@ -59,6 +59,7 @@
 }
 .header__menu-pc {
   display: none;
+  @include adaptiveValue("gap", 40, 10);
 }
 @media (min-width: 1007.98px) {
   .header__menu-pc {
@@ -66,12 +67,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-  }
-}
-@media (min-width: 1310px) {
-  .header__menu-pc {
-    gap: 40px;
   }
 }
 .header-select {
@@ -104,7 +99,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    @include adaptiveValue("gap", 50, 10);
     padding-left: 16px;
     padding-right: 16px;
   }
@@ -178,12 +173,6 @@
 .auth-nav {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-@media (min-width: 1007.98px) {
-  .auth-nav {
-    gap: 30px;
-  }
 }
 
 .auth-nav__log-in-wrapper {
@@ -234,7 +223,7 @@
 
 .auth-nav__log-in-link {
   position: relative;
-  z-index: -1;
+  // z-index: -1;
   text-wrap: nowrap;
 }
 @media (min-width: 1573px) {

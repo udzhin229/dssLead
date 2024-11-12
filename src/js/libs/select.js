@@ -279,9 +279,21 @@ class SelectConstructor {
 		const selectItemBody = this.getSelectElement(selectItem, this.selectClasses.classSelectBody).selectElement;
 		const selectItemTitle = this.getSelectElement(selectItem, this.selectClasses.classSelectTitle).selectElement;
 		if (selectItemTitle) selectItemTitle.remove();
+		
+		const selectedOption = originalSelect.options[originalSelect.selectedIndex];
+		const imgSrc = selectedOption.getAttribute('data-imgsoc') || '';
+		console.log(`Selected image URL: ${imgSrc}`);
+		
+		// Устанавливаем CSS-переменную --img-url для выбранного элемента select
+		selectItem.style.setProperty('--img-url', `url(/${imgSrc})`);
+		
+		// Добавляем HTML заголовка select в selectItemBody
 		selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
 		originalSelect.hasAttribute('data-search') ? this.searchActions(selectItem) : null;
 	}
+	
+	
+
 	// Конструктор значення заголовка
 	getSelectTitleValue(selectItem, originalSelect) {
 		// Отримуємо вибрані текстові значення

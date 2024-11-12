@@ -7,6 +7,25 @@
       <main class="page">
         <section class="hero">
           <div class="hero-thumb">
+
+            <!-- PARALLAX КАРТИНКИ -->
+            <img src="@img/parallaxmain/vector-42.png" class="parallax-img right-parallax" alt="">
+            <img src="@img/parallaxmain/vector-44.png" class="parallax-img right-parallax" alt="">
+            <img src="@img/parallaxmain/vector-49.png" class="parallax-img right-parallax" alt="">
+            <img src="@img/parallaxmain/vector-51.png" class="parallax-img right-parallax" alt="">
+            <img src="@img/parallaxmain/vector-53.png" class="parallax-img right-parallax" alt="">
+            <img src="@img/parallaxmain/vector-54.png" class="parallax-img right-parallax" alt="">
+            <img src="@img/parallaxmain/vector-56.png" class="parallax-img right-parallax" alt="">
+
+            <img src="@img/parallaxmain/vector-44.png" class="parallax-img left-parallax" alt="">
+            <img src="@img/parallaxmain/vector-45.png" class="parallax-img left-parallax" alt="">
+            <img src="@img/parallaxmain/vector-46.png" class="parallax-img left-parallax" alt="">
+            <img src="@img/parallaxmain/vector-47.png" class="parallax-img left-parallax" alt="">
+            <img src="@img/parallaxmain/vector-48.png" class="parallax-img left-parallax" alt="">
+            <img src="@img/parallaxmain/vector-50.png" class="parallax-img left-parallax" alt="">
+            <img src="@img/parallaxmain/vector-52.png" class="parallax-img left-parallax" alt="">
+            <img src="@img/parallaxmain/vector-55.png" class="parallax-img left-parallax" alt="">
+            <!-- КОНЕЦ КАРТИНОК -->
             <picture>
               <source
                 srcset="@img/hero-bg-mb-2x.png"
@@ -506,7 +525,7 @@
             <div class="founders__slider swiper">
               <div class="founders__wrapper swiper-wrapper">
                 <div class="founders__slide swiper-slide">
-                  <div class="card">
+                  <div class="card" data-imgback="@img/founders/front-card-1.png">
                     <!-- задня частинка картки -->
                     <div class="founders__slide-card-back founders-card-back">
                       <div class="founders-card-back__bg-top">
@@ -623,7 +642,7 @@
                         </div>
                         <a
                           class="founders-card-back__bottom-text-box last-child"
-                          href="#"
+                          href="https://www.instagram.com/sofiliate/"
                         >
                           <div class="founders-card-back__bottom-text-icon-box">
                             <svg class="founders-card-back__bottom-text-icon">
@@ -645,7 +664,7 @@
                   </div>
                 </div>
                 <div class="founders__slide swiper-slide">
-                  <div class="card">
+                  <div class="card" data-imgback="@img/founders/front-card-2.png">
                     <!-- задня частинка картки -->
                     <div class="founders__slide-card-back founders-card-back">
                       <div class="founders-card-back__bg-top">
@@ -772,7 +791,7 @@
                         </div>
                         <a
                           class="founders-card-back__bottom-text-box last-child"
-                          href="#"
+                          href="https://www.instagram.com/e_ihorovych/"
                         >
                           <div class="founders-card-back__bottom-text-icon-box">
                             <svg class="founders-card-back__bottom-text-icon">
@@ -794,7 +813,7 @@
                   </div>
                 </div>
                 <div class="founders__slide swiper-slide">
-                  <div class="card">
+                  <div class="card" data-imgback="@img/founders/front-card-3.png">
                     <!-- задня частинка картки -->
                     <div class="founders__slide-card-back founders-card-back">
                       <div class="founders-card-back__bg-top">
@@ -930,7 +949,7 @@
                   </div>
                 </div>
                 <div class="founders__slide swiper-slide">
-                  <div class="card">
+                  <div class="card" data-imgback="@img/founders/front-card-4.png">
                     <!-- задня частинка картки -->
                     <div class="founders__slide-card-back founders-card-back">
                       <div class="founders-card-back__bg-top">
@@ -1041,7 +1060,7 @@
                         </div>
                         <div class="founders-card-back__bottom-text-box">
                           <p class="founders-card-back__bottom-text medium">
-                            17 закрытых инфлюэнсеров для DSS-Leads
+                            72 закрытых инфлюэнсеров для DSS-Leads
                           </p>
                         </div>
                       </div>
@@ -1053,7 +1072,7 @@
                   </div>
                 </div>
                 <div class="founders__slide swiper-slide">
-                  <div class="card">
+                  <div class="card" data-imgback="@img/founders/front-card-5.png">
                     <!-- задня частинка картки -->
                     <div class="founders__slide-card-back founders-card-back">
                       <div class="founders-card-back__bg-top">
@@ -1186,7 +1205,7 @@
                         </div>
                         <a
                           class="founders-card-back__bottom-text-box last-child"
-                          href="#"
+                          href=""
                         >
                           <div class="founders-card-back__bottom-text-icon-box">
                             <svg class="founders-card-back__bottom-text-icon">
@@ -1208,7 +1227,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
+              <div class="swiper-scrollbar"></div>
               <div class="swiper-button swiper-button-prev">
                 <img src="@img/arrow-left.png" alt="arrow-left" />
               </div>
@@ -1257,9 +1276,9 @@
                 </label>
                 <div class="pre-footer__form-input-box telegram">
                   <select name="pre-footer" data-class-modif="pre-footer">
-                    <option value="1" selected>Telegram</option>
-                    <option value="2">WhatsApp</option>
-                    <option value="3">Viber</option>
+                    <option data-imgsoc="@img/telegram-2.png" value="1" selected>Telegram</option>
+                    <option data-imgsoc="@img/whatsapp.png" value="2">WhatsApp</option>
+                    <option data-imgsoc="@img/viber.png" value="3">Viber</option>
                   </select>
                 </div>
                 <div class="pre-footer__form-input-box nickname">

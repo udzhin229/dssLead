@@ -333,7 +333,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-          entry.target.classList.add("flipped");
+        entry.target.classList.add("flipped");
+
+        // Добавляем задержку в 1 секунду перед добавлением класса active
+        setTimeout(() => {
+          const accents = document.querySelectorAll(".card-back-list__item-text-accent");
+          accents.forEach((accent) => {
+            accent.classList.add("active");
+          });
+        }, 500); // Задержка 1000 мс (1 секунда)
       }
     });
   });
@@ -343,15 +351,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 const cards = document.querySelectorAll(".card");
 
 if (cards) {
   cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("flipped");
+    // Добавляем класс при наведении мыши (для устройств с курсором)
+    card.addEventListener("mouseenter", () => {
+      card.classList.add("flipped");
     });
   });
 }
+
 
 
 
@@ -379,11 +390,104 @@ titlesLineBg.forEach((titleLineBg) => {
 });
 
 
+// ============================= СВЕЧЕНИЕ КАРТОЧЕК =================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".card");
+  const cardFronts = document.querySelectorAll(".founders__slide-card-front");
+  const cardBacks = document.querySelectorAll(".founders-card-back");
+
+  cards.forEach((card, index) => {
+    const imgBack = card.getAttribute("data-imgback");
+
+    if (imgBack) {
+      // Проверяем, что передняя и задняя стороны существуют по этому индексу
+      if (cardFronts[index]) {
+        cardFronts[index].style.setProperty("--imgfront", `url(/${imgBack})`);
+      }
+
+      if (cardBacks[index]) {
+        cardBacks[index].style.setProperty("--imgback", `url(/${imgBack})`);
+      }
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".hero-thumb");
+  const rightImages = document.querySelectorAll(".right-parallax");
+  const leftImages = document.querySelectorAll(".left-parallax");
+
+  if (container && (rightImages.length > 0 || leftImages.length > 0)) {
+    const containerHeight = container.offsetHeight;
+    const containerWidth = container.offsetWidth;
+    const minDistance = 50; // Минимальное расстояние между изображениями
+
+    const placedPositions = [];
+
+    function generateRandomPosition(minLeft, maxLeft, minTop, maxTop) {
+      let position;
+      let isTooClose;
+
+      do {
+        const randomLeft = Math.random() * (maxLeft - minLeft) + minLeft;
+        const randomTop = Math.random() * (maxTop - minTop) + minTop;
+        position = { left: randomLeft, top: randomTop };
+
+        isTooClose = placedPositions.some(pos => {
+          const dx = pos.left - position.left;
+          const dy = pos.top - position.top;
+          return Math.sqrt(dx * dx + dy * dy) < minDistance;
+        });
+      } while (isTooClose);
+
+      placedPositions.push(position);
+      return position;
+    }
+
+    function processImages(images, minLeft, maxLeft) {
+      images.forEach(img => {
+        const topOffset = 100;
+        const bottomOffset = 35;
+        const minTop = topOffset;
+        const maxTop = containerHeight - bottomOffset;
+
+        const { left, top } = generateRandomPosition(minLeft, maxLeft, minTop, maxTop);
+
+        img.style.position = "absolute";
+        img.style.left = `${left}px`;
+        img.style.top = `${top}px`;
+
+        const secpar = (Math.random() * 10 + 5).toFixed(1);
+        img.style.setProperty("--secpar", `${secpar}s`);
+
+        // Генерируем случайные значения амплитуды для каждого изображения
+        const amplitude = (Math.random() * 6 + 3).toFixed(1); // от 3px до 8px
+        const smallAmplitude = (Math.random() * 5 + 2).toFixed(1); // от 1px до 3px
+
+        img.style.setProperty("--amplitude", `${amplitude}px`);
+        img.style.setProperty("--small-amplitude", `${smallAmplitude}px`);
+      });
+    }
+
+    const minLeftRight = containerWidth * (2 / 3);
+    const maxLeftRight = containerWidth - 30;
+
+    const minLeftLeft = 30;
+    const maxLeftLeft = containerWidth / 3;
+
+    processImages(rightImages, minLeftRight, maxLeftRight);
+    processImages(leftImages, minLeftLeft, maxLeftLeft);
+  }
+});
+
+
 // ============================= АНІМАЦІЯ ПОЯВИ ХЕДЕР =================================================
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector(".header");
   const firstSection = document.querySelector(".hero__button-box");
   const burgerMenu = document.querySelector(".header-mb__button-wrapper");
+  const authNav = document.querySelector(".header__auth-nav.auth-nav");
 
   window.addEventListener("scroll", function () {
     const firstSectionBottom = firstSection.getBoundingClientRect().bottom;
@@ -391,12 +495,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (firstSectionBottom <= 0) {
       header.classList.add("scrolled");
       burgerMenu.classList.add("visible");
+
+      // Добавляем gap к родителю, если у burgerMenu есть класс visible
+      if (authNav) {
+        authNav.style.gap = "30px";
+      }
     } else {
       header.classList.remove("scrolled");
       burgerMenu.classList.remove("visible");
+
+      // Убираем gap у родителя, если класс visible убран
+      if (authNav) {
+        authNav.style.gap = ""; // Убираем значение gap
+      }
     }
   });
 });
+
 
 // ===================== ДИНАМІЧНЕ ПЕРЕНАПРАВЛЯННЯ ЮЗЕРА ПРИ ВИБОРІ КЛАСА У ПОПАПІ ===============================
 document.addEventListener("DOMContentLoaded", function () {

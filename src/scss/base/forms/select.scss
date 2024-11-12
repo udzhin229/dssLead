@@ -211,13 +211,15 @@
   }
 
   & .select__content::before{
-    content: url(../img/telegram-2.png);
+    content: "";
     position: absolute;
     top: 6px;
     left: 0;
     width: 24px;
     height: 24px;
-    
+    background-image: var(--img-url);
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   & .select__option{
