@@ -402,11 +402,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (imgBack) {
       // Проверяем, что передняя и задняя стороны существуют по этому индексу
       if (cardFronts[index]) {
-        cardFronts[index].style.setProperty("--imgfront", `url(/${imgBack})`);
+        cardFronts[index].style.setProperty("--imgfront", `url(../${imgBack})`);
       }
 
       if (cardBacks[index]) {
-        cardBacks[index].style.setProperty("--imgback", `url(/${imgBack})`);
+        cardBacks[index].style.setProperty("--imgback", `url(../${imgBack})`);
       }
     }
   });
