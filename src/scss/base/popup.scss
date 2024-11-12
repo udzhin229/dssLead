@@ -53,7 +53,7 @@ body::after {
   transition: transform 0.3s ease 0s;
   background-color: $bg-popup;
   width: 100%;
-  max-width: 900px;
+  max-width: 1055px;
   border-radius: 20px;
   .lock & {
     visibility: visible;
@@ -78,8 +78,10 @@ body::after {
 
 @media (min-width: $tablet) {
   .tabs-popup__body {
-    width: 785px;
-    max-width: 785px;
+    // width: 785px;
+    // max-width: 785px;
+    @include adaptiveValue("width", 1055, 500);
+    @include adaptiveValue("max-width", 1055, 500);
     height: 537px;
     padding: 30px 60px;
     padding-right: 25px;
@@ -130,7 +132,7 @@ body::after {
   .tabs-popup__body-content-line {
     width: 100px;
     min-width: 100px;
-    margin-top: 8px;
+    margin-top: 10px;
   }
 }
 
@@ -153,12 +155,13 @@ body::after {
 
 .tabs-popup__body-content-text {
   font-family: Gilroy;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 12px;
 }
 @media (min-width: $tablet) {
   .tabs-popup__body-content-text {
     font-size: 18px;
+    max-width: 440px;
   }
 }
 
