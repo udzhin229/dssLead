@@ -281,11 +281,19 @@ class SelectConstructor {
 		if (selectItemTitle) selectItemTitle.remove();
 		
 		const selectedOption = originalSelect.options[originalSelect.selectedIndex];
-		const imgSrc = selectedOption.getAttribute('data-imgsoc') || '';
-		console.log(`Selected image URL: ${imgSrc}`);
+
+		if (selectedOption.hasAttribute('data-imgsoc')) {
+			const imgSrc = selectedOption.getAttribute('data-imgsoc');
+			// Устанавливаем картинку, если атрибут присутствует
+			selectItem.style.setProperty('--img-url', `url(../${imgSrc})`);
+		}
 		
-		// Устанавливаем CSS-переменную --img-url для выбранного элемента select
-		selectItem.style.setProperty('--img-url', `url(../${imgSrc})`);
+		// Проверка наличия атрибута 'data-lang'
+		if (selectedOption.hasAttribute('data-lang')) {
+			const lang = selectedOption.getAttribute('data-lang');
+			// Перенаправляем на страницу с языком, если атрибут присутствует
+			window.location.href = `/${lang}`;
+		}
 		
 		// Добавляем HTML заголовка select в selectItemBody
 		selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
