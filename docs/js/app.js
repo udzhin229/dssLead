@@ -18475,14 +18475,13 @@
             updateTabContent();
         }));
         function startAnimation(container) {
-            console.log(container);
             if (!container.classList.contains("animate")) {
                 container.classList.add("animate");
                 const items = container.querySelectorAll(".webmaster-tabs__item");
                 items.forEach(((item, index) => {
                     setTimeout((() => {
                         item.classList.add("show");
-                    }), index * 4e3);
+                    }), index * 3600);
                 }));
             }
         }

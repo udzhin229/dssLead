@@ -2064,8 +2064,8 @@ body::after {
 .snake-animation-container {
   position: static;
   height: 100%;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%)
+  -webkit-transform: translateY(-38%);
+  transform: translateY(-38%)
 }
 .snake-animation-container.gif-1,
 .snake-animation-container.gif-2 {
@@ -2073,7 +2073,7 @@ body::after {
   top: -690px;
   left: auto;
   width: 1050px;
-  margin-left: -287px;
+  margin-left: -305px;
   opacity: .2
 }
 .snake-animation-container.gif-2 {
@@ -2090,8 +2090,8 @@ body::after {
 }
 @-webkit-keyframes slideIn {
   0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%)
+    -webkit-transform: translateY(-38%);
+    transform: translateY(-38%)
   }
   100% {
     -webkit-transform: translateY(0);
@@ -2100,8 +2100,8 @@ body::after {
 }
 @keyframes slideIn {
   0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%)
+    -webkit-transform: translateY(-38%);
+    transform: translateY(-38%)
   }
   100% {
     -webkit-transform: translateY(0);
@@ -3294,7 +3294,7 @@ body::after {
     display: flex;
     justify-content: normal;
     margin-bottom: 74px;
-    margin-left: 300px;
+    margin-left: 280px;
     gap: 480px;
     padding: 5px;
     border: none;
@@ -3305,6 +3305,9 @@ body::after {
     position: relative;
     padding: 0;
     border-radius: 0
+  }
+  .tabs__title.tabs__title-right {
+    margin-left: -30px
   }
   .tabs__title::before {
     content: "";
@@ -3348,6 +3351,10 @@ body::after {
   .tabs__content {
     display: flex;
     justify-content: space-around
+  }
+  .tabs__body {
+    flex: 1;
+    max-width: 728px
   }
   .webmaster-tabs__button {
     width: 515px;
@@ -3672,6 +3679,8 @@ body::after {
     width: 100%
   }
   .snake-animation-container {
+    -webkit-transform: translateY(-95%);
+    transform: translateY(-95%);
     margin-left: -227px
   }
   .snake-animation-container.gif-1 {
@@ -3683,6 +3692,30 @@ body::after {
     top: -140px;
     width: 1350px;
     margin-left: -157px
+  }
+  .tabs__body-animation-wrapper.animate .snake-animation-container {
+    -webkit-animation: slideIn 18s linear forwards;
+    animation: slideIn 18s linear forwards
+  }
+  @-webkit-keyframes slideIn {
+    0% {
+      -webkit-transform: translateY(-95%);
+      transform: translateY(-95%)
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+    }
+  }
+  @keyframes slideIn {
+    0% {
+      -webkit-transform: translateY(-95%);
+      transform: translateY(-95%)
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+    }
   }
   .snake-animation-container.gif-1>img {
     -webkit-transform: scale(1.2);

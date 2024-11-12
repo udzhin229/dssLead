@@ -443,7 +443,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ================================== АНІМАЦІЯ ПОЯВИ ДРАКОНІВ =========================================// Функція для запуску анімації
 function startAnimation(container) {
-  console.log(container)
   if (!container.classList.contains('animate')) {
     container.classList.add('animate');
 
@@ -451,7 +450,7 @@ function startAnimation(container) {
     items.forEach((item, index) => {
       setTimeout(() => {
         item.classList.add('show');
-      }, index * 4000);
+      }, index * 3600);
     });
   }
 }
