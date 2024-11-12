@@ -523,6 +523,8 @@
 .not-cpa__content-top {
 }
 .not-cpa__content-chains {
+  position: relative;
+  z-index: 100;
   width: 100%;
   padding-right: 16px;
   padding-left: 16px;
@@ -530,12 +532,21 @@
   align-items: flex-start;
   justify-content: space-between;
 }
+.not-cpa__content-chains.not-cpa__content-bottom-chains{
+  z-index: 90;
+}
 .chain {
   width: 16px;
   height: 150px;
 }
+.chain.animate-chain {
+  animation: swingIn 1.5s ease-out forwards;
+}
+
 @media (min-width: $mobile) {
   .not-cpa__content-chains {
+    position: relative;
+    z-index: 100;
     padding-right: 72px;
     padding-left: 82px;
   }
@@ -551,11 +562,40 @@
 
 .not-cpa__content-board-top {
   position: relative;
+  z-index: 95;
   top: -18px;
   width: 100%;
   height: 395px;
-  // z-index: -1;
 }
+.animate-board.animate{
+  animation: swingIn 1.5s ease-out forwards;
+}
+.not-cpa__content-chains, .animate-board {
+  transform-origin: top left;
+}
+@keyframes swingIn {
+  0% {
+    transform: rotate(0deg) translateY(0);
+    opacity: 0;
+  }
+  25% {
+    transform: rotate(15deg) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(-10deg) translateY(0);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(5deg) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+    opacity: 1;
+  }
+}
+
 @media (min-width: $mobile) {
   .not-cpa__content-board-top {
     position: relative;
@@ -564,6 +604,8 @@
     height: 778px;
     padding-top: 24px;
     padding-bottom: 24px;
+    
+    opacity: 0;
   }
   .not-cpa__content-board-top::after {
     content: "";
@@ -976,7 +1018,6 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  // background-color: #8a0000;
   cursor: pointer;
   overflow: hidden;
   z-index: 100;
@@ -1002,12 +1043,14 @@
 }
 
 .board-bottom__item:nth-child(1).is-burning::after {
-  left: -20px;
+  left: -50px;
   background-image: url(../img/gif/item-1.gif);
-  background-position: center;
+  background-position: 0%;
 }
 .board-bottom__item:nth-child(2).is-burning::after {
+  left: -50px;
   background-image: url(../img/gif/item-2.gif);
+  background-position: 0%;
 }
 .board-bottom__item:nth-child(3).is-burning::after {
   background-image: url(../img/gif/item-3.gif);

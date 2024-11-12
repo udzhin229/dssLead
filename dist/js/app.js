@@ -18862,5 +18862,20 @@
                 once: true
             });
         }
+        document.addEventListener("DOMContentLoaded", (() => {
+            const board = document.querySelector(".animate-board");
+            const chains = document.querySelectorAll(".not-cpa__content-chain-left, .not-cpa__content-chain-right");
+            const observer = new IntersectionObserver((entries => {
+                entries.forEach((entry => {
+                    if (entry.isIntersecting) {
+                        board.classList.add("animate");
+                        chains.forEach((chain => chain.classList.add("animate-chain")));
+                    }
+                }));
+            }), {
+                threshold: .5
+            });
+            observer.observe(board);
+        }));
     })();
 })();

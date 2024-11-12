@@ -585,14 +585,6 @@ buttons.forEach((button, index) => {
 });
 
 // ==================================== АНІМАЦІЯ ЗГОРЯННЯ =====================================================
-// document.querySelectorAll('.board-bottom__item').forEach(item => {
-//   console.log(item)
-//   item.addEventListener('click', (e) => {
-//     // Додаємо клас для анімації
-//     console.log(e.target)
-//     item.classList.add('is-burning');
-//   });
-// });
 document.querySelectorAll('.board-bottom__item').forEach(item => {
   // Анімація для десктопів
   item.addEventListener('mouseenter', () => {
@@ -614,3 +606,23 @@ function triggerAnimation(item) {
     item.classList.remove('is-burning');
   }, { once: true });
 }
+
+
+// ====================================== АНІМАЦІЯ ХИТАННЯ ДОШКИ ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const board = document.querySelector('.animate-board');
+  const chains = document.querySelectorAll('.not-cpa__content-chain-left, .not-cpa__content-chain-right');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        board.classList.add('animate');
+        chains.forEach(chain => chain.classList.add('animate-chain'));
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  observer.observe(board);
+});
