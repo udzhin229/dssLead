@@ -1053,15 +1053,16 @@
   background-position: 0%;
 }
 .board-bottom__item:nth-child(2).is-burning::after {
-  left: -50px;
-  background-image: url(../img/gif/item-2.gif);
+  // left: -50px;
+  background-image: url(../img/gif/item-2-mb.gif);
   background-position: 0%;
 }
 .board-bottom__item:nth-child(3).is-burning::after {
-  background-image: url(../img/gif/item-3.gif);
+  background-image: url(../img/gif/item-3-mb.gif);
 }
 .board-bottom__item:nth-child(4).is-burning::after {
-  background-image: url(../img/gif/item-4.gif);
+  transform: scale(2.4);
+  background-image: url(../img/gif/item-4-mb.gif);
 }
 
 
