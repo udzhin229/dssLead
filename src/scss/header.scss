@@ -127,21 +127,25 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
+}
+@media (min-width: $tablet) {
+  .menu-nav__item.mob {
+    justify-content: center;
 
-  &:hover::after {
-    content: ''; 
-    position: absolute;
-    height: 50%;
-    top: 50%;
-    left: -10px;
-    right: -10px;
-    bottom: 0;
-    transform: translateY(-50%);
-    background: #8A0000; 
-    filter: blur(13px); 
-    z-index: 0; 
+    &:hover::after {
+      content: ''; 
+      position: absolute;
+      height: 50%;
+      top: 50%;
+      left: -10px;
+      right: -10px;
+      bottom: 0;
+      transform: translateY(-50%);
+      background: #8A0000; 
+      filter: blur(13px); 
+      z-index: 0; 
+    }
   }
 }
 

@@ -604,12 +604,12 @@ document.querySelectorAll('.board-bottom__item').forEach(item => {
 // Функція для запуску анімації
 function triggerAnimation(item) {
   item.classList.add('is-burning'); 
+  
 
   setTimeout(() => {
-    item.classList.remove('is-burning'); 
     item.classList.add('is-burnt'); 
     item.classList.add('animation-played'); 
-  }, 2000); // Час тривалості GIF
+  }, 1000);
 }
 
 

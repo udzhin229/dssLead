@@ -68,8 +68,14 @@ body::after {
 
 .tabs-popup__content{
   position: relative;
-  border-radius: 32px;
+  border-radius: 16px;
 }
+@media (min-width: $tablet) {
+  .tabs-popup__content{
+    border-radius: 32px;
+  }
+}
+
 .tabs-popup__border {
   position: absolute;
   top: -2px;
