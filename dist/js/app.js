@@ -18682,28 +18682,47 @@
         menuInit();
         tabs();
         document.addEventListener("DOMContentLoaded", (function() {
-            const cards = document.querySelectorAll(".advantages__card");
+            const leftCard = document.querySelector(".advantages__card.left");
+            const rightCard = document.querySelector(".advantages__card.right");
             const observer = new IntersectionObserver((entries => {
                 entries.forEach((entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add("flipped");
-                        setTimeout((() => {
-                            const accents = document.querySelectorAll(".card-back-list__item-text-accent");
+                        if (entry.target.classList.contains("left") && !entry.target.dataset.animated) {
+                            entry.target.classList.add("flipped");
+                            entry.target.dataset.animated = "true";
+                            const accents = document.querySelectorAll(".advantages__card.left .card-back-list__item-text-accent");
                             accents.forEach((accent => {
                                 accent.classList.add("active");
                             }));
-                        }), 500);
+                        }
+                        if (entry.target.classList.contains("right") && !entry.target.dataset.animated) {
+                            entry.target.classList.add("flipped");
+                            entry.target.dataset.animated = "true";
+                            const accents = document.querySelectorAll(".advantages__card.right .card-back-list__item-text-accent");
+                            accents.forEach((accent => {
+                                accent.classList.add("active");
+                            }));
+                        }
                     }
                 }));
             }));
-            cards.forEach((card => {
-                observer.observe(card);
-            }));
+            if (leftCard) observer.observe(leftCard);
+            if (rightCard) observer.observe(rightCard);
         }));
         const cards = document.querySelectorAll(".card");
         if (cards) cards.forEach((card => {
             card.addEventListener("mouseenter", (() => {
                 card.classList.add("flipped");
+            }));
+            card.addEventListener("mouseleave", (() => {
+                card.classList.remove("flipped");
+            }));
+            card.addEventListener("touchstart", (event => {
+                cards.forEach((otherCard => {
+                    if (otherCard !== card) otherCard.classList.remove("flipped");
+                }));
+                if (card.classList.contains("flipped")) ; else card.classList.add("flipped");
+                event.preventDefault();
             }));
         }));
         const observer = new IntersectionObserver((entries => {
@@ -18808,10 +18827,9 @@
         function triggerAnimation(item) {
             item.classList.add("is-burning");
             setTimeout((() => {
-                item.classList.remove("is-burning");
                 item.classList.add("is-burnt");
                 item.classList.add("animation-played");
-            }), 2e3);
+            }), 1e3);
         }
         document.addEventListener("DOMContentLoaded", (() => {
             const board = document.querySelector(".animate-board");
@@ -18824,9 +18842,37 @@
                     }
                 }));
             }), {
-                threshold: .5
+                threshold: .1
             });
             observer.observe(board);
+        }));
+        document.addEventListener("DOMContentLoaded", (() => {
+            const sections = document.querySelectorAll("section");
+            const menuItems = document.querySelectorAll(".menu-nav__item");
+            const updateActiveItemOnScroll = () => {
+                let currentSectionId = "";
+                sections.forEach((section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.scrollY >= sectionTop - sectionHeight / 3) currentSectionId = section.getAttribute("id");
+                }));
+                menuItems.forEach((item => {
+                    const link = item.querySelector(".menu-nav__link");
+                    item.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentSectionId}`) item.classList.add("active");
+                }));
+            };
+            window.addEventListener("scroll", updateActiveItemOnScroll);
+        }));
+        document.getElementById("submitBtn").addEventListener("click", (async () => {
+            const form = document.getElementById("myForm");
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get("name"),
+                socials: formData.get("socials"),
+                nickname: formData.get("nickname")
+            };
+            console.log(data);
         }));
     })();
 })();

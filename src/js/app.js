@@ -327,28 +327,113 @@ import "./libs/dynamic_adapt.js";
 /* Підключаємо файли зі своїм кодом */
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
+// document.addEventListener("DOMContentLoaded", function () {
+//   const cards = document.querySelectorAll(".advantages__card");
+
+//   // const observer = new IntersectionObserver((entries) => {
+//   //   entries.forEach((entry) => {
+//   //     if (entry.isIntersecting) {
+//   //       entry.target.classList.add("flipped");
+
+//   //       // Добавляем задержку в 1 секунду перед добавлением класса active
+//   //       const accents = document.querySelectorAll(".card-back-list__item-text-accent");
+//   //       accents.forEach((accent) => {
+//   //         accent.classList.add("active");
+//   //       });
+//   //       // setTimeout(() => {
+//   //       //   const accents = document.querySelectorAll(".card-back-list__item-text-accent");
+//   //       //   accents.forEach((accent) => {
+//   //       //     accent.classList.add("active");
+//   //       //   });
+//   //       // }, 500);
+//   //     }
+//   //   });
+//   // });
+
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add("flipped");
+  
+//           const accents = document.querySelectorAll(".card-back-list__item-text-accent");
+//           accents.forEach((accent) => {
+//             accent.classList.add("active");
+//           });
+  
+//           // Остановить наблюдение после первой активации
+//           observer.unobserve(entry.target);
+//         }
+//       });
+//     },
+//     { threshold: 0.5 } // Измените значение на желаемую точку видимости (например, 50%)
+//   );
+
+//   cards.forEach((card) => {
+//     observer.observe(card);
+//   });
+// });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const cards = document.querySelectorAll(".advantages__card");
+
+//   const observer = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         // Используем кастомный флаг, чтобы избежать повторных анимаций
+//         if (!entry.target.dataset.animated) {
+//           entry.target.classList.add("flipped");
+//           entry.target.dataset.animated = "true"; // Устанавливаем флаг
+
+//           const accents = document.querySelectorAll(".card-back-list__item-text-accent");
+//           accents.forEach((accent) => {
+//             accent.classList.add("active");
+//           });
+//         }
+//       }
+//     });
+//   });
+
+//   cards.forEach((card) => {
+//     observer.observe(card);
+//   });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(".advantages__card");
+  const leftCard = document.querySelector(".advantages__card.left");
+  const rightCard = document.querySelector(".advantages__card.right");
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("flipped");
+        // Обработка для левой карточки
+        if (entry.target.classList.contains("left") && !entry.target.dataset.animated) {
+          entry.target.classList.add("flipped");
+          entry.target.dataset.animated = "true"; // Флаг для предотвращения повторной анимации
 
-        // Добавляем задержку в 1 секунду перед добавлением класса active
-        setTimeout(() => {
-          const accents = document.querySelectorAll(".card-back-list__item-text-accent");
+          const accents = document.querySelectorAll(".advantages__card.left .card-back-list__item-text-accent");
           accents.forEach((accent) => {
             accent.classList.add("active");
           });
-        }, 500); // Задержка 1000 мс (1 секунда)
+        }
+
+        // Обработка для правой карточки
+        if (entry.target.classList.contains("right") && !entry.target.dataset.animated) {
+          entry.target.classList.add("flipped");
+          entry.target.dataset.animated = "true"; // Флаг для предотвращения повторной анимации
+
+          const accents = document.querySelectorAll(".advantages__card.right .card-back-list__item-text-accent");
+          accents.forEach((accent) => {
+            accent.classList.add("active");
+          });
+        }
       }
     });
   });
 
-  cards.forEach((card) => {
-    observer.observe(card);
-  });
+  // Наблюдение за карточками
+  if (leftCard) observer.observe(leftCard);
+  if (rightCard) observer.observe(rightCard);
 });
 
 
@@ -356,9 +441,33 @@ const cards = document.querySelectorAll(".card");
 
 if (cards) {
   cards.forEach((card) => {
-    // Добавляем класс при наведении мыши (для устройств с курсором)
+    // Для устройств с курсором: при наведении
     card.addEventListener("mouseenter", () => {
       card.classList.add("flipped");
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.classList.remove("flipped");
+    });
+
+    // Для тач-устройств: при первом касании
+    card.addEventListener("touchstart", (event) => {
+      // Убираем предыдущее "переворачивание" на всех карточках, если нужно
+      cards.forEach((otherCard) => {
+        if (otherCard !== card) {
+          otherCard.classList.remove("flipped");
+        }
+      });
+
+      // Переворачиваем текущую карточку
+      if (card.classList.contains("flipped")) {
+        
+      } else {
+        card.classList.add("flipped"); // Переворачиваем
+      }
+
+      // Предотвращаем вызов клика или других событий
+      event.preventDefault();
     });
   });
 }
