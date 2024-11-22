@@ -120,9 +120,6 @@
         </section>
         <section class="philosophy" id="about-brand">
           <div class="philosophy__container">
-            <!-- <div class="falling-block">
-              <h2>Контент тут</h2>
-            </div> -->
             <div class="animation-wrapper top" id="lottie-container-1"></div>
             <div class="philosophy__title-box title-box">
               <div class="bg-title-effect"></div>
@@ -188,7 +185,10 @@
                     class="board-top__title"
                     data-da=".board-top__content-wrapper,768,0"
                   >
-                    <img src="@img/board-top-title.png" alt="wanted" />
+                    <img
+                      src="@img/board-top-title.svg"
+                      alt="wanted"
+                    />
                   </div>
                   <div class="board-top__content">
                     <div class="board-top__content-wrapper">
@@ -271,10 +271,10 @@
                       data-da=".board-bottom__content,768,0"
                     >
                       <div class="board-bottom__title">
-                        <img src="@img/board-bottom-title.png" alt="or alive" />
+                        <img src="@img/board-bottom-title.svg" alt="or alive" />
                       </div>
                       <div class="board-bottom__title-pc">
-                        <img src="@img/board-bottom-title-pc.png" alt="alive" />
+                        <img src="@img/board-bottom-title-pc.svg" alt="alive" />
                       </div>
                       <div class="board-bottom__subtitle-wrapper">
                         <p class="board-bottom__subtitle">Но с DSS-Leads:</p>
@@ -320,7 +320,7 @@
                       </ul>
                     </div>
                     <div class="board-title-pc">
-                      <img src="@img/board-title-pc.png" alt="OR" />
+                      <img src="@img/board-title-pc.svg" alt="OR" />
                     </div>
                   </div>
                   <div class="board-top__bg-pc">
@@ -684,7 +684,7 @@
                             alt="Image"
                           />
                         </div>
-                        <div class="founders-card-back__bg-decor-2">
+                        <div class="founders-card-back__bg-decor-2 slide1">
                           <img
                             src="@img/founders/back-bg-card-top-decor.png"
                             alt="Image"
@@ -884,7 +884,7 @@
                         <picture>
                           <source
                             media="(min-width: 1200px)"
-                            srcset="@img/founders/back-bg-card-bootm-pc.png"
+                            srcset="@img/founders/back-bg-card-bootm-pc-2.png"
                           />
                           <img
                             src="@img/founders/back-bg-card-bootm.png"
@@ -1040,7 +1040,7 @@
                         <picture>
                           <source
                             media="(min-width: 1200px)"
-                            srcset="@img/founders/back-bg-card-bootm-pc.png"
+                            srcset="@img/founders/back-bg-card-bootm-pc-3.png"
                           />
                           <img
                             src="@img/founders/back-bg-card-bootm.png"
@@ -1162,18 +1162,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="founders-card-back__bg-bottom">
-                        <picture>
-                          <source
-                            media="(min-width: 1200px)"
-                            srcset="@img/founders/back-bg-card-bootm-pc.png"
-                          />
-                          <img
-                            src="@img/founders/back-bg-card-bootm.png"
-                            alt="form-bg"
-                          />
-                        </picture>
-                      </div>
+                      <div class="founders-card-back__bg-bottom slide4"></div>
                       <div class="founders-card-back__bottom-content slide2">
                         <div class="founders-card-back__bottom-text-box">
                           <p class="founders-card-back__bottom-text small">
@@ -1307,7 +1296,7 @@
                         <picture>
                           <source
                             media="(min-width: 1200px)"
-                            srcset="@img/founders/back-bg-card-bootm-pc.png"
+                            srcset="@img/founders/back-bg-card-bootm-pc-5.png"
                           />
                           <img
                             src="@img/founders/back-bg-card-bootm.png"
@@ -1365,6 +1354,7 @@
                 <img src="@img/arrow-right.png" alt="arrow-next" />
               </div>
             </div>
+            <div class="test"></div>
           </div>
         </section>
         <section class="pre-footer">
@@ -1384,7 +1374,7 @@
               <img src="@img/pre-footer-bg.png" alt="form-bg" />
             </picture>
             <div class="pre-footer__content-form-box">
-              <form class="pre-footer__content-form">
+              <form class="pre-footer__content-form" id="myForm">
                 <label for="name" class="pre-footer__form-label"
                   >Напиши своё имя
                 </label>
@@ -1393,6 +1383,7 @@
                     class="pre-footer__form-input"
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Имя"
                   />
                   <div class="pre-footer__input-icon-box">
@@ -1405,18 +1396,14 @@
                   >Месенджер для связи
                 </label>
                 <div class="pre-footer__form-input-box telegram">
-                  <select name="pre-footer" data-class-modif="pre-footer">
-                    <option
-                      data-imgsoc="@img/telegram-2.png"
-                      value="1"
-                      selected
-                    >
+                  <select name="socials" data-class-modif="pre-footer">
+                    <option data-imgsoc="@img/telegram.png" value="Telegram" selected>
                       Telegram
                     </option>
-                    <option data-imgsoc="@img/whatsapp.png" value="2">
+                    <option data-imgsoc="@img/whatsapp.png" value="WhatsApp">
                       WhatsApp
                     </option>
-                    <option data-imgsoc="@img/viber.png" value="3">
+                    <option data-imgsoc="@img/viber.png" value="Viber">
                       Viber
                     </option>
                   </select>
@@ -1426,10 +1413,11 @@
                     class="pre-footer__form-input nickname"
                     type="text"
                     id="nickname"
+                    name="nickname"
                     placeholder="ID или @nickname"
                   />
                 </div>
-                <button type="button" class="pre-footer__button">
+                <button type="button" class="pre-footer__button" id="submitBtn">
                   <p class="pre-footer__button-text">Начать путешествие!</p>
                 </button>
               </form>

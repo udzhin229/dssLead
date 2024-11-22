@@ -12,7 +12,8 @@
 }
 @media (min-width: $tablet) {
     .title {
-      font-size: 90px;
+      font-size: 56px;
+      letter-spacing: calc(56px * 0.05);
     }
   }
 

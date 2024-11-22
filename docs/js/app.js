@@ -14554,9 +14554,14 @@
                 const selectItemTitle = this.getSelectElement(selectItem, this.selectClasses.classSelectTitle).selectElement;
                 if (selectItemTitle) selectItemTitle.remove();
                 const selectedOption = originalSelect.options[originalSelect.selectedIndex];
-                const imgSrc = selectedOption.getAttribute("data-imgsoc") || "";
-                console.log(`Selected image URL: ${imgSrc}`);
-                selectItem.style.setProperty("--img-url", `url(../${imgSrc})`);
+                if (selectedOption.hasAttribute("data-imgsoc")) {
+                    const imgSrc = selectedOption.getAttribute("data-imgsoc");
+                    selectItem.style.setProperty("--img-url", `url(../${imgSrc})`);
+                }
+                if (selectedOption.hasAttribute("data-lang")) {
+                    const lang = selectedOption.getAttribute("data-lang");
+                    window.location.href = `/${lang}`;
+                }
                 selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
                 originalSelect.hasAttribute("data-search") ? this.searchActions(selectItem) : null;
             }
@@ -18723,8 +18728,8 @@
             cards.forEach(((card, index) => {
                 const imgBack = card.getAttribute("data-imgback");
                 if (imgBack) {
-                    if (cardFronts[index]) cardFronts[index].style.setProperty("--imgfront", `url(/${imgBack})`);
-                    if (cardBacks[index]) cardBacks[index].style.setProperty("--imgback", `url(/${imgBack})`);
+                    if (cardFronts[index]) cardFronts[index].style.setProperty("--imgfront", `url(../${imgBack})`);
+                    if (cardBacks[index]) cardBacks[index].style.setProperty("--imgback", `url(../${imgBack})`);
                 }
             }));
         }));
@@ -18857,10 +18862,9 @@
         function triggerAnimation(item) {
             item.classList.add("is-burning");
             setTimeout((() => {
-                item.classList.remove("is-burning");
                 item.classList.add("is-burnt");
                 item.classList.add("animation-played");
-            }), 2e3);
+            }), 1e3);
         }
         document.addEventListener("DOMContentLoaded", (() => {
             const board = document.querySelector(".animate-board");
@@ -18873,9 +18877,27 @@
                     }
                 }));
             }), {
-                threshold: .5
+                threshold: .2
             });
             observer.observe(board);
+        }));
+        document.addEventListener("DOMContentLoaded", (() => {
+            const sections = document.querySelectorAll("section");
+            const menuItems = document.querySelectorAll(".menu-nav__item");
+            const updateActiveItemOnScroll = () => {
+                let currentSectionId = "";
+                sections.forEach((section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.scrollY >= sectionTop - sectionHeight / 3) currentSectionId = section.getAttribute("id");
+                }));
+                menuItems.forEach((item => {
+                    const link = item.querySelector(".menu-nav__link");
+                    item.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentSectionId}`) item.classList.add("active");
+                }));
+            };
+            window.addEventListener("scroll", updateActiveItemOnScroll);
         }));
     })();
 })();
