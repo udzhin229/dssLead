@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241111203045">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241112202546">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -124,8 +124,8 @@
 							</div>
 						</div>
 						<div class="auth-nav__log-in-wrapper" data-da=".menu__body-nav, 1007.98, 1">
-							<a href="#" class="auth-nav__log-in-link">Войти</a>
-							<a href="#" class="auth-nav__sign-in-link">Регистрация</a>
+							<a href="#" data-popup="#popup" class="auth-nav__log-in-link">Войти</a>
+							<a href="#" data-popup="#popup" class="auth-nav__sign-in-link">Регистрация</a>
 						</div>
 						<div class="auth-nav__log-out-wrapper">
 							<a href="#" class="auth-nav__log-out-link">
@@ -142,6 +142,24 @@
 		<main class="page">
 			<section class="hero">
 				<div class="hero-thumb">
+					<!-- PARALLAX КАРТИНКИ -->
+					<img src="img/parallaxmain/vector-42.webp" class="parallax-img right-parallax" alt="" />
+					<img src="img/parallaxmain/vector-44.webp" class="parallax-img right-parallax" alt="" />
+					<img src="img/parallaxmain/vector-49.webp" class="parallax-img right-parallax" alt="" />
+					<img src="img/parallaxmain/vector-51.webp" class="parallax-img right-parallax" alt="" />
+					<img src="img/parallaxmain/vector-53.webp" class="parallax-img right-parallax" alt="" />
+					<img src="img/parallaxmain/vector-54.webp" class="parallax-img right-parallax" alt="" />
+					<img src="img/parallaxmain/vector-56.webp" class="parallax-img right-parallax" alt="" />
+
+					<img src="img/parallaxmain/vector-44.webp" class="parallax-img left-parallax" alt="" />
+					<img src="img/parallaxmain/vector-45.webp" class="parallax-img left-parallax" alt="" />
+					<img src="img/parallaxmain/vector-46.webp" class="parallax-img left-parallax" alt="" />
+					<img src="img/parallaxmain/vector-47.webp" class="parallax-img left-parallax" alt="" />
+					<img src="img/parallaxmain/vector-48.webp" class="parallax-img left-parallax" alt="" />
+					<img src="img/parallaxmain/vector-50.webp" class="parallax-img left-parallax" alt="" />
+					<img src="img/parallaxmain/vector-52.webp" class="parallax-img left-parallax" alt="" />
+					<img src="img/parallaxmain/vector-55.webp" class="parallax-img left-parallax" alt="" />
+					<!-- КОНЕЦ КАРТИНОК -->
 					<picture>
 						<source srcset="img/hero-bg-mb-2x.webp" media="(max-width: 767px)" />
 						<img src="img/hero-bg-pc-2x.webp" alt="background slide" />
@@ -233,12 +251,11 @@
 									<img src="img/chain-right.webp" alt="chain-right" />
 								</div>
 							</div>
-							<div class="not-cpa__content-board-top board-top">
+							<div class="not-cpa__content-board-top board-top animate-board">
 								<div class="board-top__title" data-da=".board-top__content-wrapper,768,0">
 									<img src="img/board-top-title.webp" alt="wanted" />
 								</div>
 								<div class="board-top__content">
-
 									<div class="board-top__content-wrapper">
 										<p class="board-top__subtitle">dead</p>
 										<p class="board-top__text">Обычная сеть CPA-сеть это:</p>
@@ -246,46 +263,57 @@
 											<ul class="board-top__list">
 												<li class="board-top__item">
 													<div class="board-top__item-bg">
-														<img src="img/board-top-item-1-pc.webp" alt="Image">
+														<img src="img/board-top-item-1-pc.webp" alt="Image" />
 													</div>
 													<div class="board-top__item-content">
 														<div class="board-top__item-decor">
-															<img src="img/marker.webp" alt="marker">
+															<img src="img/marker.webp" alt="marker" />
 														</div>
-														<p class="board-top__item-text">Неудобный Offer Wall с заниженными и невыгодными ставками</p>
+														<p class="board-top__item-text">
+															Неудобный Offer Wall с заниженными и невыгодными
+															ставками
+														</p>
 													</div>
 												</li>
 												<li class="board-top__item">
 													<div class="board-top__item-bg">
-														<img src="img/board-top-item-2-pc.webp" alt="Image">
+														<img src="img/board-top-item-2-pc.webp" alt="Image" />
 													</div>
 													<div class="board-top__item-content">
 														<div class="board-top__item-decor">
-															<img src="img/marker.webp" alt="marker">
+															<img src="img/marker.webp" alt="marker" />
 														</div>
-														<p class="board-top__item-text">Постоянный шейвинг честно пролитых лидов</p>
+														<p class="board-top__item-text">
+															Постоянный шейвинг честно пролитых лидов
+														</p>
 													</div>
 												</li>
 												<li class="board-top__item">
 													<div class="board-top__item-bg">
-														<img src="img/board-top-item-3-pc.webp" alt="Image">
+														<img src="img/board-top-item-3-pc.webp" alt="Image" />
 													</div>
 													<div class="board-top__item-content">
 														<div class="board-top__item-decor">
-															<img src="img/marker.webp" alt="marker">
+															<img src="img/marker.webp" alt="marker" />
 														</div>
-														<p class="board-top__item-text">Отсутствие любых гарантий финансовой безопасности вебмастера</p>
+														<p class="board-top__item-text">
+															Отсутствие любых гарантий финансовой
+															безопасности вебмастера
+														</p>
 													</div>
 												</li>
 												<li class="board-top__item">
 													<div class="board-top__item-bg">
-														<img src="img/board-top-item-1-pc.webp" alt="Image">
+														<img src="img/board-top-item-1-pc.webp" alt="Image" />
 													</div>
 													<div class="board-top__item-content">
 														<div class="board-top__item-decor">
-															<img src="img/marker.webp" alt="marker">
+															<img src="img/marker.webp" alt="marker" />
 														</div>
-														<p class="board-top__item-text">Ответы раз в 30 минут и 2-3 дня на решение даже базовых проблем</p>
+														<p class="board-top__item-text">
+															Ответы раз в 30 минут и 2-3 дня на решение даже
+															базовых проблем
+														</p>
 													</div>
 												</li>
 											</ul>
@@ -303,25 +331,50 @@
 										</div>
 										<ul class="board-bottom__list">
 											<li class="board-bottom__item">
-												<p class="board-bottom__item-text">Тебе НЕ нужны Продажники</p>
+												<p class="board-bottom__item-text">
+													Тебе НЕ нужны Продажники
+												</p>
+												<p class="board-bottom__item-text-after-animation">
+													С нас поиск любых офферов и реклов под твой запрос в
+													течении 2х дней
+												</p>
 											</li>
 											<li class="board-bottom__item">
-												<p class="board-bottom__item-text">Тебе НЕ нужны Фин. Менеджеры</p>
+												<p class="board-bottom__item-text">
+													Тебе НЕ нужны Фин. Менеджеры
+												</p>
+												<p class="board-bottom__item-text-after-animation">
+													Мы - это твой щит от шейвинга лидов и срезания
+													выплат
+												</p>
 											</li>
 											<li class="board-bottom__item">
-												<p class="board-bottom__item-text">Тебе НЕ нужен Траффик Аналитик</p>
+												<p class="board-bottom__item-text">
+													Тебе НЕ нужен Траффик Аналитик
+												</p>
+												<p class="board-bottom__item-text-after-animation">
+													Мы проводим аналитику 24/7, и готовы переключить
+													тебя на новый оффер при падении конверта хоть в 3
+													часа ночи
+												</p>
 											</li>
 											<li class="board-bottom__item">
-												<p class="board-bottom__item-text">Тебе НЕ нужны саппорты</p>
+												<p class="board-bottom__item-text">
+													Тебе НЕ нужны саппорты
+												</p>
+												<p class="board-bottom__item-text-after-animation">
+													Наши качественные саппорты, обучение, техническая
+													поддержка закроют все твои вопросы
+												</p>
 											</li>
 										</ul>
 									</div>
 									<div class="board-title-pc">
-										<img src="img/board-title-pc.webp" alt="OR">
+										<img src="img/board-title-pc.webp" alt="OR" />
 									</div>
 								</div>
 								<div class="board-top__bg-pc">
-									<img src="img/board-bg-pc.webp" alt="board-bg-pc">
+									<img src="img/board-bg-pc.webp" alt="board-bg-pc" />
 								</div>
 							</div>
 						</div>
@@ -334,11 +387,10 @@
 									<img src="img/chain-right.webp" alt="chain-right" />
 								</div>
 							</div>
-							<div class="not-cpa__content-board-bottom board-bottom">
-								<div class="board-bottom__content">
-								</div>
+							<div class="not-cpa__content-board-bottom board-bottom animate-board">
+								<div class="board-bottom__content"></div>
 								<div class="board-top__bg-pc">
-									<img src="img/board-bottom-decor.webp" alt="board-bg-pc">
+									<img src="img/board-bottom-decor.webp" alt="board-bg-pc" />
 								</div>
 							</div>
 						</div>
@@ -484,7 +536,7 @@
 								<button type="button" class="tabs__title _tab-active">
 									<p class="tabs__title-text">Вебмастер :</p>
 								</button>
-								<button type="button" class="tabs__title">
+								<button type="button" class="tabs__title tabs__title-right">
 									<p class="tabs__title-text">Прямой рекламодатель :</p>
 								</button>
 							</nav>
@@ -604,7 +656,7 @@
 					<div class="founders__slider swiper">
 						<div class="founders__wrapper swiper-wrapper">
 							<div class="founders__slide swiper-slide">
-								<div class="card">
+								<div class="card" data-imgback="img/founders/front-card-1.webp">
 									<!-- задня частинка картки -->
 									<div class="founders__slide-card-back founders-card-back">
 										<div class="founders-card-back__bg-top">
@@ -675,7 +727,7 @@
 													Instagram&Youtube influencer
 												</p>
 											</div>
-											<a class="founders-card-back__bottom-text-box last-child" href="#">
+											<a class="founders-card-back__bottom-text-box last-child" href="https://www.instagram.com/sofiliate/">
 												<div class="founders-card-back__bottom-text-icon-box">
 													<svg class="founders-card-back__bottom-text-icon">
 														<use xlink:href="img/icons/icons.svg#instagram"></use>
@@ -694,7 +746,7 @@
 								</div>
 							</div>
 							<div class="founders__slide swiper-slide">
-								<div class="card">
+								<div class="card" data-imgback="img/founders/front-card-2.webp">
 									<!-- задня частинка картки -->
 									<div class="founders__slide-card-back founders-card-back">
 										<div class="founders-card-back__bg-top">
@@ -771,7 +823,7 @@
 													Ex-CEO платежного агрегатора для high-risk
 												</p>
 											</div>
-											<a class="founders-card-back__bottom-text-box last-child" href="#">
+											<a class="founders-card-back__bottom-text-box last-child" href="https://www.instagram.com/e_ihorovych/">
 												<div class="founders-card-back__bottom-text-icon-box">
 													<svg class="founders-card-back__bottom-text-icon">
 														<use xlink:href="img/icons/icons.svg#instagram"></use>
@@ -790,7 +842,7 @@
 								</div>
 							</div>
 							<div class="founders__slide swiper-slide">
-								<div class="card">
+								<div class="card" data-imgback="img/founders/front-card-3.webp">
 									<!-- задня частинка картки -->
 									<div class="founders__slide-card-back founders-card-back">
 										<div class="founders-card-back__bg-top">
@@ -876,7 +928,7 @@
 								</div>
 							</div>
 							<div class="founders__slide swiper-slide">
-								<div class="card">
+								<div class="card" data-imgback="img/founders/front-card-4.webp">
 									<!-- задня частинка картки -->
 									<div class="founders__slide-card-back founders-card-back">
 										<div class="founders-card-back__bg-top">
@@ -945,7 +997,7 @@
 											</div>
 											<div class="founders-card-back__bottom-text-box">
 												<p class="founders-card-back__bottom-text medium">
-													17 закрытых инфлюэнсеров для DSS-Leads
+													72 закрытых инфлюэнсеров для DSS-Leads
 												</p>
 											</div>
 										</div>
@@ -957,7 +1009,7 @@
 								</div>
 							</div>
 							<div class="founders__slide swiper-slide">
-								<div class="card">
+								<div class="card" data-imgback="img/founders/front-card-5.webp">
 									<!-- задня частинка картки -->
 									<div class="founders__slide-card-back founders-card-back">
 										<div class="founders-card-back__bg-top">
@@ -1034,7 +1086,7 @@
 													Излишне скромный
 												</p>
 											</div>
-											<a class="founders-card-back__bottom-text-box last-child" href="#">
+											<a class="founders-card-back__bottom-text-box last-child" href="">
 												<div class="founders-card-back__bottom-text-icon-box">
 													<svg class="founders-card-back__bottom-text-icon">
 														<use xlink:href="img/icons/icons.svg#anonim"></use>
@@ -1053,7 +1105,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-pagination"></div>
+						<div class="swiper-scrollbar"></div>
 						<div class="swiper-button swiper-button-prev">
 							<img src="img/arrow-left.webp" alt="arrow-left" />
 						</div>
@@ -1092,16 +1144,22 @@
 							</label>
 							<div class="pre-footer__form-input-box telegram">
 								<select name="pre-footer" data-class-modif="pre-footer">
-									<option value="1" selected>Telegram</option>
-									<option value="2">WhatsApp</option>
-									<option value="3">Viber</option>
+									<option data-imgsoc="img/telegram-2.webp" value="1" selected>
+										Telegram
+									</option>
+									<option data-imgsoc="img/whatsapp.webp" value="2">
+										WhatsApp
+									</option>
+									<option data-imgsoc="img/viber.webp" value="3">
+										Viber
+									</option>
 								</select>
 							</div>
 							<div class="pre-footer__form-input-box nickname">
 								<input class="pre-footer__form-input nickname" type="text" id="nickname" placeholder="ID или @nickname" />
 							</div>
 							<button type="button" class="pre-footer__button">
-								<p class="pre-footer__button-text">Начать путишествие!</p>
+								<p class="pre-footer__button-text">Начать путешествие!</p>
 							</button>
 						</form>
 					</div>
@@ -1117,11 +1175,11 @@
 							<h2 class="footer__title title">Свяжитесь с нами:</h2>
 						</div>
 						<div class="footer-socials__list">
-							<div class="footer-socials__element">
+							<a class="footer-socials__element" href="https://t.me/+G9iauPfdVT4xZjJi" target="_blank">
 								<svg class="footer-socials__element-icon">
 									<use xlink:href="img/icons/icons.svg#telegram-2"></use>
 								</svg>
-							</div>
+							</a>
 							<div class="footer-socials__element">
 								<svg class="footer-socials__element-icon">
 									<use xlink:href="img/icons/icons.svg#youtube"></use>
@@ -1216,7 +1274,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241111203045"></script>
+	<script src="js/app.min.js?_v=20241112202546"></script>
 </body>
 
 </html>

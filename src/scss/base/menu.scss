@@ -1,42 +1,41 @@
 .menu {
+  position: relative;
   // .menu__icon
   &__icon {
   }
   // .menu__body
   &__body {
     // @media (max-width: 1007.98px) {
-      position: fixed;
-      width: 95%;
-      height: 96.5vh;
-      left: -100%;
-      top: 20px;
+      position: absolute;
+      width: 370px;
+      right: -10px;
+      top: -100vh;
       background-color: #313131;
       border-radius: 24px;
       overflow: auto;
       padding: toRem(77) toRem(20) toRem(40) toRem(20);
-      transition: left 0.3s;
-      &::before {
-        content: "";
-        position: fixed;
-        width: 100%;
-        height: toRem(70);
-        left: -100%;
-        top: 0;
-        transition: left 0.3s;
-        z-index: 2;
-      }
+      transition: top 0.3s;
+      
       .menu-open & {
-        left: 50%;
-        transform: translateX(-50%);
+        top: -10px;
         &::before {
           left: 0;
         }
       }
+
+      @media (max-width: 1007.98px) {
+        
+
+        .menu-open & {
+          top: -10px;
+        }
+      }
     // }
   }
-  @media (min-width: 1007.98px) {
+  @media (max-width: 1007.98px) {
     &__body {
-      // display: none;
+      right: -10px;
+      padding: toRem(40) toRem(15) toRem(20) toRem(15);
     }
   }
   // .menu__list
@@ -131,10 +130,17 @@
   // @media (max-width: 1007.98px) {
     .menu-body__wrapper {
       width: 100%;
-      height: 100vh;
+      height: 100%;
       display: flex;
+      align-items: center;
       flex-direction: column;
-      gap: 50px;
+      gap: 60px;
+    }
+    @media (max-width: 1007.98px) {
+      .menu-body__wrapper {
+        align-items: start;
+        gap: 40px;
+      }
     }
     .menu-body__socials-link-box {
     }
@@ -171,9 +177,21 @@
     }
 
     .menu-body__language-box {
-      display: flex;
+      display: none;
       align-items: flex-start;
       gap: 50px;
+      
+      .radio-text.active {
+        border-radius: 8px;
+        border: 1px solid #FFFFFF;
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    @media (max-width: 1007.98px) {
+      .menu-body__language-box {
+        display: flex;
+      }
     }
 
     .menu-body__language-box input[type="radio"] {
@@ -190,8 +208,9 @@
   // }
 }
 
-@media (min-width: 1007.98px) {
-  html.lock.menu-open .header-mb__button-wrapper.visible {
-    top: 20px;
-  }
-}
+
+// @media (min-width: 1007.98px) {
+//   html.lock.menu-open .header-mb__button-wrapper.visible {
+//     top: 20px;
+//   }
+// }
