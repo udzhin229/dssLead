@@ -18808,10 +18808,9 @@
         function triggerAnimation(item) {
             item.classList.add("is-burning");
             setTimeout((() => {
-                item.classList.remove("is-burning");
                 item.classList.add("is-burnt");
                 item.classList.add("animation-played");
-            }), 2e3);
+            }), 1e3);
         }
         document.addEventListener("DOMContentLoaded", (() => {
             const board = document.querySelector(".animate-board");
@@ -18824,9 +18823,27 @@
                     }
                 }));
             }), {
-                threshold: .5
+                threshold: .2
             });
             observer.observe(board);
+        }));
+        document.addEventListener("DOMContentLoaded", (() => {
+            const sections = document.querySelectorAll("section");
+            const menuItems = document.querySelectorAll(".menu-nav__item");
+            const updateActiveItemOnScroll = () => {
+                let currentSectionId = "";
+                sections.forEach((section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.scrollY >= sectionTop - sectionHeight / 3) currentSectionId = section.getAttribute("id");
+                }));
+                menuItems.forEach((item => {
+                    const link = item.querySelector(".menu-nav__link");
+                    item.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentSectionId}`) item.classList.add("active");
+                }));
+            };
+            window.addEventListener("scroll", updateActiveItemOnScroll);
         }));
     })();
 })();

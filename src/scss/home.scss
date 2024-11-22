@@ -100,7 +100,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 @media (min-width: $min-pc) {
   .hero__content-wrapper {
@@ -144,9 +143,9 @@
 }
 @media (min-width: $pc) {
   .hero__text {
-    max-width: none;
-    margin-bottom: 100px;
-    font-size: 72px;
+    max-width: 1165px;
+    margin-bottom: 50px;
+    font-size: 56px;
   }
 }
 
@@ -370,10 +369,10 @@
 @media (min-width: $tablet) {
   .philosophy__title-box::after {
     right: auto;
-    left: -270px;
-    top: -60px;
-    width: 305px;
-    height: 230px;
+    left: -140px;
+    top: -25px;
+    width: 131px;
+    height: 120px;
     background-image: url(../img/decor-pc.png);
   }
 }
@@ -415,7 +414,8 @@
 
 @media (min-width: $tablet) {
   .philosophy__title {
-    font-size: 90px;
+    font-size: 56px;
+    letter-spacing: calc(56px * 0.05);
   }
 }
 .philosophy__description {
@@ -512,17 +512,19 @@
   .not-cpa__title-box.title-box {
     position: absolute;
     left: 150px;
-    max-width: 1266px;
+    top: 96px;
+    max-width: 1066px;
   }
   .not-cpa__title-box.title-box .title {
-    font-size: 66px;
+    font-size: 56px;
+    letter-spacing: calc(56px * 0.05);
   }
 }
-@media (min-width: $min-pc) {
-  .not-cpa__title-box.title-box .title {
-    font-size: 90px;
-  }
-}
+// @media (min-width: $min-pc) {
+//   .not-cpa__title-box.title-box .title {
+//     font-size: 90px;
+//   }
+// }
 
 .not-cpa__content {
 }
@@ -533,13 +535,15 @@
   z-index: 100;
   width: 100%;
   padding-right: 16px;
-  padding-left: 16px;
+  padding-left: 18px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 .not-cpa__content-chains.not-cpa__content-bottom-chains {
   z-index: 90;
+  padding-right: 23px;
+  padding-left: 24px;
 }
 .chain {
   width: 16px;
@@ -558,7 +562,7 @@
   }
   .chain {
     width: 32px;
-    height: 299px;
+    height: 289px;
   }
 }
 .chain > img {
@@ -569,32 +573,37 @@
 .not-cpa__content-board-top {
   position: relative;
   z-index: 95;
-  top: -18px;
+  top: -17px;
   width: 100%;
   height: 395px;
 }
 .animate-board.animate {
-  animation: swingIn 1.5s ease-out forwards;
+  animation: swingIn 2s ease-out forwards;
 }
 .not-cpa__content-chains,
 .animate-board {
   transform-origin: top left;
 }
+
 @keyframes swingIn {
   0% {
     transform: rotate(0deg) translateY(0);
     opacity: 0;
   }
-  25% {
-    transform: rotate(15deg) translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: rotate(-10deg) translateY(0);
-    opacity: 1;
-  }
-  75% {
+  20% {
     transform: rotate(5deg) translateY(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: rotate(-4deg) translateY(0);
+    opacity: 0.8;
+  }
+  60% {
+    transform: rotate(3deg) translateY(0);
+    opacity: 0.9;
+  }
+  80% {
+    transform: rotate(-2deg) translateY(0);
     opacity: 1;
   }
   100% {
@@ -603,10 +612,11 @@
   }
 }
 
+
 @media (min-width: $mobile) {
   .not-cpa__content-board-top {
     position: relative;
-    top: -35px;
+    top: -34px;
     width: 100%;
     height: 778px;
     padding-top: 24px;
@@ -663,10 +673,11 @@
     padding-top: 0;
   }
 }
+
 .board-top__title {
   position: relative;
   width: 156px;
-  height: 39px;
+  height: 44px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 6px;
@@ -744,7 +755,7 @@
   z-index: 5;
 }
 .board-top__item:nth-child(1) {
-  top: 15px;
+  top: 5px;
   left: 7px;
 }
 .board-top__item:nth-child(2) {
@@ -754,13 +765,13 @@
   transform: rotate(-1.63deg);
 }
 .board-top__item:nth-child(3) {
-  left: 4px;
-  bottom: 0;
+  left: 15px;
+  bottom: -7px;
   transform: rotate(-3.49deg);
 }
 .board-top__item:nth-child(4) {
   right: 10px;
-  bottom: -30px;
+  bottom: -55px;
   z-index: 3;
   transform: rotate(336deg);
 }
@@ -882,7 +893,7 @@
 
 .not-cpa__content-board-bottom.board-bottom {
   position: relative;
-  top: -18px;
+  top: -19px;
   width: 100%;
   height: 443px;
 }
@@ -1065,21 +1076,15 @@
   background-image: url(../img/gif/item-4-mb.gif);
 }
 
-
 // /////
-.board-bottom__item.is-burnt::after {
-  background-image: url(../img/alive-bg-mb.png); /* Новий фон після згоряння */
-  opacity: 0; /* Початкове значення для плавної анімації */
-  animation: fadeIn 1s forwards; /* Анімація плавного з'явлення */
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.board-bottom__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(../img/alive-bg-mb.png);
 }
 
 // ////
@@ -1091,6 +1096,16 @@
 
   .board-bottom__item::after {
     background-image: url(../img/board-bottom-content-bg-pc.png);
+  }
+
+  .board-bottom__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../img/alive-bg.png);
   }
 
   .board-bottom__item.is-burning::after {
@@ -1119,10 +1134,6 @@
     background-image: url(../img/gif/item-4.gif);
     transform: scale(1.68);
   }
-
-  .board-bottom__item.is-burnt::after {
-    background-image: url(../img/alive-bg.png); /* Новий фон після згоряння */
-  }
 }
 
 .board-bottom__item-text {
@@ -1136,7 +1147,7 @@
   color: #0c0c0c;
   z-index: 100;
 }
-.board-bottom__item-text-after-animation{
+.board-bottom__item-text-after-animation {
   display: none;
   max-width: 300px;
   position: relative;
@@ -1146,7 +1157,7 @@
   line-height: 130%;
   font-weight: 600;
   font-style: italic;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 @media (min-width: $mobile) {
@@ -1159,7 +1170,7 @@
     max-width: 237px;
   }
 
-  .board-bottom__item-text-after-animation{
+  .board-bottom__item-text-after-animation {
     max-width: 300px;
     font-size: 20px;
   }
@@ -1173,8 +1184,18 @@
   display: none;
 }
 
-.board-bottom__item.is-burnt .board-bottom__item-text-after-animation{
+.board-bottom__item.is-burnt .board-bottom__item-text-after-animation {
   display: block;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 // ==============================================================================================================
@@ -1247,9 +1268,10 @@
 }
 @media (min-width: $tablet) {
   .advantages__title-box.title-box::after {
-    left: -350px;
-    width: 398px;
-    height: 240px;
+    left: -130px;
+    width: 126px;
+    height: 137px;
+    background-position: center;
     background-image: url(../img/advantages-decor-pc.png);
   }
 }
@@ -1297,7 +1319,7 @@
 }
 @media (min-width: $mobile) {
   .advantages__title.title {
-    max-width: 690px;
+    max-width: 440px;
     margin-left: auto;
     margin-right: 110px;
     margin-bottom: 50px;
@@ -1920,7 +1942,7 @@
 @media (min-width: $tablet) {
   .tabs__body-animation-wrapper.animate {
     position: relative;
-    max-height: 1800px;
+    max-height: 1880px;
     width: 753px;
   }
 }
@@ -1969,13 +1991,13 @@
 }
 @media (min-width: $tablet) {
   .snake-animation-container.gif-1 {
-    top: -210px;
+    top: -180px;
     width: 1350px;
     margin-left: -87px;
   }
 
   .snake-animation-container.gif-2 {
-    top: -140px;
+    top: -100px;
     width: 1350px;
     margin-left: -157px;
   }
@@ -2026,10 +2048,10 @@
 }
 @media (min-width: $tablet) {
   .snake-animation-container.gif-1 > img {
-    transform: scale(1.2);
+    transform: scale(1.30);
   }
   .snake-animation-container.gif-2 > img {
-    transform: scale(1.2);
+    transform: scale(1.25);
   }
 }
 //
@@ -2304,6 +2326,16 @@
   width: fit-content;
   margin-left: auto;
 }
+@media (min-width: $tablet) {
+  .title.founders__title {
+    font-size: 56px;
+    letter-spacing: calc(56px * 0.05);
+  }
+
+  .founders__title-box.title-box > .bg-title-effect._active{
+    filter: blur(48px);
+  }
+}
 
 .founders__container-swiper {
   position: relative;
@@ -2476,7 +2508,7 @@
   filter: blur(15px);
   width: 102%;
   height: 102%;
-  background-image: var(--imgback); /* Используем переменную */
+  // background-image: var(--imgback); /* Используем переменную */
   background-size: cover;
   background-position: center;
   z-index: -1; /* Помещает псевдоэлемент за содержимое карточки */
@@ -2592,11 +2624,11 @@
   }
 
   .swiper-button.swiper-button-prev {
-    left: 35px;
+    left: 15px;
   }
 
   .swiper-button.swiper-button-next {
-    right: 35px;
+    right: 15px;
   }
 }
 
@@ -2616,11 +2648,11 @@
 
 @media (min-width: $pc) {
   .swiper-button.swiper-button-prev {
-    left: -20px;
+    left: -35px;
   }
 
   .swiper-button.swiper-button-next {
-    right: -20px;
+    right: -35px;
   }
 }
 
@@ -2720,7 +2752,7 @@
 
 .founders-card-back__bg-decor {
   position: absolute;
-  z-index: 8;
+  z-index: 80;
   width: 93px;
   height: 57px;
   top: 61px;
@@ -2750,28 +2782,50 @@
     transform: translate(0, 0) scale(1) rotate(0deg);
   }
   20% {
-    transform: translate(5px, -3px) scale(1.01) rotate(1.5deg); 
+    transform: translate(5px, -20px) scale(1.01) rotate(15deg);
   }
   40% {
-    transform: translate(3px, 5px) scale(1.015) rotate(-0.5deg); 
+    transform: translate(15px, 5px) scale(1.015) rotate(-0.5deg);
   }
   60% {
-    transform: translate(0, 3px) scale(1.01) rotate(1.5deg); 
+    transform: translate(0, 15px) scale(1.01) rotate(10deg);
   }
   80% {
     transform: translate(4px, 0px) scale(1.015) rotate(-0.25deg);
   }
   100% {
-    transform: translate(0, 0) scale(1) rotate(0deg); 
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
 }
 .founders-card-back__bg-decor.slide5 {
   top: 151px;
+  animation: smoothFloat5 13s ease-in-out infinite;
 }
+@keyframes smoothFloat5 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  20% {
+    transform: translate(20px, -28px) scale(1.02) rotate(15deg); /* Більше вправо та вгору */
+  }
+  40% {
+    transform: translate(40px, 14px) scale(1.03) rotate(-8deg); /* Більше вправо та вниз */
+  }
+  60% {
+    transform: translate(0, -16px) scale(1.02) rotate(12deg); /* Більше вгору */
+  }
+  80% {
+    transform: translate(10px, 18px) scale(1.03) rotate(-5deg); /* Вправо та вниз */
+  }
+  100% {
+    transform: translate(0, 0px) scale(1) rotate(0deg); /* Фінальний рух вправо та вгору */
+  }
+}
+
 //
 .founders-card-back__bg-decor-2.slide3 {
   transform: rotate(0);
-  top: 35px;
+  top: 30px;
   right: 4px;
 }
 .founders-card-back__bg-decor-2.slide4 {
@@ -2786,19 +2840,19 @@
     transform: translate(0, 0) scale(1) rotate(0deg);
   }
   20% {
-    transform: translate(-4px, -6px) scale(1.01) rotate(1deg); /* Більше вліво та вгору */
+    transform: translate(-10px, -6px) scale(1.01) rotate(15deg); /* Більше вліво та вгору */
   }
   40% {
-    transform: translate(-2px, 4px) scale(1.015) rotate(-0.5deg); /* Легкий рух вліво та вниз */
+    transform: translate(-2px, 10px) scale(1.015) rotate(-5deg);
   }
   60% {
-    transform: translate(0, -8px) scale(1.01) rotate(0.5deg); /* Більше вгору */
+    transform: translate(0, -8px) scale(1.01) rotate(0.5deg);
   }
   80% {
-    transform: translate(-3px, 2px) scale(1.015) rotate(-0.25deg); /* Легкий рух вліво та вниз */
+    transform: translate(-10px, 2px) scale(1.015) rotate(-0.25deg);
   }
   100% {
-    transform: translate(0, 0) scale(1) rotate(0deg); /* Повернення в початкове положення */
+    transform: translate(10, 0) scale(1) rotate(0deg);
   }
 }
 
@@ -2806,6 +2860,7 @@
   transform: rotate(36deg);
   top: 160px;
   z-index: 1;
+  filter: blur(1.5px);
 }
 //
 @media (min-width: $min-pc) {
@@ -2815,21 +2870,29 @@
     top: 75px;
   }
 
+  .founders-card-back__bg-decor.slide2 {
+    width: 229px;
+    height: 140px;
+    left: -65px;
+    top: 55px;
+  }
+
   .founders-card-back__bg-decor.slide3 {
-    width: 200px;
-    height: 130px;
-    left: -70px;
+    width: 229px;
+    height: 140px;
+    left: -60px;
   }
 
   .founders-card-back__bg-decor-2.slide3 {
     transform: rotate(354deg);
     right: -15px;
+    filter: blur(1.5px);
   }
 
   .founders-card-back__bg-decor.slide4 {
     width: 300px;
     height: 181px;
-    left: -100px;
+    left: -90px;
     top: 71px;
   }
 
@@ -2896,7 +2959,7 @@
   }
 
   .founders-card-back__bg-decor.slide5 {
-    top: 243px;
+    top: 223px;
   }
 
   .founders-card-back__bg-decor-2.slide5 {
@@ -2906,7 +2969,7 @@
 
 .founders-card-back__bg-decor-2 {
   position: absolute;
-  z-index: 8;
+  z-index: 80;
   width: 89px;
   height: 55px;
   top: 95px;
@@ -2920,6 +2983,13 @@
     height: 87px;
     top: 125px;
     right: -24px;
+  }
+  .founders-card-back__bg-decor-2.slide2 {
+    top: 105px;
+  }
+  .founders-card-back__bg-decor-2.slide1,
+  .founders-card-back__bg-decor-2.slide2 {
+    filter: blur(1.5px);
   }
 }
 @media (min-width: 1600px) {
@@ -3245,11 +3315,26 @@
   width: 129px;
   height: 129px;
 }
+.founders-card-back__bg-bottom.slide4 {
+  width: 159px;
+  height: 159px;
+  bottom: 13px;
+  background-image: url(../img/founders/back-bg-card-bootm-pc-4.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
 @media (min-width: $min-pc) {
   .founders-card-back__bg-bottom {
     width: 205px;
     height: 205px;
     bottom: 50px;
+  }
+
+  .founders-card-back__bg-bottom.slide4 {
+    width: 272px;
+    height: 274px;
+    bottom: 8px;
   }
 }
 

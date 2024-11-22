@@ -604,12 +604,12 @@ document.querySelectorAll('.board-bottom__item').forEach(item => {
 // Функція для запуску анімації
 function triggerAnimation(item) {
   item.classList.add('is-burning'); 
+  
 
   setTimeout(() => {
-    item.classList.remove('is-burning'); 
     item.classList.add('is-burnt'); 
     item.classList.add('animation-played'); 
-  }, 2000); // Час тривалості GIF
+  }, 1000);
 }
 
 
@@ -627,8 +627,72 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.5
+    threshold: 0.10
   });
 
   observer.observe(board);
+});
+
+
+// =================================== ПІДСВІЧУВАННЯ АКТИВНОГО ПОСИЛАННЯ В ХЕДЕРІ ===================================
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('section');
+  const menuItems = document.querySelectorAll('.menu-nav__item');
+
+  const updateActiveItemOnScroll = () => {
+    let currentSectionId = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+
+    menuItems.forEach(item => {
+      const link = item.querySelector('.menu-nav__link');
+      item.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSectionId}`) {
+        item.classList.add('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', updateActiveItemOnScroll);
+});
+
+
+// ======================================= ВІДПРАВКА ФОРМИ ====================================================
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  // Отримання даних з форми
+  const form = document.getElementById('myForm');
+  const formData = new FormData(form);
+  const data = {
+    name: formData.get('name'),
+    socials: formData.get('socials'),
+    nickname: formData.get('nickname'),
+  };
+
+  console.log(data)
+//   const webhookUrl = "https://rest-api.bitrix24.com/rest/1/doutwqkjxgc3mgc1/";
+
+//   fetch(webhookUrl, {
+//     method: "POST",
+//     headers: {
+//         "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(data)
+// })
+// .then(response => {
+//     if (!response.ok) {
+//         throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+//     return response.json();
+// })
+// .then(result => {
+//     console.log("Успішно:", result);
+// })
+// .catch(error => {
+//     console.error("Помилка:", error);
+// });
 });

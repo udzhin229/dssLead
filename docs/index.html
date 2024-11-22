@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241113201829">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241122142530">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +16,10 @@
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
-				<div class="header__logo-thumb">
-					<img class="header__logo" src="img/logo.svg" alt="logo" />
-				</div>
-				<div class="header__menu-pc">
+				<div class="left-block">
+					<div class="header__logo-thumb">
+						<img class="header__logo" src="img/logo.svg" alt="logo" />
+					</div>
 					<div class="header__language-wrapper">
 						<select name="form[]" data-class-modif="form" class="header-select">
 							<option class="header-select__option" value="1" selected>Ru</option>
@@ -27,16 +27,18 @@
 							<option class="header-select__option" data-lang="ua" value="3">Ua</option>
 						</select>
 					</div>
+				</div>
+				<div class="header__menu-pc">
 					<nav class="header__menu-nav menu-nav">
 						<ul class="menu-nav__list">
 							<li class="menu-nav__item">
 								<a href="#about-brand" class="menu-nav__link"> О бренде </a>
 							</li>
 							<li class="menu-nav__item">
-								<a href="#unique-features" class="menu-nav__link"> Уникальные фишки </a>
+								<a href="#unique-features" class="menu-nav__link"> Уникальные сервисы </a>
 							</li>
 							<li class="menu-nav__item">
-								<a href="#cpa" class="menu-nav__link"> Мы не СРА </a>
+								<a href="#cpa" class="menu-nav__link"> Наши фишки </a>
 							</li>
 							<li class="menu-nav__item">
 								<a href="#perspective" class="menu-nav__link"> Что будет дальше? </a>
@@ -46,6 +48,8 @@
 							</li>
 						</ul>
 					</nav>
+				</div>
+				<div class="right-block">
 					<div class="header__auth-nav auth-nav">
 						<div class="header__menu menu" data-da=".header__container,1007.98,2">
 							<div class="header-mb__button-wrapper">
@@ -61,10 +65,10 @@
 												<a href="#about-brand" class="menu-nav__link"> О бренде </a>
 											</li>
 											<li class="menu-nav__item mob">
-												<a href="#unique-features" class="menu-nav__link"> Уникальные фишки </a>
+												<a href="#unique-features" class="menu-nav__link"> Уникальные сервисы </a>
 											</li>
 											<li class="menu-nav__item mob">
-												<a href="#cpa" class="menu-nav__link"> Мы не СРА </a>
+												<a href="#cpa" class="menu-nav__link"> Наши фишки </a>
 											</li>
 											<li class="menu-nav__item mob">
 												<a href="#perspective" class="menu-nav__link"> Что будет дальше? </a>
@@ -138,7 +142,133 @@
 				</div>
 			</div>
 		</header>
-
+		<!-- <header class="header">
+  <div class="header__container">
+    <div class="header__logo-thumb">
+      <img class="header__logo" src="img/logo.svg" alt="logo" />
+    </div>
+    <div class="header__menu-pc">
+      <div class="header__language-wrapper">
+        <select name="form[]" data-class-modif="form" class="header-select">
+          <option class="header-select__option" value="1" selected>Ru</option>
+          <option class="header-select__option" data-lang="en" value="2">En</option>
+          <option class="header-select__option" data-lang="ua" value="3">Ua</option>
+        </select>
+      </div>
+      <nav class="header__menu-nav menu-nav">
+        <ul class="menu-nav__list">
+          <li class="menu-nav__item">
+            <a href="#about-brand" class="menu-nav__link"> О бренде </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="#unique-features" class="menu-nav__link"> Уникальные сервисы </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="#cpa" class="menu-nav__link"> Наши фишки </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="#perspective" class="menu-nav__link"> Что будет дальше? </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="#founders" class="menu-nav__link"> О команде </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__auth-nav auth-nav">
+        <div class="header__menu menu" data-da=".header__container,1007.98,2">
+          <div class="header-mb__button-wrapper">
+            <button type="button" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+          </div>
+          <div class="menu__body">
+            <div class="menu-body__wrapper">
+              <nav class="menu__body-nav">
+                <ul class="menu-nav__list" >
+                  <li class="menu-nav__item mob">
+                    <a href="#about-brand" class="menu-nav__link"> О бренде </a>
+                  </li>
+                  <li class="menu-nav__item mob">
+                    <a href="#unique-features" class="menu-nav__link"> Уникальные сервисы </a>
+                  </li>
+                  <li class="menu-nav__item mob">
+                    <a href="#cpa" class="menu-nav__link"> Наши фишки </a>
+                  </li>
+                  <li class="menu-nav__item mob">
+                    <a href="#perspective" class="menu-nav__link"> Что будет дальше? </a>
+                  </li>
+                  <li class="menu-nav__item mob">
+                    <a href="#founders" class="menu-nav__link"> О команде </a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="menu-body__socials-link-box socials-links">
+                <ul class="socials-links__list">
+                  <li class="socials-links__item">
+                    <a href="#" class="socials-links__link">
+                      <svg class="socials-links__link-icon telegram">
+                        <use xlink:href="img/icons/icons.svg#telegram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials-links__item">
+                    <a href="#" class="socials-links__link-another">
+                      <svg class="socials-links__link-icon">
+                        <use xlink:href="img/icons/icons.svg#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials-links__item">
+                    <a href="#" class="socials-links__link-another">
+                      <svg class="socials-links__link-icon">
+                        <use xlink:href="img/icons/icons.svg#instagram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials-links__item">
+                    <a href="#" class="socials-links__link-another">
+                      <svg class="socials-links__link-icon">
+                        <use xlink:href="img/icons/icons.svg#facebook"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-body__language-box">
+                <label>
+                  <input type="radio" name="language" value="RU" />
+                  <a href="/" class="radio-text">Ru</a> 
+                </label>
+                <label>
+                  <input type="radio" name="language" value="EN" />
+                  <a href="/en/" class="radio-text">Eng</a>
+                </label>
+                <label>
+                  <input type="radio" name="language" value="UA" />
+                  <a href="/ua/" class="radio-text">Ua</a>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="auth-nav__log-in-wrapper"
+          data-da=".menu__body-nav, 1007.98, 1"
+        >
+          <a href="#" data-popup="#popup" class="auth-nav__log-in-link">Войти</a>
+          <a href="#" data-popup="#popup" class="auth-nav__sign-in-link">Регистрация</a>
+        </div>
+        <div class="auth-nav__log-out-wrapper">
+          <a href="#" class="auth-nav__log-out-link">
+            <svg class="auth-nav__log-out-link-icon">
+              <use xlink:href="img/icons/icons.svg#log-out"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header> -->
 		<main class="page">
 			<section class="hero">
 				<div class="hero-thumb">
@@ -188,9 +318,6 @@
 			</section>
 			<section class="philosophy" id="about-brand">
 				<div class="philosophy__container">
-					<!-- <div class="falling-block">
-              <h2>Контент тут</h2>
-            </div> -->
 					<div class="animation-wrapper top" id="lottie-container-1"></div>
 					<div class="philosophy__title-box title-box">
 						<div class="bg-title-effect"></div>
@@ -253,7 +380,7 @@
 							</div>
 							<div class="not-cpa__content-board-top board-top animate-board">
 								<div class="board-top__title" data-da=".board-top__content-wrapper,768,0">
-									<img src="img/board-top-title.webp" alt="wanted" />
+									<img src="img/board-top-title.svg" alt="wanted" />
 								</div>
 								<div class="board-top__content">
 									<div class="board-top__content-wrapper">
@@ -321,10 +448,10 @@
 									</div>
 									<div class="board-bottom__content-wrapper" data-da=".board-bottom__content,768,0">
 										<div class="board-bottom__title">
-											<img src="img/board-bottom-title.webp" alt="or alive" />
+											<img src="img/board-bottom-title.svg" alt="or alive" />
 										</div>
 										<div class="board-bottom__title-pc">
-											<img src="img/board-bottom-title-pc.webp" alt="alive" />
+											<img src="img/board-bottom-title-pc.svg" alt="alive" />
 										</div>
 										<div class="board-bottom__subtitle-wrapper">
 											<p class="board-bottom__subtitle">Но с DSS-Leads:</p>
@@ -370,7 +497,7 @@
 										</ul>
 									</div>
 									<div class="board-title-pc">
-										<img src="img/board-title-pc.webp" alt="OR" />
+										<img src="img/board-title-pc.svg" alt="OR" />
 									</div>
 								</div>
 								<div class="board-top__bg-pc">
@@ -679,7 +806,7 @@
 											<div class="founders-card-back__bg-decor">
 												<img src="img/founders/back-bg-card-top-decor.webp" alt="Image" />
 											</div>
-											<div class="founders-card-back__bg-decor-2">
+											<div class="founders-card-back__bg-decor-2 slide1">
 												<img src="img/founders/back-bg-card-top-decor.webp" alt="Image" />
 											</div>
 											<div class="founders-card-back__top-icon-box slide1">
@@ -803,7 +930,7 @@
 										</div>
 										<div class="founders-card-back__bg-bottom">
 											<picture>
-												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc-2.webp" />
 												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
 											</picture>
 										</div>
@@ -899,7 +1026,7 @@
 										</div>
 										<div class="founders-card-back__bg-bottom">
 											<picture>
-												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc-3.webp" />
 												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
 											</picture>
 										</div>
@@ -978,12 +1105,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="founders-card-back__bg-bottom">
-											<picture>
-												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
-												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
-											</picture>
-										</div>
+										<div class="founders-card-back__bg-bottom slide4"></div>
 										<div class="founders-card-back__bottom-content slide2">
 											<div class="founders-card-back__bottom-text-box">
 												<p class="founders-card-back__bottom-text small">
@@ -1066,7 +1188,7 @@
 										</div>
 										<div class="founders-card-back__bg-bottom">
 											<picture>
-												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc.webp" />
+												<source media="(min-width: 1200px)" srcset="img/founders/back-bg-card-bootm-pc-5.webp" />
 												<img src="img/founders/back-bg-card-bootm.webp" alt="form-bg" />
 											</picture>
 										</div>
@@ -1113,6 +1235,7 @@
 							<img src="img/arrow-right.webp" alt="arrow-next" />
 						</div>
 					</div>
+					<div class="test"></div>
 				</div>
 			</section>
 			<section class="pre-footer">
@@ -1144,7 +1267,7 @@
 							</label>
 							<div class="pre-footer__form-input-box telegram">
 								<select name="pre-footer" data-class-modif="pre-footer">
-									<option data-imgsoc="img/telegram-2.webp" value="1" selected>
+									<option data-imgsoc="img/telegram.webp" value="1" selected>
 										Telegram
 									</option>
 									<option data-imgsoc="img/whatsapp.webp" value="2">
@@ -1234,6 +1357,7 @@
 									<p class="tabs-popup__body-content-text">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 										Quisque non nibh fermentum, suscipit ex quis, porta augue.
+										Donec id interdum dui, ut blandit magna.
 									</p>
 								</div>
 							</div>
@@ -1247,6 +1371,8 @@
 									</h3>
 									<p class="tabs-popup__body-content-text">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Quisque non nibh fermentum, suscipit ex quis, porta augue.
+										Donec id interdum dui, ut blandit magna.
 									</p>
 								</div>
 							</div>
@@ -1275,7 +1401,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241113201829"></script>
+	<script src="js/app.min.js?_v=20241122142530"></script>
 </body>
 
 </html>
