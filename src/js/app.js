@@ -68,10 +68,10 @@ function createObserver(elementId, animationPath) {
 }
 
 // Запускаємо обсервери для кожної анімації
-createObserver("lottie-container-1", "./img/animation/dracon.json");
-createObserver("lottie-container-2", "./img/animation/dracon.json");
-createObserver("lottie-container-3", "./img/animation/dracon.json");
-createObserver("lottie-container-4", "./img/animation/dracon.json");
+createObserver("lottie-container-1", "/img/animation/dracon.json");
+createObserver("lottie-container-2", "/img/animation/dracon.json");
+createObserver("lottie-container-3", "/img/animation/dracon.json");
+createObserver("lottie-container-4", "/img/animation/dracon.json");
 
 function handleScroll() {
   const block = document.querySelector('.falling-block');
@@ -413,73 +413,73 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".hero-thumb");
-  const rightImages = document.querySelectorAll(".right-parallax");
-  const leftImages = document.querySelectorAll(".left-parallax");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const container = document.querySelector(".hero-thumb");
+//   const rightImages = document.querySelectorAll(".right-parallax");
+//   const leftImages = document.querySelectorAll(".left-parallax");
 
-  if (container && (rightImages.length > 0 || leftImages.length > 0)) {
-    const containerHeight = container.offsetHeight;
-    const containerWidth = container.offsetWidth;
-    const minDistance = 50; // Минимальное расстояние между изображениями
+//   if (container && (rightImages.length > 0 || leftImages.length > 0)) {
+//     const containerHeight = container.offsetHeight;
+//     const containerWidth = container.offsetWidth;
+//     const minDistance = 50; // Минимальное расстояние между изображениями
 
-    const placedPositions = [];
+//     const placedPositions = [];
 
-    function generateRandomPosition(minLeft, maxLeft, minTop, maxTop) {
-      let position;
-      let isTooClose;
+//     function generateRandomPosition(minLeft, maxLeft, minTop, maxTop) {
+//       let position;
+//       let isTooClose;
 
-      do {
-        const randomLeft = Math.random() * (maxLeft - minLeft) + minLeft;
-        const randomTop = Math.random() * (maxTop - minTop) + minTop;
-        position = { left: randomLeft, top: randomTop };
+//       do {
+//         const randomLeft = Math.random() * (maxLeft - minLeft) + minLeft;
+//         const randomTop = Math.random() * (maxTop - minTop) + minTop;
+//         position = { left: randomLeft, top: randomTop };
 
-        isTooClose = placedPositions.some(pos => {
-          const dx = pos.left - position.left;
-          const dy = pos.top - position.top;
-          return Math.sqrt(dx * dx + dy * dy) < minDistance;
-        });
-      } while (isTooClose);
+//         isTooClose = placedPositions.some(pos => {
+//           const dx = pos.left - position.left;
+//           const dy = pos.top - position.top;
+//           return Math.sqrt(dx * dx + dy * dy) < minDistance;
+//         });
+//       } while (isTooClose);
 
-      placedPositions.push(position);
-      return position;
-    }
+//       placedPositions.push(position);
+//       return position;
+//     }
 
-    function processImages(images, minLeft, maxLeft) {
-      images.forEach(img => {
-        const topOffset = 100;
-        const bottomOffset = 35;
-        const minTop = topOffset;
-        const maxTop = containerHeight - bottomOffset;
+//     function processImages(images, minLeft, maxLeft) {
+//       images.forEach(img => {
+//         const topOffset = 100;
+//         const bottomOffset = 35;
+//         const minTop = topOffset;
+//         const maxTop = containerHeight - bottomOffset;
 
-        const { left, top } = generateRandomPosition(minLeft, maxLeft, minTop, maxTop);
+//         const { left, top } = generateRandomPosition(minLeft, maxLeft, minTop, maxTop);
 
-        img.style.position = "absolute";
-        img.style.left = `${left}px`;
-        img.style.top = `${top}px`;
+//         img.style.position = "absolute";
+//         img.style.left = `${left}px`;
+//         img.style.top = `${top}px`;
 
-        const secpar = (Math.random() * 10 + 5).toFixed(1);
-        img.style.setProperty("--secpar", `${secpar}s`);
+//         const secpar = (Math.random() * 10 + 5).toFixed(1);
+//         img.style.setProperty("--secpar", `${secpar}s`);
 
-        // Генерируем случайные значения амплитуды для каждого изображения
-        const amplitude = (Math.random() * 6 + 3).toFixed(1); // от 3px до 8px
-        const smallAmplitude = (Math.random() * 5 + 2).toFixed(1); // от 1px до 3px
+//         // Генерируем случайные значения амплитуды для каждого изображения
+//         const amplitude = (Math.random() * 6 + 3).toFixed(1); // от 3px до 8px
+//         const smallAmplitude = (Math.random() * 5 + 2).toFixed(1); // от 1px до 3px
 
-        img.style.setProperty("--amplitude", `${amplitude}px`);
-        img.style.setProperty("--small-amplitude", `${smallAmplitude}px`);
-      });
-    }
+//         img.style.setProperty("--amplitude", `${amplitude}px`);
+//         img.style.setProperty("--small-amplitude", `${smallAmplitude}px`);
+//       });
+//     }
 
-    const minLeftRight = containerWidth * (2 / 3);
-    const maxLeftRight = containerWidth - 30;
+//     const minLeftRight = containerWidth * (2 / 3);
+//     const maxLeftRight = containerWidth - 30;
 
-    const minLeftLeft = 30;
-    const maxLeftLeft = containerWidth / 3;
+//     const minLeftLeft = 30;
+//     const maxLeftLeft = containerWidth / 3;
 
-    processImages(rightImages, minLeftRight, maxLeftRight);
-    processImages(leftImages, minLeftLeft, maxLeftLeft);
-  }
-});
+//     processImages(rightImages, minLeftRight, maxLeftRight);
+//     processImages(leftImages, minLeftLeft, maxLeftLeft);
+//   }
+// });
 
 
 // ============================= АНІМАЦІЯ ПОЯВИ ХЕДЕР =================================================
